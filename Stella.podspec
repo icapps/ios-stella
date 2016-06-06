@@ -9,34 +9,21 @@
 Pod::Spec.new do |s|
   s.name             = 'Stella'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Stella.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.summary          = 'A set of utilities that can be used during iOS development in Swift.'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Stella contains utlities methods that make it easier for you to code in Swift.
+
+At the moment only some cleaner GCD handling is added to Stella, but this will be expanded in the future.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/Stella'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.homepage         = 'https://github.com/icapps/ios-tella'
+  s.license          = { type: 'MIT', file: 'LICENSE' }
   s.author           = { 'Jelle Vandebeeck' => 'jelle@fousa.be' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/Stella.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { git: 'https://github.com/icapps/ios-stella.git', tag: s.version.to_s }
+  s.social_media_url = 'https://twitter.com/icapps'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
+  s.tvos.deployment_target = '9.0'
 
-  s.source_files = 'Stella/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'Stella' => ['Stella/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.source_files = 'Sources/**/*'
 end
