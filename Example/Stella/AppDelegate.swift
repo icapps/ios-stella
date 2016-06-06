@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stella
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
