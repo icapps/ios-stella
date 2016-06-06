@@ -1,9 +1,9 @@
 {
   "name": "Stella",
   "version": "0.1.0",
-  "summary": "A short description of Stella.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/Stella",
+  "summary": "A set of utilities that can be used during iOS development in Swift.",
+  "description": "Stella contains utlities methods that make it easier for you to code in Swift.\n\nAt the moment only some cleaner GCD handling is added to Stella, but this will be expanded in the future.",
+  "homepage": "https://github.com/icapps/ios-tella",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,13 @@
     "Jelle Vandebeeck": "jelle@fousa.be"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/Stella.git",
+    "git": "https://github.com/icapps/ios-stella.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/icapps",
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0",
+    "tvos": "9.0"
   },
-  "source_files": "Stella/Classes/**/*"
+  "source_files": "Sources/**/*"
 }
