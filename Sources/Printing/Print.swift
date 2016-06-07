@@ -9,7 +9,7 @@
 /**
  Writes the textual representations of items, prefixed with a 🍞 emoji, into the standard output.
  
- This function is used to print breadcrumbs.
+ This textual representations is used for breadcrumbs.
  
  - Parameter items: The items to write to the output.
  */
@@ -20,7 +20,7 @@ public func printBreadcrumb(items: Any...) {
 /**
  Writes the textual representations of items, prefixed with a 🔥 emoji, into the standard output.
  
- This function is used to print errors.
+ This textual representations is used for errors.
  
  - Parameter items: The items to write to the output.
  */
@@ -31,7 +31,7 @@ public func printError(items: Any...) {
 /**
  Writes the textual representations of items, prefixed with a 🎯 emoji, into the standard output.
  
- This function is used to print user actions.
+ This textual representations is used for user actions.
  
  - Parameter items: The items to write to the output.
  */
