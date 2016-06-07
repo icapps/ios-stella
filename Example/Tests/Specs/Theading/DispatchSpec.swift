@@ -16,7 +16,7 @@ class DispatchSpec: QuickSpec {
         describe("dispatch handling") {
             it("should be performed on the main thread") {
                 var onMainQueue = false
-                dispatch_async_main {
+                dispatch_on_main {
                     let currentQueue = dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL)
                     let mainQueue = dispatch_queue_get_label(dispatch_get_main_queue())
                     onMainQueue = currentQueue == mainQueue
@@ -34,7 +34,7 @@ class DispatchSpec: QuickSpec {
                     let backgroundQueue = dispatch_queue_get_label(queue)
                     onBackgroundQueue = currentBackgroundQueue == backgroundQueue
                     
-                    dispatch_async_main {
+                    dispatch_on_main {
                         let currentQueue = dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL)
                         let mainQueue = dispatch_queue_get_label(dispatch_get_main_queue())
                         onMainQueue = currentQueue == mainQueue
@@ -42,6 +42,27 @@ class DispatchSpec: QuickSpec {
                 }
                 expect(onBackgroundQueue).toEventually(beTrue(), timeout: 1)
                 expect(onMainQueue).toEventually(beTrue(), timeout: 1)
+            }
+            
+            it("should be performed on the background thread") {
+                var onBackgroundQueue = false
+                dispatch_in_background {
+                    let currentQueue = dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL)
+                    let mainQueue = dispatch_queue_get_label(dispatch_get_main_queue())
+                    onBackgroundQueue = currentQueue != mainQueue
+                }
+                expect(onBackgroundQueue).toEventually(beTrue(), timeout: 1)
+            }
+            
+            it("should be dispatch on the main thread after 2 seconds") {
+                var onMainQueue = false
+                dispatch_on_main_after(2) {
+                    let currentQueue = dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL)
+                    let mainQueue = dispatch_queue_get_label(dispatch_get_main_queue())
+                    onMainQueue = currentQueue == mainQueue
+                }
+                expect(onMainQueue).toEventually(beFalse(), timeout: 1)
+                expect(onMainQueue).toEventually(beTrue(), timeout: 2.1)
             }
         }
         
