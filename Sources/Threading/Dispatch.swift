@@ -34,7 +34,7 @@ public func dispatch_in_background(block: dispatch_block_t) {
  - Parameter seconds: The delay before the block is executed expressed in seconds.
  - Parameter block: The block to submit to the target dispatch queue.
  */
-public func dispatch_on_main_after(seconds: UInt64, block: dispatch_block_t) {
+public func dispatch_on_main(after seconds: UInt64, block: dispatch_block_t) {
     let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(seconds * NSEC_PER_SEC))
     dispatch_after(delayTime, dispatch_get_main_queue()) {
         block()

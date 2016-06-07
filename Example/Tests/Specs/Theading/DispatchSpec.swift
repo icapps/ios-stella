@@ -56,7 +56,7 @@ class DispatchSpec: QuickSpec {
             
             it("should be dispatch on the main thread after 2 seconds") {
                 var onMainQueue = false
-                dispatch_on_main_after(2) {
+                dispatch_on_main(after: 2) {
                     let currentQueue = dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL)
                     let mainQueue = dispatch_queue_get_label(dispatch_get_main_queue())
                     onMainQueue = currentQueue == mainQueue

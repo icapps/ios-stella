@@ -48,7 +48,7 @@ dispatch_on_main {
   // Perform this code on the main thread.
 }
 
-dispatch_on_main_after(2) {
+dispatch_on_main(after: 2) {
   // Perform this code on the main thread after 2 seconds.
 }
 
