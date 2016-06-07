@@ -64,6 +64,18 @@ class DispatchSpec: QuickSpec {
                 expect(onMainQueue).toEventually(beFalse(), timeout: 1)
                 expect(onMainQueue).toEventually(beTrue(), timeout: 2.1)
             }
+            
+            
+            it("should be performed as a synchronous call") {
+                var didComplete = false
+                dispatch_wait { completion in
+                    dispatch_in_background {
+                        didComplete = true
+                        completion()
+                    }
+                }
+                expect(didComplete).to(beTrue())
+            }
         }
         
     }
