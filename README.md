@@ -13,6 +13,32 @@ pod 'Stella', '~> 0.1'
 
 ## Utilities
 
+### Localization
+
+Localize a key on no time with this handy localization function.
+
+```swift
+let key = "this_is_your_localization_key"
+print(key.localizedString)
+// The debug console will print the localized
+// string found in your .strings file.
+```
+
+### Printing
+
+Add something extra to your debug output. There are *three* extra functions available for you to use.
+
+```swift
+printAction("This is a user action.")
+// The debug console will print `🎯 This is a user action.`
+
+printBreadcrumb("This is your breadcrumb.")
+// The debug console will print `🍞 This is your breadcrumb.`
+
+printError("This is an error.")
+// The debug console will print `🔥 This is an error.`
+```
+
 ### Threading
 
 Perform block on the main or on the background queue more easily.
@@ -29,21 +55,6 @@ dispatch_on_main_after(2) {
 dispatch_in_background {
   // Perform this code on a background thread.
 }
-```
-
-### Printing
-
-Add something extra to your debug output. There are *three* extra functions available for you to use.
-
-```swift
-printAction("This is a user action.")
-// The debug console will print `🎯 This is a user action.`
-
-printBreadcrumb("This is your breadcrumb.")
-// The debug console will print `🍞 This is your breadcrumb.`
-
-printError("This is an error.")
-// The debug console will print `🔥 This is an error.`
 ```
 
 ## Author
