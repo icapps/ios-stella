@@ -51,11 +51,6 @@
                BlueprintName = "Stella_Tests"
                ReferencedContainer = "container:Stella.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "TableOfContentsSpec">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
