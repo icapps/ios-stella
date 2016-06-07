@@ -55,6 +55,14 @@ dispatch_on_main_after(2) {
 dispatch_in_background {
   // Perform this code on a background thread.
 }
+
+dispatch_wait { completion in
+  // Perform an asynchronous call to a web service for example.
+  performCall {
+    // Notify the `dispatch_wait` that the asynchronous call finished it's execution.
+    completion()
+  }
+}
 ```
 
 ## Author

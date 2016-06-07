@@ -40,3 +40,29 @@ public func dispatch_on_main_after(seconds: UInt64, block: dispatch_block_t) {
         block()
     }
 }
+
+/**
+ Submits a block for synchronous execution. Trigger the completetion function from the
+ calling object in order to indicate that the asynchronous execution fininshed.
+ 
+ Example:
+ ```
+ dispatch_wait { completion in
+    performAsynchrounousTask {
+        completion()
+    }
+ }
+ ```
+ 
+ - Parameter block: The block to submit to the target dispatch queue.
+ */
+public func dispatch_wait(for block: (completion: () -> ()) -> ()) {
+    let semaphore = dispatch_semaphore_create(0)!
+    let queue = dispatch_queue_create("com.icapps.stella.waitqueue", nil)!
+    dispatch_async(queue) {
+        block {
+            dispatch_semaphore_signal(semaphore)
+        }
+    }
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+}
