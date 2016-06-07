@@ -29,8 +29,8 @@
 /* Begin PBXFileReference section */
 		296BDEB0B993B62C044FF92E /* Pods-Stella_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stella_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stella_Tests/Pods-Stella_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2CDD43F4918EA39775C35955 /* Pods_Stella_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stella_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		358D36B118B7D04570B08738 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		4AC8449A6AC6D23B704C2426 /* Stella.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Stella.podspec; path = ../Stella.podspec; sourceTree = "<group>"; };
+		358D36B118B7D04570B08738 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../../LICENSE; sourceTree = "<group>"; };
+		4AC8449A6AC6D23B704C2426 /* Stella.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Stella.podspec; path = ../../Stella.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Stella_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stella_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +41,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62263A5E1D06D16F00393E94 /* DispatchSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchSpec.swift; sourceTree = "<group>"; };
 		7A8866C3231A615F1F0ED625 /* Pods-Stella_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stella_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stella_Tests/Pods-Stella_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		8D918924E62E6ED18802DFBB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8D918924E62E6ED18802DFBB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		B296C1900C0A8E3485B39330 /* Pods-Stella_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stella_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stella_Example/Pods-Stella_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3ECDB4EF2541D9ACF63B0A /* Pods_Stella_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stella_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E072D2027233A92CB8652855 /* Pods-Stella_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stella_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stella_Example/Pods-Stella_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,12 +79,12 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for Stella */,
-				607FACE81AFB9204008FA782 /* Tests */,
-				607FACD11AFB9204008FA782 /* Products */,
-				F861651F80713BABD721EF04 /* Pods */,
 				1F93741571F359AD997F3207 /* Frameworks */,
+				F861651F80713BABD721EF04 /* Pods */,
+				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				607FACD11AFB9204008FA782 /* Products */,
+				607FACE81AFB9204008FA782 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,14 +100,13 @@
 		607FACD21AFB9204008FA782 /* Example for Stella */ = {
 			isa = PBXGroup;
 			children = (
+				607FACD31AFB9204008FA782 /* Supporting Files */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				607FACD31AFB9204008FA782 /* Supporting Files */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
 			);
-			name = "Example for Stella";
-			path = Stella;
+			path = "Example for Stella";
 			sourceTree = "<group>";
 		};
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
@@ -115,14 +114,14 @@
 			children = (
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				62263AAD1D0704F700393E94 /* Specs */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
-				62263A5E1D06D16F00393E94 /* DispatchSpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -132,17 +131,33 @@
 			children = (
 				607FACEA1AFB9204008FA782 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				4AC8449A6AC6D23B704C2426 /* Stella.podspec */,
-				8D918924E62E6ED18802DFBB /* README.md */,
 				358D36B118B7D04570B08738 /* LICENSE */,
+				8D918924E62E6ED18802DFBB /* README.md */,
+				4AC8449A6AC6D23B704C2426 /* Stella.podspec */,
 			);
-			name = "Podspec Metadata";
+			path = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		62263AAD1D0704F700393E94 /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				62263AAE1D0704FE00393E94 /* Theading */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		62263AAE1D0704FE00393E94 /* Theading */ = {
+			isa = PBXGroup;
+			children = (
+				62263A5E1D06D16F00393E94 /* DispatchSpec.swift */,
+			);
+			path = Theading;
 			sourceTree = "<group>";
 		};
 		F861651F80713BABD721EF04 /* Pods */ = {
@@ -385,6 +400,7 @@
 				607FACDA1AFB9204008FA782 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
@@ -393,6 +409,7 @@
 				607FACDF1AFB9204008FA782 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -486,7 +503,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DYLIB_CURRENT_VERSION = 1;
-				INFOPLIST_FILE = Stella/Info.plist;
+				INFOPLIST_FILE = "Example for Stella/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -502,7 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DYLIB_CURRENT_VERSION = 1;
-				INFOPLIST_FILE = Stella/Info.plist;
+				INFOPLIST_FILE = "Example for Stella/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -524,7 +541,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
@@ -541,7 +558,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
