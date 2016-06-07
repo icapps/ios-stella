@@ -15,7 +15,7 @@ pod 'Stella', '~> 0.1'
 
 ### Localization
 
-Localize a key on no time with this handy localization function.
+Localize a key in no time with this handy localization function.
 
 ```swift
 let key = "this_is_your_localization_key"
