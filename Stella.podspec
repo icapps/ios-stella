@@ -16,13 +16,13 @@ Stella contains utlities methods that make it easier for you to code in Swift.
 At the moment only some cleaner GCD handling is added to Stella, but this will be expanded in the future.
                        DESC
 
-  s.homepage         = 'https://github.com/icapps/ios-tella'
+  s.homepage         = 'https://github.com/icapps/ios-stella'
   s.license          = { type: 'MIT', file: 'LICENSE' }
   s.author           = { 'Jelle Vandebeeck' => 'jelle@fousa.be' }
   s.source           = { git: 'https://github.com/icapps/ios-stella.git', tag: s.version.to_s }
   s.social_media_url = 'https://twitter.com/icapps'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '8.0'
   s.tvos.deployment_target = '9.0'
 
   s.source_files = 'Sources/**/*'
