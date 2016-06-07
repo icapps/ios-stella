@@ -1,12 +1,9 @@
 use_frameworks!
 
-target 'Stella_Example' do
+target 'Stella_Tests' do
   pod 'Stella', :path => '../'
 
-  target 'Stella_Tests' do
-    inherit! :search_paths
-
-    pod 'Quick',  '~> 0.8'
-    pod 'Nimble', '~> 3.0'
-  end
+  # The test frameworks
+  pod 'Quick',  '~> 0.8'
+  pod 'Nimble', '~> 3.0'
 end
