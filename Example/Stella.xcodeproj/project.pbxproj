@@ -13,6 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		62263A601D06D17A00393E94 /* DispatchSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62263A5E1D06D16F00393E94 /* DispatchSpec.swift */; };
+		629CA9DC1D071666008E9648 /* LocalizationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CA9DA1D0715F5008E9648 /* LocalizationSpec.swift */; };
 		A9F4B87EDC9942D95EC97B48 /* Pods_Stella_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDD43F4918EA39775C35955 /* Pods_Stella_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		607FACE51AFB9204008FA782 /* Stella_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Stella_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62263A5E1D06D16F00393E94 /* DispatchSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchSpec.swift; sourceTree = "<group>"; };
+		629CA9DA1D0715F5008E9648 /* LocalizationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationSpec.swift; sourceTree = "<group>"; };
 		7A8866C3231A615F1F0ED625 /* Pods-Stella_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stella_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stella_Tests/Pods-Stella_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		8D918924E62E6ED18802DFBB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		B296C1900C0A8E3485B39330 /* Pods-Stella_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stella_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stella_Example/Pods-Stella_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				62263AAE1D0704FE00393E94 /* Theading */,
+				629CA9DA1D0715F5008E9648 /* LocalizationSpec.swift */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62263A601D06D17A00393E94 /* DispatchSpec.swift in Sources */,
+				629CA9DC1D071666008E9648 /* LocalizationSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
