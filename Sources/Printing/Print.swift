@@ -6,8 +6,6 @@
 //
 //
 
-import Foundation
-
 /**
  Writes the textual representations of items, prefixed with a 🍞 emoji, into the standard output.
  

@@ -6,8 +6,6 @@
 //
 //
 
-import Foundation
-
 public func dispatch_on_main(block: dispatch_block_t) {
     dispatch_async(dispatch_get_main_queue()) { 
         block()
