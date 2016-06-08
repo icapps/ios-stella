@@ -17,6 +17,7 @@ extension DefaultsKeys {
     static let doubleValue = DefaultsKey<Double?>("doubleValue")
     static let floatValue = DefaultsKey<Float?>("floatValue")
     static let booleanValue = DefaultsKey<Bool?>("booleanValue")
+    static let dateValue = DefaultsKey<NSDate?>("dateValue")
 }
 
 class DefaultsSpec: QuickSpec {
@@ -85,6 +86,21 @@ class DefaultsSpec: QuickSpec {
                 it("should be able to read to the defaults") {
                     NSUserDefaults.standardUserDefaults().setBool(true, forKey: "booleanValue")
                     expect(Defaults[.booleanValue]).to(beTrue())
+                }
+            }
+            
+            context("date value") {
+                it("should be able to write to the defaults") {
+                    let date = NSDate(timeIntervalSince1970: 200)
+                    Defaults[.dateValue] = date
+                    let dateValue = NSUserDefaults.standardUserDefaults().objectForKey("dateValue") as! NSDate
+                    expect(dateValue).to(equal(date))
+                }
+                
+                it("should be able to read to the defaults") {
+                    let date = NSDate(timeIntervalSince1970: 100)
+                    NSUserDefaults.standardUserDefaults().setObject(date, forKey: "dateValue")
+                    expect(Defaults[.dateValue]).to(equal(date))
                 }
             }
         }

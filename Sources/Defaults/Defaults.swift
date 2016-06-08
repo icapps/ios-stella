@@ -115,4 +115,18 @@ public extension NSUserDefaults {
             setBool(newValue, forKey: key.key)
         }
     }
+    
+    /// Get the defaults NSDate value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    ///
+    /// ```
+    /// static let date = DefaultsKey<NSDate?>("the date defaults key")
+    /// ```
+    public subscript(key: DefaultsKey<NSDate?>) -> NSDate? {
+        get {
+            return objectForKey(key.key) as? NSDate
+        }
+        set {
+            setObject(newValue, forKey: key.key)
+        }
+    }
 }
