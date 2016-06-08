@@ -13,6 +13,49 @@ pod 'Stella', '~> 0.1'
 
 ## Utilities
 
+### Defaults
+
+We have a cleaner way to use `NSUserDefaults`. Define the user defaults by extending the `DefaultsKeys` class.
+
+```swift
+extension DefaultsKeys {
+  // Writes a string object to the defaults with the 'stringValue' key.
+  static let stringValue = DefaultsKey<String?>("stringValue")
+  // Writes an integer to the defaults with the 'integerValue' key.
+  static let integerValue = DefaultsKey<Int?>("integerValue")
+  // Writes a double to the defaults with the 'doubleValue' key.
+  static let doubleValue = DefaultsKey<Double?>("doubleValue")
+  // Writes a float to the defaults with the 'floatValue' key.
+  static let floatValue = DefaultsKey<Float?>("floatValue")
+  // Writes a bool to the defaults with the 'booleanValue' key.
+  static let booleanValue = DefaultsKey<Bool?>("booleanValue")
+  // Writes a date object to the defaults with the 'dateValue' key.
+  static let dateValue = DefaultsKey<NSDate?>("dateValue")
+}
+```
+
+You can read/write the from/to the `NSUserDefaults` by using the `subscript` on the `Defaults` class.
+
+```swift
+Defaults[.stringValue] = "A string value"
+print(Defaults[.stringValue]) // Prints 'A string value'
+
+Defaults[.integerValue] = 123
+print(Defaults[.integerValue]) // Prints '123'
+
+Defaults[.doubleValue] = 123.123
+print(Defaults[.doubleValue]) // Prints '123.123'
+
+Defaults[.floatValue] = 123.321
+print(Defaults[.floatValue]) // Prints '123.312'
+
+Defaults[.booleanValue] = true
+print(Defaults[.booleanValue]) // Prints 'true'
+
+Defaults[.dateValue] = NSDate()
+print(Defaults[.dateValue]) // Prints '1996-12-19T16:39:57-08:00'
+```
+
 ### Localization
 
 Localize a key in no time with this handy localization function.
