@@ -13,7 +13,11 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 Stella contains utlities methods that make it easier for you to code in Swift.
 
-At the moment only some cleaner GCD handling is added to Stella, but this will be expanded in the future.
+The features that are currently added are:
+- User defaults handling
+- Localization
+- Printing
+- Threading
                        DESC
 
   s.homepage         = 'https://github.com/icapps/ios-stella'
