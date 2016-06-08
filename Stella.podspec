@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Stella'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.summary          = 'A set of utilities that can be used during iOS development in Swift.'
   s.description      = <<-DESC
 Stella contains utlities methods that make it easier for you to code in Swift.

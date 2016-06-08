@@ -1,10 +1,15 @@
 # Stella
 
+## Version 0.3.0
+
+- Added the defaults implementation.
+- Fixed some typo's.
+
 ## Version 0.2.0
 
-- Add the dispatch_wait function.
-- Rename the `dispatch_on_main_after` to `dispatch_on_main(after:block:)`.
-- Remove the Example application for a tests only project.
+- Added the dispatch_wait function.
+- Renamed the `dispatch_on_main_after` to `dispatch_on_main(after:block:)`.
+- Removed the Example application for a tests only project.
 
 ## Version 0.1.1
 

@@ -13,7 +13,7 @@
 Stella is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
 
 ```ruby
-pod 'Stella', '~> 0.1'
+pod 'Stella', '~> 0.3'
 ```
 ## TOC
 
