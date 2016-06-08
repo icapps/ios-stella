@@ -14,7 +14,7 @@ class LocalizationSpec: QuickSpec {
     override func spec() {
         
         describe("localization") {
-            it("localize the current string to the correct language") {
+            it("should localize the current string to the correct language") {
                 let key = "some_key"
                 let nativeLocalized = NSLocalizedString(key, comment: "")
                 expect(key.localizedString).to(equal(nativeLocalized))
