@@ -13,6 +13,10 @@ import Stella
 // Define the keys used for this test.
 extension DefaultsKeys {
     static let stringValue = DefaultsKey<String?>("stringValue")
+    static let integerValue = DefaultsKey<Int?>("integerValue")
+    static let doubleValue = DefaultsKey<Double?>("doubleValue")
+    static let floatValue = DefaultsKey<Float?>("floatValue")
+    static let booleanValue = DefaultsKey<Bool?>("booleanValue")
 }
 
 class DefaultsSpec: QuickSpec {
@@ -29,6 +33,58 @@ class DefaultsSpec: QuickSpec {
                 it("should be able to read to the defaults") {
                     NSUserDefaults.standardUserDefaults().setObject("Some string value", forKey: "stringValue")
                     expect(Defaults[.stringValue]).to(equal("Some string value"))
+                }
+            }
+            
+            context("integer value") {
+                it("should be able to write to the defaults") {
+                    Defaults[.integerValue] = 123
+                    let integerValue = NSUserDefaults.standardUserDefaults().integerForKey("integerValue")
+                    expect(integerValue).to(equal(123))
+                }
+                
+                it("should be able to read to the defaults") {
+                    NSUserDefaults.standardUserDefaults().setInteger(123, forKey: "integerValue")
+                    expect(Defaults[.integerValue]).to(equal(123))
+                }
+            }
+            
+            context("float value") {
+                it("should be able to write to the defaults") {
+                    Defaults[.floatValue] = 123.123
+                    let floatValue = NSUserDefaults.standardUserDefaults().floatForKey("floatValue")
+                    expect(floatValue).to(equal(123.123))
+                }
+                
+                it("should be able to read to the defaults") {
+                    NSUserDefaults.standardUserDefaults().setFloat(123.123, forKey: "floatValue")
+                    expect(Defaults[.floatValue]).to(equal(123.123))
+                }
+            }
+            
+            context("double value") {
+                it("should be able to write to the defaults") {
+                    Defaults[.doubleValue] = 123.123
+                    let doubleValue = NSUserDefaults.standardUserDefaults().doubleForKey("doubleValue")
+                    expect(doubleValue).to(equal(123.123))
+                }
+                
+                it("should be able to read to the defaults") {
+                    NSUserDefaults.standardUserDefaults().setDouble(123.123, forKey: "doubleValue")
+                    expect(Defaults[.doubleValue]).to(equal(123.123))
+                }
+            }
+            
+            context("boolean value") {
+                it("should be able to write to the defaults") {
+                    Defaults[.booleanValue] = true
+                    let booleanValue = NSUserDefaults.standardUserDefaults().boolForKey("booleanValue")
+                    expect(booleanValue).to(beTrue())
+                }
+                
+                it("should be able to read to the defaults") {
+                    NSUserDefaults.standardUserDefaults().setBool(true, forKey: "booleanValue")
+                    expect(Defaults[.booleanValue]).to(beTrue())
                 }
             }
         }

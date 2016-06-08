@@ -34,7 +34,7 @@ public class DefaultsKey<ValueType>: DefaultsKeys {
 
 public extension NSUserDefaults {
     
-    /// Get the defaults value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    /// Get the defaults String value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
     ///
     /// ```
     /// static let string = DefaultsKey<String?>("the string defaults key")
@@ -45,6 +45,74 @@ public extension NSUserDefaults {
         }
         set {
             setObject(newValue, forKey: key.key)
+        }
+    }
+    
+    /// Get the defaults Int value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    ///
+    /// ```
+    /// static let integer = DefaultsKey<Int?>("the integer defaults key")
+    /// ```
+    public subscript(key: DefaultsKey<Int?>) -> Int? {
+        get {
+            return integerForKey(key.key)
+        }
+        set {
+            if let newValue = newValue {
+                setInteger(newValue, forKey: key.key)
+            } else {
+                removeObjectForKey(key.key)
+            }
+        }
+    }
+    
+    /// Get the defaults Float value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    ///
+    /// ```
+    /// static let float = DefaultsKey<Float?>("the float defaults key")
+    /// ```
+    public subscript(key: DefaultsKey<Float?>) -> Float? {
+        get {
+            return floatForKey(key.key)
+        }
+        set {
+            if let newValue = newValue {
+                setFloat(newValue, forKey: key.key)
+            } else {
+                removeObjectForKey(key.key)
+            }
+        }
+    }
+    
+    /// Get the defaults Double value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    ///
+    /// ```
+    /// static let double = DefaultsKey<Double?>("the double defaults key")
+    /// ```
+    public subscript(key: DefaultsKey<Double?>) -> Double? {
+        get {
+            return doubleForKey(key.key)
+        }
+        set {
+            if let newValue = newValue {
+                setDouble(newValue, forKey: key.key)
+            } else {
+                removeObjectForKey(key.key)
+            }
+        }
+    }
+    
+    /// Get the defaults Bool value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    ///
+    /// ```
+    /// static let boolean = DefaultsKey<Bool?>("the boolean defaults key")
+    /// ```
+    public subscript(key: DefaultsKey<Bool?>) -> Bool {
+        get {
+            return boolForKey(key.key) ?? false
+        }
+        set {
+            setBool(newValue, forKey: key.key)
         }
     }
 }
