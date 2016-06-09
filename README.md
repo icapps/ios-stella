@@ -8,17 +8,10 @@
 
 > Stella contains a set of utilities that can be used during iOS development in Swift.
 
-## Installation
-
-Stella is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
-
-```ruby
-pod 'Stella', '~> 0.3'
-```
 ## TOC
 
 - [Installation](#installation)
-- [Utilities](#utilities)
+- [Features](#features)
   - [Defaults](#defaults)
   - [Localization](#localization)
   - [Printing](#printing)
@@ -26,7 +19,15 @@ pod 'Stella', '~> 0.3'
 - [Author](#author)
 - [License](#license)
 
-## Utilities
+## Installation
+
+Stella is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
+
+```ruby
+pod 'Stella', '~> 0.3'
+```
+
+## Features
 
 ### Defaults
 
