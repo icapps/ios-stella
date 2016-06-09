@@ -16,6 +16,7 @@
   - [Localization](#localization)
   - [Printing](#printing)
   - [Threading](#threading)
+- [Bucket List](#bucket-list)
 - [Author](#author)
 - [License](#license)
 
@@ -123,6 +124,13 @@ dispatch_wait { completion in
   }
 }
 ```
+
+## Bucket List
+
+Here is an overview what is on our todo list.
+
+- [ ] The `sharedInstance` should be more configurable with a closure.
+- [ ] Add keychain integration.
 
 ## Author
 
