@@ -1,5 +1,9 @@
 # Stella
 
+## Version 0.3.1
+
+- Update the readme.
+
 ## Version 0.3.0
 
 - Added the defaults implementation.
