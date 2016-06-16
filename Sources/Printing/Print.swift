@@ -14,7 +14,7 @@
  - Parameter items: The items to write to the output.
  */
 public func printBreadcrumb(items: Any...) {
-    print("🍞", items)
+    print("🍞", items.map { String($0) }.joinWithSeparator(" "))
 }
 
 /**
@@ -25,7 +25,7 @@ public func printBreadcrumb(items: Any...) {
  - Parameter items: The items to write to the output.
  */
 public func printError(items: Any...) {
-    print("🔥", items)
+    print("🔥", items.map { String($0) }.joinWithSeparator(" "))
 }
 
 /**
@@ -36,5 +36,5 @@ public func printError(items: Any...) {
  - Parameter items: The items to write to the output.
  */
 public func printAction(items: Any...) {
-    print("🎯", items)
+    print("🎯", items.map { String($0) }.joinWithSeparator(" "))
 }
