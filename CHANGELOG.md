@@ -1,5 +1,9 @@
 # Stella
 
+## Version 0.4.1
+
+- Correctly printout the errors, breadcrumbs and the actions.
+
 ## Version 0.4.0
 
 - Add macOS support.
