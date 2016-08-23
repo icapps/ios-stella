@@ -15,7 +15,7 @@
  - Returns : text to be printed
  */
 public func printBreadcrumb(items: Any...) -> String {
-    let text = "🍞" + items.map { String($0) }.joinWithSeparator(" ")
+    let text = "🍞 " + items.map { String($0) }.joinWithSeparator(" ")
     print("\(text)")
     return text
 }
@@ -29,7 +29,7 @@ public func printBreadcrumb(items: Any...) -> String {
  - Returns : text to be printed
  */
 public func printError(items: Any...) -> String {
-    let text = "🔥" + items.map { String($0) }.joinWithSeparator(" ")
+    let text = "🔥 " + items.map { String($0) }.joinWithSeparator(" ")
     print(text)
     return text
 }
@@ -43,7 +43,7 @@ public func printError(items: Any...) -> String {
  - Returns : text to be printed
  */
 public func printAction(items: Any...) -> String {
-    let text = "🎯" + items.map { String($0) }.joinWithSeparator(" ")
+    let text = "🎯 " + items.map { String($0) }.joinWithSeparator(" ")
     print("\(text)")
     return text
 }
@@ -57,7 +57,7 @@ public func printAction(items: Any...) -> String {
  - Returns : text to be printed
  */
 public func printThought(items: Any...) -> String {
-    let text = "🤔" + items.map { String($0) }.joinWithSeparator(" ")
+    let text = "🤔 " + items.map { String($0) }.joinWithSeparator(" ")
     print("\(text)")
     return text
 }

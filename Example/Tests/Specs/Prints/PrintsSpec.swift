@@ -38,7 +38,7 @@ class PrintsSpec: QuickSpec {
 			context("thought") {
 				it("begins with 🤔") {
                     let suffix = "thought"
-					expect(printThought()).to(beginWith("🤔 \(suffix)"))
+					expect(printThought(suffix)).to(beginWith("🤔 \(suffix)"))
 				}
 			}
 		}
