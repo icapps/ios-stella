@@ -11,33 +11,37 @@ import Nimble
 import Stella
 
 class PrintsSpec: QuickSpec {
-    override func spec() {
-        
-        describe("print") {
-            context("error") {
-                it("begins with 🔥") {
-					expect(printError("error")).to(beginWith("🔥"))
-                }
-            }
+	override func spec() {
+
+		describe("print") {
+			context("error") {
+				it("begins with 🔥") {
+                    let suffix = "error"
+					expect(printError(suffix)).to(beginWith("🔥 \(suffix)"))
+				}
+			}
 
 			context("action"){
 				it("begins with 🎯"){
-					expect(printAction("action")).to(beginWith("🎯"))
+                    let action = "action"
+					expect(printAction(action)).to(beginWith("🎯 \(action)"))
 				}
 			}
 
 			context("breadCrumb") {
 				it("begins with 🍞") {
-					expect(printBreadcrumb("breadCrumb")).to(beginWith("🍞"))
+                    let suffix = "breadCrumb"
+					expect(printBreadcrumb(suffix)).to(beginWith("🍞 \(suffix)"))
 				}
 			}
 
 			context("thought") {
 				it("begins with 🤔") {
-					expect(printThought("thought")).to(beginWith("🤔"))
+                    let suffix = "thought"
+					expect(printThought()).to(beginWith("🤔 \(suffix)"))
 				}
 			}
-        }
-        
-    }
+		}
+
+	}
 }
