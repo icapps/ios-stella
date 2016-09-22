@@ -14,6 +14,9 @@ class PrintsSpec: QuickSpec {
 	override func spec() {
 
 		describe("print") {
+            beforeEach {
+                Printer.level = .verbose
+            }
 			context("error") {
 				it("begins with 🔥") {
                     let suffix = "error"
@@ -38,10 +41,109 @@ class PrintsSpec: QuickSpec {
 			context("question") {
 				it("begins with ❓") {
                     let suffix = "question"
-					expect(printQuestion(items: suffix)).to(beginWith("❓ \(suffix)"))
+					expect(printQuestion(suffix)).to(beginWith("❓ \(suffix)"))
 				}
 			}
 		}
+
+        describe("PrintLevel") {
+            context("quiet") {
+                beforeEach {
+                    Printer.level = .quiet
+                }
+                context("should print") {
+                    it("🔥") {
+                        expect(printError("")).toNot(beNil())
+                    }
+
+                    it("🎯") {
+                        expect(printAction("")).toNot(beNil())
+                    }
+                }
+
+                context("should not print") {
+
+
+                    it("❓") {
+                        expect(printQuestion("")).to(beNil())
+                    }
+
+                    it("🍞") {
+                        expect(printBreadcrumb("")).to(beNil())
+                    }
+                }
+            }
+
+            context("verbose") {
+                beforeEach {
+                    Printer.level = .verbose
+                }
+                context("should print") {
+                    it("🔥") {
+                        expect(printError("")).toNot(beNil())
+                    }
+
+                    it("🎯") {
+                        expect(printAction("")).toNot(beNil())
+                    }
+
+                    it("❓") {
+                        expect(printQuestion("")).toNot(beNil())
+                    }
+
+                    it("🍞") {
+                        expect(printBreadcrumb("")).toNot(beNil())
+                    }
+                }
+            }
+
+            context("error") {
+                beforeEach {
+                    Printer.level = .error
+                }
+                context("should print") {
+                    it("🔥") {
+                        expect(printError("")).toNot(beNil())
+                    }
+                }
+
+                context("should not print") {
+                    it("🎯") {
+                        expect(printAction("")).to(beNil())
+                    }
+
+                    it("❓") {
+                        expect(printQuestion("")).to(beNil())
+                    }
+
+                    it("🍞") {
+                        expect(printBreadcrumb("")).to(beNil())
+                    }
+                }
+            }
+            context("nothing") {
+                beforeEach {
+                    Printer.level = .nothing
+                }
+                context("should not print") {
+                    it("🔥") {
+                        expect(printError("")).to(beNil())
+                    }
+
+                    it("🎯") {
+                        expect(printAction("")).to(beNil())
+                    }
+
+                    it("❓") {
+                        expect(printQuestion("")).to(beNil())
+                    }
+
+                    it("🍞") {
+                        expect(printBreadcrumb("")).to(beNil())
+                    }
+                }
+            }
+        }
 
 	}
 }
