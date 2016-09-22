@@ -59,8 +59,9 @@ public func printAction(_ items: Any...) -> String {
  - Parameter items: The items to write to the output.
  - Returns : text to be printed
  */
-public func printThought(items: Any...) -> String {
-    let text = "🤔 " + items.map { String(describing: $0) }.joined(separator: " ")
+@discardableResult
+public func printQuestion(items: Any...) -> String {
+    let text = "❓ " + items.map { String(describing: $0) }.joined(separator: " ")
     print("\(text)")
     return text
 }
