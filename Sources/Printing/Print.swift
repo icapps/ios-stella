@@ -16,7 +16,7 @@
  */
 @discardableResult
 public func printBreadcrumb(_ items: Any...) -> String? {
-    guard Printer.level == .verbose else {
+    guard Output.level == .verbose else {
         return nil
     }
 
@@ -34,8 +34,8 @@ public func printBreadcrumb(_ items: Any...) -> String? {
  - Returns : text to be printed
  */
 @discardableResult
-public func printError(_ items: Any...) -> String? {
-    guard Printer.level != .nothing || Printer.level == .error else {
+public func Outputror(_ items: Any...) -> String? {
+    guard Output.level != .nothing || Output.level == .error else {
         return nil
     }
     let text = "🔥 " + items.map { String(describing: $0) }.joined(separator: " ")
@@ -53,7 +53,7 @@ public func printError(_ items: Any...) -> String? {
  */
 @discardableResult
 public func printAction(_ items: Any...) -> String? {
-    guard Printer.level == .verbose || Printer.level == .quiet else {
+    guard Output.level == .verbose || Output.level == .quiet else {
         return nil
     }
     let text = "🎯 " + items.map { String(describing: $0) }.joined(separator: " ")
@@ -71,7 +71,7 @@ public func printAction(_ items: Any...) -> String? {
  */
 @discardableResult
 public func printQuestion(_ items: Any...) -> String? {
-    guard Printer.level == .verbose else {
+    guard Output.level == .verbose else {
         return nil
     }
     let text = "❓ " + items.map { String(describing: $0) }.joined(separator: " ")

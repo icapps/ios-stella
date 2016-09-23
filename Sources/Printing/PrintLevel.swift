@@ -15,6 +15,6 @@ public enum PrintLevel {
     case nothing
 }
 
-public struct Printer {
+public struct Output {
     public static var level: PrintLevel = .quiet
 }

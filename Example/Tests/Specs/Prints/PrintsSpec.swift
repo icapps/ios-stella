@@ -15,12 +15,12 @@ class PrintsSpec: QuickSpec {
 
 		describe("print") {
             beforeEach {
-                Printer.level = .verbose
+                Output.level = .verbose
             }
 			context("error") {
 				it("begins with 🔥") {
                     let suffix = "error"
-					expect(printError(suffix)).to(beginWith("🔥 \(suffix)"))
+					expect(Outputror(suffix)).to(beginWith("🔥 \(suffix)"))
 				}
 			}
 
@@ -49,11 +49,11 @@ class PrintsSpec: QuickSpec {
         describe("PrintLevel") {
             context("quiet") {
                 beforeEach {
-                    Printer.level = .quiet
+                    Output.level = .quiet
                 }
                 context("should print") {
                     it("🔥") {
-                        expect(printError("")).toNot(beNil())
+                        expect(Outputror("")).toNot(beNil())
                     }
 
                     it("🎯") {
@@ -76,11 +76,11 @@ class PrintsSpec: QuickSpec {
 
             context("verbose") {
                 beforeEach {
-                    Printer.level = .verbose
+                    Output.level = .verbose
                 }
                 context("should print") {
                     it("🔥") {
-                        expect(printError("")).toNot(beNil())
+                        expect(Outputror("")).toNot(beNil())
                     }
 
                     it("🎯") {
@@ -99,11 +99,11 @@ class PrintsSpec: QuickSpec {
 
             context("error") {
                 beforeEach {
-                    Printer.level = .error
+                    Output.level = .error
                 }
                 context("should print") {
                     it("🔥") {
-                        expect(printError("")).toNot(beNil())
+                        expect(Outputror("")).toNot(beNil())
                     }
                 }
 
@@ -123,11 +123,11 @@ class PrintsSpec: QuickSpec {
             }
             context("nothing") {
                 beforeEach {
-                    Printer.level = .nothing
+                    Output.level = .nothing
                 }
                 context("should not print") {
                     it("🔥") {
-                        expect(printError("")).to(beNil())
+                        expect(Outputror("")).to(beNil())
                     }
 
                     it("🎯") {
