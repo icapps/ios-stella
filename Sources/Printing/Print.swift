@@ -34,7 +34,7 @@ public func printBreadcrumb(_ items: Any...) -> String? {
  - Returns : text to be printed
  */
 @discardableResult
-public func Outputror(_ items: Any...) -> String? {
+public func printError(_ items: Any...) -> String? {
     guard Output.level != .nothing || Output.level == .error else {
         return nil
     }

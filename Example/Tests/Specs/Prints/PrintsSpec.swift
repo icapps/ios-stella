@@ -20,7 +20,7 @@ class PrintsSpec: QuickSpec {
 			context("error") {
 				it("begins with 🔥") {
                     let suffix = "error"
-					expect(Outputror(suffix)).to(beginWith("🔥 \(suffix)"))
+					expect(printError(suffix)).to(beginWith("🔥 \(suffix)"))
 				}
 			}
 
@@ -53,7 +53,7 @@ class PrintsSpec: QuickSpec {
                 }
                 context("should print") {
                     it("🔥") {
-                        expect(Outputror("")).toNot(beNil())
+                        expect(printError("")).toNot(beNil())
                     }
 
                     it("🎯") {
@@ -80,7 +80,7 @@ class PrintsSpec: QuickSpec {
                 }
                 context("should print") {
                     it("🔥") {
-                        expect(Outputror("")).toNot(beNil())
+                        expect(printError("")).toNot(beNil())
                     }
 
                     it("🎯") {
@@ -103,7 +103,7 @@ class PrintsSpec: QuickSpec {
                 }
                 context("should print") {
                     it("🔥") {
-                        expect(Outputror("")).toNot(beNil())
+                        expect(printError("")).toNot(beNil())
                     }
                 }
 
@@ -127,7 +127,7 @@ class PrintsSpec: QuickSpec {
                 }
                 context("should not print") {
                     it("🔥") {
-                        expect(Outputror("")).to(beNil())
+                        expect(printError("")).to(beNil())
                     }
 
                     it("🎯") {
