@@ -98,32 +98,25 @@ printBreadcrumb("This is your breadcrumb.")
 printError("This is an error.")
 // The debug console will print `🔥 This is an error.`
 ```
+### Print Levels
 
-### Threading
-
-Perform block on the main or on the background queue more easily.
+You can simply specify print levels like:
 
 ```swift
-dispatch_on_main {
-  // Perform this code on the main thread.
-}
-
-dispatch_on_main(after: 2) {
-  // Perform this code on the main thread after 2 seconds.
-}
-
-dispatch_in_background {
-  // Perform this code on a background thread.
-}
-
-dispatch_wait { completion in
-  // Perform an asynchronous call to a web service for example.
-  performCall {
-    // Notify the `dispatch_wait` that the asynchronous call finished it's execution.
-    completion()
-  }
-}
+Printer.level = .verbose
 ```
+
+or to only print errors
+```swift
+Printer.level = .error
+```
+
+Or just shut up everything, handy for in unit tests.
+
+```swift
+Printer.level = .nothing
+```
+To see what is printed for what level look at the `PrintSpec`.
 
 ## Bucket List
 
