@@ -97,6 +97,25 @@ printBreadcrumb("This is your breadcrumb.")
 printError("This is an error.")
 // The debug console will print `🔥 This is an error.`
 ```
+#### Print Levels
+
+You can simply specify print levels like:
+
+```swift
+Printer.level = .verbose
+```
+
+or to only print errors
+```swift
+Printer.level = .error
+```
+
+Or just shut up everything, handy for in unit tests.
+
+```swift
+Printer.level = .nothing
+```
+To see what is printed for what level look at the `PrintSpec`.
 
 ## Bucket List
 
