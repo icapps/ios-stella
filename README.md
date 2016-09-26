@@ -15,7 +15,6 @@
   - [Defaults](#defaults)
   - [Localization](#localization)
   - [Printing](#printing)
-  - [Threading](#threading)
 - [Bucket List](#bucket-list)
 - [Author](#author)
 - [License](#license)
