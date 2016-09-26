@@ -1,5 +1,10 @@
 # Stella
 
+### Version 1.0.0
+
+- Updated for Xcode 8 and Swift 3.
+- Remove the `dispatch` functions because Swift 3 has a cleaner API.
+
 ## Version 0.4.1
 
 - Correctly printout the errors, breadcrumbs and the actions.
