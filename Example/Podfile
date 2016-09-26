@@ -9,7 +9,6 @@ target 'Stella_Tests' do
 end
 
 post_install do |installer|
-
     # Make sure all targets have the right swift version set
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
