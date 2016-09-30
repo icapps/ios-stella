@@ -1,4 +1,4 @@
-# Stella
+![](./Images/StellaShield.jpg)
 
 [![CI Status](http://img.shields.io/travis/icapps/ios-stella.svg?style=flat)](https://travis-ci.org/icapps/ios-stella)
 [![License](https://img.shields.io/cocoapods/l/Stella.svg?style=flat)](http://cocoapods.org/pods/Stella)
