@@ -1,6 +1,9 @@
 # Stella
 
-### Version 1.0.0
+## Version 1.0.1
+* Aesthetic improvement to readme
+
+## Version 1.0.0
 
 - Updated for Xcode 8 and Swift 3.
 - Remove the `dispatch` functions because Swift 3 has a cleaner API.
