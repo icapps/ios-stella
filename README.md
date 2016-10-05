@@ -24,7 +24,7 @@
 Stella is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
 
 ```ruby
-pod 'Stella', '~> 0.4'
+pod 'Stella', '~> 1.0'
 ```
 
 ## Features
@@ -98,25 +98,25 @@ printError("This is an error.")
 // The debug console will print `🔥 This is an error.`
 
 printQuestion("This is a question")
-/ The debug console will print `❓ This is an question.`
+// The debug console will print `❓ This is an question.`
 ```
 #### Print Levels
 
 You can simply specify print levels like:
 
 ```swift
-Printer.level = .verbose
+Output.level = .verbose
 ```
 
 or to only print errors
 ```swift
-Printer.level = .error
+Output.level = .error
 ```
 
 Or just shut up everything, handy for in unit tests.
 
 ```swift
-Printer.level = .nothing
+Output.level = .nothing
 ```
 To see what is printed for what level look at the `PrintSpec`.
 
