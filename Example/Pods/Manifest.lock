@@ -1,29 +1,22 @@
 PODS:
   - Nimble (5.0.0)
-  - Quick (0.9.3)
-  - Stella (1.0.0)
+  - Quick (0.10.0)
+  - Stella (1.0.1)
 
 DEPENDENCIES:
-  - Nimble (~> 5.0.0)
-  - Quick (from `https://github.com/Quick/Quick.git`)
+  - Nimble (~> 5.0)
+  - Quick (~> 0.10)
   - Stella (from `../`)
 
 EXTERNAL SOURCES:
-  Quick:
-    :git: https://github.com/Quick/Quick.git
   Stella:
     :path: "../"
 
-CHECKOUT OPTIONS:
-  Quick:
-    :commit: e72d6dc86bea6b0200a54c86820a6407cf20ebb0
-    :git: https://github.com/Quick/Quick.git
-
 SPEC CHECKSUMS:
   Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
-  Quick: 31fb576b6cbb6b028cc5e0016e4366accbb346f5
-  Stella: 66bda017c5e487e06423c9c02087ca638df81f10
+  Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
+  Stella: cdc2f17dc39fcf78ed7942796af09cdf0d59c6cc
 
-PODFILE CHECKSUM: 9fac40f48f5dca90e7ac1fe66ecb74eee6864341
+PODFILE CHECKSUM: fd48b1212ab7904adecd877b6d68c524a2b2bf66
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2
