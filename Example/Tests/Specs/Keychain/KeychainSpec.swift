@@ -9,6 +9,7 @@
 import Quick
 import Nimble
 import Stella
+import Keychain
 
 // Define the keys used for this test.
 extension Keys {
@@ -23,12 +24,12 @@ class KeychainSpec: QuickSpec {
                 it("should be able to write to the keychain") {
                     Keychain[.stringValue] = "A string value"
                     
-                    let stringValue = UserDefaults.standard.string(forKey: "stringValue")
+                    let stringValue = Keychain.load("stringValue")
                     expect(stringValue).to(equal("A string value"))
                 }
                 
                 it("should be able to read to the keychain") {
-//                    UserDefaults.standard.set("Some string value", forKey: "stringValue")
+                    let _ = Keychain.save("Some string value", forKey: "stringValue")
                     expect(Keychain[.stringValue]).to(equal("Some string value"))
                 }
             }
