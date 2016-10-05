@@ -1,7 +1,7 @@
 PODS:
   - Nimble (5.0.0)
   - Quick (0.9.3)
-  - Stella (0.4.1)
+  - Stella (1.0.0)
 
 DEPENDENCIES:
   - Nimble (~> 5.0.0)
@@ -22,8 +22,8 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
   Quick: 31fb576b6cbb6b028cc5e0016e4366accbb346f5
-  Stella: d158572e518e4254ab00dba7e7786995b961a695
+  Stella: 66bda017c5e487e06423c9c02087ca638df81f10
 
-PODFILE CHECKSUM: 466bb3d2df25b7054d71c047a2b100966a76801f
+PODFILE CHECKSUM: 9fac40f48f5dca90e7ac1fe66ecb74eee6864341
 
 COCOAPODS: 1.0.1
