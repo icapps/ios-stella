@@ -9,14 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "Stella_Tests.xctest"
-               BlueprintName = "Stella_Tests"
+               BlueprintIdentifier = "62C5DF771DA53D39002D6C47"
+               BuildableName = "Stella Example.app"
+               BlueprintName = "Stella Example"
                ReferencedContainer = "container:Stella.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -39,6 +39,15 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "62C5DF771DA53D39002D6C47"
+            BuildableName = "Stella Example.app"
+            BlueprintName = "Stella Example"
+            ReferencedContainer = "container:Stella.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -52,15 +61,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACE41AFB9204008FA782"
-            BuildableName = "Stella_Tests.xctest"
-            BlueprintName = "Stella_Tests"
+            BlueprintIdentifier = "62C5DF771DA53D39002D6C47"
+            BuildableName = "Stella Example.app"
+            BlueprintName = "Stella Example"
             ReferencedContainer = "container:Stella.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,15 +80,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACE41AFB9204008FA782"
-            BuildableName = "Stella_Tests.xctest"
-            BlueprintName = "Stella_Tests"
+            BlueprintIdentifier = "62C5DF771DA53D39002D6C47"
+            BuildableName = "Stella Example.app"
+            BlueprintName = "Stella Example"
             ReferencedContainer = "container:Stella.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

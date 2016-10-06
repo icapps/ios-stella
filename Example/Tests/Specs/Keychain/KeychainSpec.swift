@@ -28,6 +28,14 @@ class KeychainSpec: QuickSpec {
                     expect(stringValue).to(equal("A string value"))
                 }
                 
+                it("should be able to delete from the keychain") {
+                    let _ = Keychain.save("Some string value", forKey: "stringValue")
+                    expect(Keychain[.stringValue]).to(equal("Some string value"))
+                    
+                    Keychain[.stringValue] = nil
+                    expect(Keychain[.stringValue]).to(beNil())
+                }
+                
                 it("should be able to read to the keychain") {
                     let _ = Keychain.save("Some string value", forKey: "stringValue")
                     expect(Keychain[.stringValue]).to(equal("Some string value"))

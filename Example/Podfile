@@ -1,14 +1,23 @@
-use_frameworks!
+install! 'cocoapods', deterministic_uuids: false,
+                      share_schemes_for_development_pods: false
 
-target 'Stella_Tests' do
+platform :ios, '9.0'
+
+target 'Stella Example' do
+  use_frameworks!
+
   pod 'Stella', :path => '../'
 
-  # Frameworks needed for testing.
-  pod 'Keychain', '~> 0.3'
+  target 'Stella_Tests' do
+    inherit! :search_paths
+    
+    # Frameworks needed for testing.
+    pod 'Keychain', '~> 0.3'
 
-  # The test frameworks
-  pod 'Quick',  '~> 0.10'
-  pod 'Nimble', '~> 5.0'
+    # The test frameworks
+    pod 'Quick',  '~> 0.10'
+    pod 'Nimble', '~> 5.0'
+  end
 end
 
 post_install do |installer|
