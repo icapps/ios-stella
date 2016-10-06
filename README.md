@@ -13,6 +13,7 @@
 - [Installation](#installation)
 - [Features](#features)
   - [Defaults](#defaults)
+  - [Keychain](#keychain)
   - [Localization](#localization)
   - [Printing](#printing)
 - [Bucket List](#bucket-list)
@@ -70,6 +71,24 @@ print(Defaults[.booleanValue]) // Prints 'true'
 
 Defaults[.dateValue] = NSDate()
 print(Defaults[.dateValue]) // Prints '1996-12-19T16:39:57-08:00'
+```
+
+### Keychain
+
+We have a cleaner way to use the `Keychain`. Define the user defaults by extending the `Keys` class.
+
+```swift
+extension Keys {
+  // Writes a string object to the keychain with the 'stringValue' key.
+  static let stringValue = Key<String?>("stringValue")
+}
+```
+
+You can read/write the from/to the `Keychain` by using the `subscript` on the `Keychain` class.
+
+```swift
+Keychain[.stringValue] = "A string value"
+print(Keychain[.stringValue]) // Prints 'A string value'
 ```
 
 ### Localization
