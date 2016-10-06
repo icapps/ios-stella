@@ -102,7 +102,7 @@ public extension KeychainHandler {
         }
         set {
             let value = newValue?.data(using: .utf8, allowLossyConversion: false)
-            set(value, for: key.key)
+            let _ = set(value, for: key.key)
         }
     }
 }
