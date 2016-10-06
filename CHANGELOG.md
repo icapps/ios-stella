@@ -1,5 +1,9 @@
 # Stella
 
+## Version 1.1.0
+
+- Add the keychain integration.
+
 ## Version 1.0.1
 * Aesthetic improvement to readme
 
