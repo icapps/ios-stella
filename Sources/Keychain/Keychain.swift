@@ -88,7 +88,7 @@ open class Key<ValueType>: Keys {
 
 public extension KeychainHandler {
     
-    /// Get the defaults String value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    /// Get the keychain String value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
     ///
     /// ```
     /// static let string = Key<String?>("the string defaults key")
