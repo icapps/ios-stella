@@ -90,6 +90,7 @@
 		B57D1CB93B5354C491983368 /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20901C3A0388BBA0D1AE2501 /* BeginWith.swift */; };
 		BB7FE6D5A0D8BC45FC604EA5 /* QuickSelectedTestSuiteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F904DDA4A5EB140B93FDFD5 /* QuickSelectedTestSuiteBuilder.swift */; };
 		BEE09114FD7C4B22AEB36652 /* BeLogical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DAC42352DACB28FA84FCE3 /* BeLogical.swift */; };
+		C0A80B341DDC7967000A7ABA /* AdditionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A80B331DDC7967000A7ABA /* AdditionFunctions.swift */; };
 		C5CAC9244C41B65368D2E68F /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DE86952BBEE670858A6758 /* Equal.swift */; };
 		CB7BE8CFF2CBB79981E7F9C2 /* NMBExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70780B90FBBF17487723A458 /* NMBExpectation.swift */; };
 		CB90F1A5DCDB732EF13B5B14 /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFD74A17B90DCEF02D8912 /* BeEmpty.swift */; };
@@ -260,6 +261,7 @@
 		B8DE77D6CC9731F543B0A433 /* Pods-Stella Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Stella Example-umbrella.h"; sourceTree = "<group>"; };
 		BD67C49A4B3F7A36DD6C31B4 /* KeychainItemFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainItemFactory.swift; path = Keychain/Classes/KeychainItemFactory.swift; sourceTree = "<group>"; };
 		BE31C11936EDB53033608129 /* HooksPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HooksPhase.swift; path = Sources/Quick/Hooks/HooksPhase.swift; sourceTree = "<group>"; };
+		C0A80B331DDC7967000A7ABA /* AdditionFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdditionFunctions.swift; path = AdditionFunctions/AdditionFunctions.swift; sourceTree = "<group>"; };
 		C353C61A45B47B6CF6E08058 /* Quick.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Quick.xcconfig; sourceTree = "<group>"; };
 		C433E374369209B9F4D550F4 /* Pods-Stella_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Stella_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		CA78358A5760B0B2844D8998 /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Sources/Nimble/Expression.swift; sourceTree = "<group>"; };
@@ -578,6 +580,14 @@
 			path = "Example/Pods/Target Support Files/Stella";
 			sourceTree = "<group>";
 		};
+		C0A80B321DDC792F000A7ABA /* AdditionFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				C0A80B331DDC7967000A7ABA /* AdditionFunctions.swift */,
+			);
+			name = AdditionFunctions;
+			sourceTree = "<group>";
+		};
 		CCC4036A1AAE1C51DB10C6FC /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -665,6 +675,7 @@
 		F8CE44D1FFABD0908487BE88 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C0A80B321DDC792F000A7ABA /* AdditionFunctions */,
 				09234A906D219BBB0E637261 /* Defaults */,
 				DAC7152B501DE9B191E6921F /* Keychain */,
 				73F76E648418226A1B2A649B /* Localization */,
@@ -890,6 +901,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB6046A07EEDF1F12F62A58 /* Defaults.swift in Sources */,
+				C0A80B341DDC7967000A7ABA /* AdditionFunctions.swift in Sources */,
 				5F06084DD0A45DC7526CFBFA /* Keychain.swift in Sources */,
 				1BC836F3179F0C1C11BB86E8 /* Localization.swift in Sources */,
 				2C411BA6081EB432EC72CB12 /* Print.swift in Sources */,
