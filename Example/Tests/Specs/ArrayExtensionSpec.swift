@@ -28,7 +28,7 @@ class ArrayExtensionSpec: QuickSpec {
 
                     it("object"){
                         let expected = "Somethingelse"
-                        existingArray.addIfNeeded(expected)
+                        expect(existingArray.addIfNeeded(expected)) == true
                         expect(existingArray[1]) == expected
                     }
 
@@ -77,6 +77,50 @@ class ArrayExtensionSpec: QuickSpec {
                         expect(existingArray.count) == 2
                     }
                 }
+            }
+
+            describe("DELETE") {
+
+                beforeEach {
+                    existingArray = [existingObject]
+                }
+
+                it("existing") {
+                    expect(existingArray.deleteIfNeeded([existingObject])) == true
+
+                    expect(existingArray).to(beEmpty())
+                }
+
+                it("extra") {
+                    let extraElement = "extra"
+                    existingArray.append(extraElement)
+
+                    expect(existingArray.deleteIfNeeded([existingObject])) == true
+                    expect(existingArray).to(haveCount(1))
+                }
+
+                it("non existing") {
+                    expect(existingArray.deleteIfNeeded(["bullshit"])) == false
+                }
+
+                it("maintain order") {
+                    existingArray.append("A")
+                    existingArray.append("B")
+
+                    existingArray.deleteIfNeeded(["A"])
+                    expect(existingArray[0]) == existingObject
+                    expect(existingArray[1]) == "B"
+                }
+
+                it("Delete one element") {
+                    existingArray.append(contentsOf: ["A", "B"])
+
+                    existingArray.deleteIfNeeded([existingObject, "B"])
+
+                    expect(existingArray).to(haveCount(1))
+                    expect(existingArray.first) == "A"
+                }
+
             }
         }
     }

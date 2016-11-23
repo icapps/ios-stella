@@ -15,7 +15,7 @@
 		62C5DF851DA53D39002D6C47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C5DF831DA53D39002D6C47 /* LaunchScreen.storyboard */; };
 		A9F4B87EDC9942D95EC97B48 /* Pods_Stella_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDD43F4918EA39775C35955 /* Pods_Stella_Tests.framework */; };
 		C02328591D94379000BA8C05 /* PrintsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02328581D94379000BA8C05 /* PrintsSpec.swift */; };
-		C0A80B371DDC79B8000A7ABA /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A80B361DDC79B8000A7ABA /* ArrayExtension.swift */; };
+		C0A80B371DDC79B8000A7ABA /* ArrayExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A80B361DDC79B8000A7ABA /* ArrayExtensionSpec.swift */; };
 		E90FDEF76A4953935987BA7A /* Pods_Stella_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3ECDB4EF2541D9ACF63B0A /* Pods_Stella_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +48,7 @@
 		B277654691E1294518B1E6E7 /* Pods-Stella Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stella Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stella Example/Pods-Stella Example.release.xcconfig"; sourceTree = "<group>"; };
 		BE3ECDB4EF2541D9ACF63B0A /* Pods_Stella_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stella_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02328581D94379000BA8C05 /* PrintsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintsSpec.swift; sourceTree = "<group>"; };
-		C0A80B361DDC79B8000A7ABA /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		C0A80B361DDC79B8000A7ABA /* ArrayExtensionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,7 +192,7 @@
 		C0A80B351DDC79A8000A7ABA /* ArrayExtension */ = {
 			isa = PBXGroup;
 			children = (
-				C0A80B361DDC79B8000A7ABA /* ArrayExtension.swift */,
+				C0A80B361DDC79B8000A7ABA /* ArrayExtensionSpec.swift */,
 			);
 			name = ArrayExtension;
 			sourceTree = "<group>";
@@ -416,7 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0A80B371DDC79B8000A7ABA /* ArrayExtension.swift in Sources */,
+				C0A80B371DDC79B8000A7ABA /* ArrayExtensionSpec.swift in Sources */,
 				62690A0A1DA52FDF005680EB /* KeychainSpec.swift in Sources */,
 				629CA9DC1D071666008E9648 /* LocalizationSpec.swift in Sources */,
 				621A5AED1D080A8A00CA812B /* DefaultsSpec.swift in Sources */,
