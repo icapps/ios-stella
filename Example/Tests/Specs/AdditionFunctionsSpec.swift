@@ -18,56 +18,62 @@ class AdditionFunctionsSpec: QuickSpec {
         describe("AdditionFunctionsSpec") {
 
             let existingObject = "Something"
-            let existingArray = [existingObject]
+            var existingArray: [String]!
 
             context("Add if not yet contained") {
+                beforeEach {
+                    existingArray = [existingObject]
+                }
 
                 it("object"){
                     let expected = "Somethingelse"
-                    let result = addIfNeeded(to: existingArray, from: expected)
-
-                    expect(result[1]) == expected
+                    existingArray.addIfNeeded(expected)
+                    expect(existingArray[1]) == expected
                 }
 
                 it("array with ALL new") {
                     let expected = ["A", "B"]
 
-                    let result = addIfNeeded(to: existingArray, from: expected)
+                    existingArray.addIfNeeded(expected)
 
-                    expect(result[1]) == expected[0]
-                    expect(result[2]) == expected[1]
+                    expect(existingArray[1]) == expected[0]
+                    expect(existingArray[2]) == expected[1]
                 }
 
 
                 it("array with SOME new") {
                     let expected = [existingObject, "A", "B"]
 
-                    let result = addIfNeeded(to: existingArray, from: expected)
+                    existingArray.addIfNeeded(expected)
 
-                    expect(result[1]) == expected[1]
-                    expect(result[2]) == expected[2]
+                    expect(existingArray[1]) == expected[1]
+                    expect(existingArray[2]) == expected[2]
                 }
             }
 
             context("NO duplicates") {
 
+                beforeEach {
+                    existingArray = [existingObject]
+                }
+                
                 it("object") {
-                    let result = addIfNeeded(to: existingArray, from: existingObject)
+                    existingArray.addIfNeeded(existingObject)
 
-                    expect(result[0]) == existingObject
-                    expect(result.count) == 1
+                    expect(existingArray[0]) == existingObject
+                    expect(existingArray.count) == 1
                 }
 
                 it("array with ALL existing") {
                     let newElement = "new element"
-                    let testArray = addIfNeeded(to: existingArray, from: newElement)
+                    existingArray.addIfNeeded(newElement)
                     let expected = [existingObject, newElement]
 
-                    let result = addIfNeeded(to: testArray, from: expected)
+                    existingArray.addIfNeeded(expected)
 
-                    expect(result[0]) == existingObject
-                    expect(result[1]) == newElement
-                    expect(result.count) == 2
+                    expect(existingArray[0]) == existingObject
+                    expect(existingArray[1]) == newElement
+                    expect(existingArray.count) == 2
                 }
             }
         }

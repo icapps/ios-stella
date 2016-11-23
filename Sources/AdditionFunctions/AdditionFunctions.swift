@@ -10,38 +10,43 @@ import Foundation
 
 // MARK: - Additions without losing order
 
-/// Will add object to array if it is not in the array. Without losing the order of the first elements.
-/// - parameter array: array to add object to
-/// - parameter object: will be added to array if it is not yet contained in array
-/// - returns: array with added object if it was not already in the array
-public func addIfNeeded<A: Hashable>(to array:[A], from object: A) -> [A] {
-    return addIfNeeded(to: array, from: [object])
-}
+public extension Array where Element: Hashable {
 
-/// Will add object to array if it is not in the array. Without losing the order of the first elements.
-/// - parameter array: array to add object to
-/// - parameter objects: will be added to array if it is not yet contained in array
-/// - returns: array with added object if it was not already in the array
-public func addIfNeeded<A: Hashable>(to array:[A], from objects: [A]) -> [A] {
-    var currentSet = Set<A>(array)
-    var objectsSet = Set<A>(objects)
-    var array = array
-    objectsSet.subtract(currentSet)
+    /// Will add object to array if it is not in the array. Without losing the order of the first elements.
+    /// - parameter objects: will be added to array if it is not yet contained in array
+    /// - returns: true if elements are added
+    @discardableResult
+    public mutating func addIfNeeded(_ elements: [Element]) -> Bool {
+        var currentSet = Set<Element>(self)
+        var objectsSet = Set<Element>(elements)
+        objectsSet.subtract(currentSet)
 
-    guard objectsSet.count > 0 else {
-        return array
+        guard objectsSet.count > 0 else {
+            return false
+        }
+
+        if objectsSet.count == elements.count {
+            self.append(contentsOf: elements)
+        } else {
+            //What are the duplicates
+            currentSet.subtract(objectsSet)
+            // remove them from objects
+            let arrayToAppend = elements.filter{!currentSet.contains($0)}
+            // append the remaining array
+            self.append(contentsOf: arrayToAppend)
+        }
+        
+        return true
     }
 
-    if objectsSet.count == objects.count {
-        array.append(contentsOf: objects)
-    } else {
-        //What are the duplicates
-        currentSet.subtract(objectsSet)
-        // remove them from objects
-        let arrayToAppend = objects.filter{!currentSet.contains($0)}
-        // append the remaining array
-        array.append(contentsOf: arrayToAppend)
+    /// Will add object to array if it is not in the array. Without losing the order of the first elements.
+    /// - parameter object: will be added to array if it is not yet contained in array
+    /// - returns: true if element is added
+    @discardableResult
+    public mutating func addIfNeeded(_ element: Element) -> Bool {
+        return addIfNeeded([element])
     }
 
-    return array
 }
+
+
