@@ -19,6 +19,8 @@ public extension Array where Element: Hashable {
     /// - returns: true if elements are added
     @discardableResult
     public mutating func addIfNeeded(_ elements: [Element]) -> Bool {
+        var elements = elements
+        elements.uniq()
         var currentSet = Set<Element>(self)
         var elementSet = Set<Element>(elements)
         elementSet.subtract(currentSet)
@@ -28,12 +30,13 @@ public extension Array where Element: Hashable {
         }
 
         if elementSet.count == elements.count {
+
             self.append(contentsOf: elements)
         } else {
             //What are the duplicates
             currentSet.subtract(elementSet)
             // remove them from objects
-            let arrayToAppend = elements.filter{!currentSet.contains($0)}
+            var arrayToAppend = elements.filter{!currentSet.contains($0)}
             // append the remaining array
             self.append(contentsOf: arrayToAppend)
         }
@@ -80,6 +83,20 @@ public extension Array where Element: Hashable {
         return deleteIfNeeded([element])
     }
 
+    mutating func uniq() {
+        var added = Set<Element>(self)
+        if added.count < self.count {
+            let original = self
+            self.removeAll()
+            added.removeAll()
+            for elem in original {
+                if !added.contains(elem) {
+                    self.append(elem)
+                    added.insert(elem)
+                }
+            }
+        }
+    }
 }
 
 

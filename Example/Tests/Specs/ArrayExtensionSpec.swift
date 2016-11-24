@@ -76,6 +76,22 @@ class ArrayExtensionSpec: QuickSpec {
                         expect(existingArray[1]) == newElement
                         expect(existingArray.count) == 2
                     }
+
+                    it("The same elements not yet in array") {
+                        let sameElements = ["Z","Z","Z","Z","Z","Z"]
+
+                        existingArray.addIfNeeded(sameElements)
+
+                        expect(existingArray).to(haveCount(2))
+                    }
+
+                    it("unique an array") {
+                        var sameElements = ["Z","Z","Z","A","A","Z"]
+
+                        sameElements.uniq()
+
+                        expect(sameElements).to(haveCount(2))
+                    }
                 }
             }
 
