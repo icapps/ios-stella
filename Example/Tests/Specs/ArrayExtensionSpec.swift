@@ -33,9 +33,9 @@ class ArrayExtensionSpec: QuickSpec {
                     }
 
                     it("array with ALL new") {
-                        let expected = ["A", "B"]
+                        var expected = ["A", "B"]
 
-                        existingArray.addIfNeeded(expected)
+                        existingArray.addIfNeeded(&expected)
 
                         expect(existingArray[1]) == expected[0]
                         expect(existingArray[2]) == expected[1]
@@ -43,9 +43,9 @@ class ArrayExtensionSpec: QuickSpec {
 
 
                     it("array with SOME new") {
-                        let expected = [existingObject, "A", "B"]
+                        var expected = [existingObject, "A", "B"]
 
-                        existingArray.addIfNeeded(expected)
+                        existingArray.addIfNeeded(&expected)
 
                         expect(existingArray[1]) == expected[1]
                         expect(existingArray[2]) == expected[2]
@@ -68,9 +68,9 @@ class ArrayExtensionSpec: QuickSpec {
                     it("array with ALL existing") {
                         let newElement = "new element"
                         existingArray.addIfNeeded(newElement)
-                        let expected = [existingObject, newElement]
+                        var expected = [existingObject, newElement]
                         
-                        existingArray.addIfNeeded(expected)
+                        existingArray.addIfNeeded(&expected)
                         
                         expect(existingArray[0]) == existingObject
                         expect(existingArray[1]) == newElement
@@ -78,9 +78,9 @@ class ArrayExtensionSpec: QuickSpec {
                     }
 
                     it("The same elements not yet in array") {
-                        let sameElements = ["Z","Z","Z","Z","Z","Z"]
+                        var sameElements = ["Z","Z","Z","Z","Z","Z"]
 
-                        existingArray.addIfNeeded(sameElements)
+                        existingArray.addIfNeeded(&sameElements)
 
                         expect(existingArray).to(haveCount(2))
                     }
