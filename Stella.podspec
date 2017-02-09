@@ -26,7 +26,7 @@ The features that are currently added are:
   s.source           = { git: 'https://github.com/icapps/ios-stella.git', tag: s.version.to_s }
   s.social_media_url = 'https://twitter.com/icapps'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.tvos.deployment_target = '9.0'
   s.osx.deployment_target = '10.10'
 
