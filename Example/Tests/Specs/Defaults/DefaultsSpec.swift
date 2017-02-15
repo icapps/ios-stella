@@ -18,6 +18,7 @@ extension DefaultsKeys {
     static let floatValue = DefaultsKey<Float?>("floatValue")
     static let booleanValue = DefaultsKey<Bool?>("booleanValue")
     static let dateValue = DefaultsKey<Date?>("dateValue")
+    static let stringsValue = DefaultsKey<[String]?>("stringsValue")
 }
 
 class DefaultsSpec: QuickSpec {
@@ -101,6 +102,21 @@ class DefaultsSpec: QuickSpec {
                     let date = Date(timeIntervalSince1970: 100)
                     UserDefaults.standard.set(date, forKey: "dateValue")
                     expect(Defaults[.dateValue]).to(equal(date))
+                }
+            }
+            
+            context("string array value") {
+                it("should be able to write to the defaults") {
+                    let strings = ["string1", "string2", "string3"]
+                    Defaults[.stringsValue] = strings
+                    let stringArrayValue = UserDefaults.standard.object(forKey: "stringsValue") as! [String]
+                    expect(stringArrayValue).to(equal(strings))
+                }
+                
+                it("should be able to read from the defaults") {
+                    let strings = ["string1", "string2", "string3"]
+                    UserDefaults.standard.set(strings, forKey: "stringsValue")
+                    expect(Defaults[.stringsValue]).to(equal(strings))
                 }
             }
         }
