@@ -145,5 +145,51 @@ class PrintsSpec: QuickSpec {
             }
         }
 
+		describe("Print Throw") {
+
+			context("when throwing inside function" ) {
+				enum PrintError: Error{
+					case mockError
+				}
+
+				it("error") {
+					expect(printThrowAsError { throw PrintError.mockError} ) == "mockError"
+				}
+
+				it("question") {
+					expect(printThrowAsQuestion { throw PrintError.mockError} ) == "mockError"
+				}
+
+				it("action") {
+					expect(printThrowAsAction { throw PrintError.mockError} ) == "mockError"
+				}
+
+				it("breadcrumb") {
+					expect(printThrowAsBreadcrumb { throw PrintError.mockError} ) == "mockError"
+				}
+			}
+
+			context("when no throw happens in function") {
+
+				it("error") {
+					expect(printThrowAsError {} ).to(beNil())
+				}
+
+				it("question") {
+					expect(printThrowAsQuestion {} ).to(beNil())
+				}
+
+				it("action") {
+					expect(printThrowAsAction {} ).to(beNil())
+				}
+
+				it("breadcrumb") {
+					expect(printThrowAsBreadcrumb {} ).to(beNil())
+				}
+
+			}
+
+		}
+
 	}
 }

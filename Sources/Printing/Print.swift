@@ -78,3 +78,85 @@ public func printQuestion(_ items: Any...) -> String? {
     print("\(text)")
     return text
 }
+
+// MARK: - Print Throw
+
+/**
+Uses `printError` when something is thrown inside `function`.
+
+
+- Parameter function: closure that can potentially throw
+- Returns : text to be printed
+*/
+@discardableResult
+public func printThrowAsError(_ function: () throws -> Void) -> String? {
+	do {
+		try function()
+		return nil
+	} catch {
+		let result = "\(error)"
+		printError(result)
+		return result
+	}
+
+}
+
+/**
+Uses `printQuestion` when something is thrown inside `function`.
+
+
+- Parameter function: closure that can potentially throw
+- Returns : text to be printed
+*/
+@discardableResult
+public func printThrowAsQuestion(_ function: () throws -> Void) -> String? {
+	do {
+		try function()
+		return nil
+	} catch {
+		let result = "\(error)"
+		printQuestion(result)
+		return result
+	}
+
+}
+
+/**
+Uses `printBreadcrumb` when something is thrown inside `function`.
+
+
+- Parameter function: closure that can potentially throw
+- Returns : text to be printed
+*/
+@discardableResult
+public func printThrowAsBreadcrumb(_ function: () throws -> Void) -> String? {
+	do {
+		try function()
+		return nil
+	} catch {
+		let result = "\(error)"
+		printBreadcrumb(result)
+		return result
+	}
+
+}
+
+/**
+Uses `printAction` when something is thrown inside `function`.
+
+
+- Parameter function: closure that can potentially throw
+- Returns : text to be printed
+*/
+@discardableResult
+public func printThrowAsAction(_ function: () throws -> Void) -> String? {
+	do {
+		try function()
+		return nil
+	} catch {
+		let result = "\(error)"
+		printAction(result)
+		return result
+	}
+
+}
