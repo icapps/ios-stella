@@ -1,5 +1,10 @@
 # Stella
 
+## Version 1.1.1
+
+* prints to deal with do catch blocks
+* Addition functions for an array
+
 ## Version 1.1.0
 
 - Add the keychain integration.
