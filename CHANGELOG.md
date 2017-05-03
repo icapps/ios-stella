@@ -2,8 +2,7 @@
 
 ## Version 1.1.1
 
-* prints to deal with do catch blocks
-* Addition functions for an array
+* prints to deal with do catch blocks for throws
 
 ## Version 1.1.0
 
