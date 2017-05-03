@@ -16,6 +16,7 @@
   - [Keychain](#keychain)
   - [Localization](#localization)
   - [Printing](#printing)
+  - [Number formatting](#numberformatting)
 - [Bucket List](#bucket-list)
 - [Author](#author)
 - [License](#license)
@@ -157,6 +158,28 @@ Output.level = .nothing
 ```
 To see what is printed for what level look at the `PrintSpec`.
 
+## Number formatting
+
+Also see `StellaNumberFormattingSpec`...
+
+```swift
+// round to number of decimals
+StellaNumberFormatter.maximumFractionDigits = 4
+
+let double: Double = 22.56989123
+
+print(double.roundedString)
+// The debug console prints "rouned to 4 digits: 22.5699"
+```
+
+```swift
+// round without decimal separator
+
+let double: Double = 22.56989123
+
+print(double.roundedStringNoDecimals)
+// The debug console prints "23"
+```
 ## Bucket List
 
 Here is an overview what is on our todo list.
