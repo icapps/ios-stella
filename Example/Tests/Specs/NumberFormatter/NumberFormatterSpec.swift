@@ -23,17 +23,17 @@ class NumberFormatterSpec: QuickSpec {
 
 				let double: Double = 22.56989123
 
-				expect(double.stringFormattedWithSeperator) == "22.5699"
+				expect(double.roundedString) == "22.5699"
 
 				StellaNumberFormatter.maximumFractionDigits = 2
 
-				expect(double.stringFormattedWithSeperator) == "22.57"
+				expect(double.roundedString) == "22.57"
 			}
 
 			it("round without decimal separator") {
 				let double: Double = 22.56989123
 
-				expect(double.stringFormattedWithSeperatorNoDecimals) == "23"
+				expect(double.roundedStringNoDecimals) == "23"
 			}
 
 		}

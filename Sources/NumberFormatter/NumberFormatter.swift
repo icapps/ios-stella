@@ -45,11 +45,11 @@ public struct StellaNumberFormatter {
 
 extension Double {
 
-	public var stringFormattedWithSeperator: String {
+	public var roundedString: String {
 		return StellaNumberFormatter.formatter.string(from: self as NSNumber) ?? ""
 	}
 
-	public var stringFormattedWithSeperatorNoDecimals: String {
+	public var roundedStringNoDecimals: String {
 		return StellaNumberFormatter.formatterNoDecimals.string(from: self as NSNumber) ?? ""
 	}
 
