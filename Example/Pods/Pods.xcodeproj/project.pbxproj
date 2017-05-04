@@ -95,6 +95,7 @@
 		BD70A68E168743CC54BA6BDC /* Quick-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB4907E1A730442DF8CB137 /* Quick-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFD71A9CDBA7F5195255DE58 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E714D928616F8C11C782EE97 /* DSL.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BFE01D2BFA750F1FED0BD9AF /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1605B30DF641D0CA7465E2 /* FailureMessage.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C068319A1EBB3D5500138D62 /* StringSizeCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06831991EBB3D5500138D62 /* StringSizeCalculation.swift */; };
 		C0D2993C1EB9E0E100C8152E /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D299361EB9DEE200C8152E /* NumberFormatter.swift */; };
 		C581E8444CBDC6C05A268C76 /* ExampleHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D408DED1B8D8EB982F5C57 /* ExampleHooks.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C8BE7E162C5081539AA2AF65 /* MatchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EB296109A4F2D38A66BECB /* MatchError.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -272,6 +273,7 @@
 		B85678ECF257EB77C396B6A6 /* Pods-Stella Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Stella Example.modulemap"; sourceTree = "<group>"; };
 		BBB1D16BA48CCEFBA69B515C /* Stella-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Stella-dummy.m"; sourceTree = "<group>"; };
 		BD02E09548896FA4FE7859A0 /* Stella-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Stella-umbrella.h"; sourceTree = "<group>"; };
+		C06831991EBB3D5500138D62 /* StringSizeCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringSizeCalculation.swift; path = "String Size Calculation/StringSizeCalculation.swift"; sourceTree = "<group>"; };
 		C0731449BC72ED0D229655B7 /* Quick.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Quick.h; path = Sources/QuickObjectiveC/Quick.h; sourceTree = "<group>"; };
 		C0D299361EB9DEE200C8152E /* NumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumberFormatter.swift; path = NumberFormatter/NumberFormatter.swift; sourceTree = "<group>"; };
 		C264B2BA5D220D6D3A8DC341 /* Closures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Closures.swift; path = Sources/Quick/Hooks/Closures.swift; sourceTree = "<group>"; };
@@ -556,6 +558,7 @@
 		97DB7C46F1C90A80FC998F9B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C06831981EBB3D2100138D62 /* String Size Calculation */,
 				C0D299351EB9DECB00C8152E /* NumberFormatter */,
 				2F72AA61BF2FD189DF449D50 /* Defaults */,
 				558D8F64F28779FDD601A761 /* Keychain */,
@@ -619,6 +622,14 @@
 			);
 			name = "Pods-Stella_Tests";
 			path = "Target Support Files/Pods-Stella_Tests";
+			sourceTree = "<group>";
+		};
+		C06831981EBB3D2100138D62 /* String Size Calculation */ = {
+			isa = PBXGroup;
+			children = (
+				C06831991EBB3D5500138D62 /* StringSizeCalculation.swift */,
+			);
+			name = "String Size Calculation";
 			sourceTree = "<group>";
 		};
 		C0D299351EB9DECB00C8152E /* NumberFormatter */ = {
@@ -951,6 +962,7 @@
 				00B9A4F2942DB656F57F2DC8 /* PrintLevel.swift in Sources */,
 				C0D2993C1EB9E0E100C8152E /* NumberFormatter.swift in Sources */,
 				98A3ABCDED257DCC2580F16B /* Stella-dummy.m in Sources */,
+				C068319A1EBB3D5500138D62 /* StringSizeCalculation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
