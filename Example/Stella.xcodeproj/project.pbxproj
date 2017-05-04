@@ -15,6 +15,7 @@
 		62C5DF851DA53D39002D6C47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C5DF831DA53D39002D6C47 /* LaunchScreen.storyboard */; };
 		A9F4B87EDC9942D95EC97B48 /* Pods_Stella_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDD43F4918EA39775C35955 /* Pods_Stella_Tests.framework */; };
 		C02328591D94379000BA8C05 /* PrintsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02328581D94379000BA8C05 /* PrintsSpec.swift */; };
+		C0D2993B1EB9E07200C8152E /* NumberFormatterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D299391EB9E05500C8152E /* NumberFormatterSpec.swift */; };
 		E90FDEF76A4953935987BA7A /* Pods_Stella_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3ECDB4EF2541D9ACF63B0A /* Pods_Stella_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		B277654691E1294518B1E6E7 /* Pods-Stella Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stella Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stella Example/Pods-Stella Example.release.xcconfig"; sourceTree = "<group>"; };
 		BE3ECDB4EF2541D9ACF63B0A /* Pods_Stella_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stella_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02328581D94379000BA8C05 /* PrintsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintsSpec.swift; sourceTree = "<group>"; };
+		C0D299391EB9E05500C8152E /* NumberFormatterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumberFormatterSpec.swift; path = NumberFormatter/NumberFormatterSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		62263AAD1D0704F700393E94 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				C0D299381EB9E02B00C8152E /* NumberFormatter */,
 				621A5AEB1D080A7F00CA812B /* Defaults */,
 				62690A081DA52FD0005680EB /* Keychain */,
 				620750BC1D076F22000E3494 /* Localization */,
@@ -184,6 +187,14 @@
 				C02328581D94379000BA8C05 /* PrintsSpec.swift */,
 			);
 			path = Prints;
+			sourceTree = "<group>";
+		};
+		C0D299381EB9E02B00C8152E /* NumberFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				C0D299391EB9E05500C8152E /* NumberFormatterSpec.swift */,
+			);
+			name = NumberFormatter;
 			sourceTree = "<group>";
 		};
 		F861651F80713BABD721EF04 /* Pods */ = {
@@ -406,6 +417,7 @@
 				62690A0A1DA52FDF005680EB /* KeychainSpec.swift in Sources */,
 				629CA9DC1D071666008E9648 /* LocalizationSpec.swift in Sources */,
 				621A5AED1D080A8A00CA812B /* DefaultsSpec.swift in Sources */,
+				C0D2993B1EB9E07200C8152E /* NumberFormatterSpec.swift in Sources */,
 				C02328591D94379000BA8C05 /* PrintsSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

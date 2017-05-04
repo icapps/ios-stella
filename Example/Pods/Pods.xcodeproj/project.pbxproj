@@ -95,6 +95,7 @@
 		BD70A68E168743CC54BA6BDC /* Quick-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB4907E1A730442DF8CB137 /* Quick-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFD71A9CDBA7F5195255DE58 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E714D928616F8C11C782EE97 /* DSL.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BFE01D2BFA750F1FED0BD9AF /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1605B30DF641D0CA7465E2 /* FailureMessage.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C0D2993C1EB9E0E100C8152E /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D299361EB9DEE200C8152E /* NumberFormatter.swift */; };
 		C581E8444CBDC6C05A268C76 /* ExampleHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D408DED1B8D8EB982F5C57 /* ExampleHooks.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C8BE7E162C5081539AA2AF65 /* MatchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EB296109A4F2D38A66BECB /* MatchError.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C99B7501684EB410DAAF9AA2 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2D9169FC964A37836D5553 /* Filter.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -203,39 +204,39 @@
 		500BCC70146AF0FCB5AAEA97 /* Pods-Stella Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Stella Example-resources.sh"; sourceTree = "<group>"; };
 		507DE1605131191856023DD8 /* Pods-Stella_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Stella_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		51D2EA6F1456E2A6845DE6D1 /* Keychain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Keychain-dummy.m"; sourceTree = "<group>"; };
-		51FA07C575365F0277AD999C /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nimble.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51FA07C575365F0277AD999C /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5666A0ADF350C0F1322568C7 /* SourceLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourceLocation.swift; path = Sources/Nimble/Utils/SourceLocation.swift; sourceTree = "<group>"; };
 		57EB2C1EBCF4E49F176C2460 /* ThrowError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowError.swift; path = Sources/Nimble/Matchers/ThrowError.swift; sourceTree = "<group>"; };
 		5890EDF9F9846E25F0877A44 /* SuiteHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SuiteHooks.swift; path = Sources/Quick/Hooks/SuiteHooks.swift; sourceTree = "<group>"; };
-		5A2AA6071B62BC0DD072BF5A /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Quick.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A2AA6071B62BC0DD072BF5A /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFF2E7E904C41453F4E36C0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E73D3218A27E5389DC3C47A /* PostNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostNotification.swift; path = Sources/Nimble/Matchers/PostNotification.swift; sourceTree = "<group>"; };
 		5EBB52FB86AC44DAE3011580 /* PrintLevel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PrintLevel.swift; sourceTree = "<group>"; };
-		6094BB8AF9C258635DF99F15 /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Nimble.modulemap; sourceTree = "<group>"; };
+		6094BB8AF9C258635DF99F15 /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Nimble.modulemap; sourceTree = "<group>"; };
 		61EFE7F79171412B6D13FE25 /* Nimble.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Nimble.h; path = Sources/Nimble/Nimble.h; sourceTree = "<group>"; };
 		6468DF3058DF03A6828BCD7A /* NMBExceptionCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBExceptionCapture.h; path = Sources/NimbleObjectiveC/NMBExceptionCapture.h; sourceTree = "<group>"; };
 		66987E9B63FE2FA7AABBB8A7 /* Nimble-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-umbrella.h"; sourceTree = "<group>"; };
 		69116C26112471CCDD5FAF06 /* AsyncMatcherWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncMatcherWrapper.swift; path = Sources/Nimble/Matchers/AsyncMatcherWrapper.swift; sourceTree = "<group>"; };
-		6A8522BE9612D1A172B74A07 /* Pods_Stella_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Stella_Tests.framework; path = "Pods-Stella_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A8522BE9612D1A172B74A07 /* Pods_Stella_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stella_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6F2680D2C76A978104C738 /* World.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = World.swift; path = Sources/Quick/World.swift; sourceTree = "<group>"; };
-		727AF5E327A02CCD6DB18D00 /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Quick.modulemap; sourceTree = "<group>"; };
+		727AF5E327A02CCD6DB18D00 /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Quick.modulemap; sourceTree = "<group>"; };
 		7568FABEDFBBDA27843E9731 /* MatcherProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherProtocols.swift; path = Sources/Nimble/Matchers/MatcherProtocols.swift; sourceTree = "<group>"; };
 		77F98239348B46EE0547932D /* KeychainProtocolType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainProtocolType.swift; path = Keychain/Classes/KeychainProtocolType.swift; sourceTree = "<group>"; };
 		77FBBC9CEE462B3551E45EC9 /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		79D62041825682C38771F7AF /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Sources/Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
-		7A849C666CB46FEDE7FB4737 /* Pods_Stella_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Stella_Example.framework; path = "Pods-Stella Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A849C666CB46FEDE7FB4737 /* Pods_Stella_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stella_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B983651C05141660CA4BA77 /* Pods-Stella_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Stella_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7F438B7250D60165DF517236 /* NMBStringify.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBStringify.m; path = Sources/NimbleObjectiveC/NMBStringify.m; sourceTree = "<group>"; };
 		7FD11B68535E70F27AB0D018 /* KeychainItemFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainItemFactory.swift; path = Keychain/Classes/KeychainItemFactory.swift; sourceTree = "<group>"; };
 		820D2C4F3E26F2F98237A8D9 /* NMBExpectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBExpectation.swift; path = Sources/Nimble/Adapters/NMBExpectation.swift; sourceTree = "<group>"; };
 		83332949F6EE51C89787D7CF /* ExampleMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleMetadata.swift; path = Sources/Quick/ExampleMetadata.swift; sourceTree = "<group>"; };
-		84555651378656B5B22393C6 /* Stella.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Stella.modulemap; sourceTree = "<group>"; };
-		876DE750BB9946087FE619AD /* Keychain.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Keychain.modulemap; sourceTree = "<group>"; };
-		8796836647116A94A66279AE /* Stella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Stella.framework; path = Stella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84555651378656B5B22393C6 /* Stella.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Stella.modulemap; sourceTree = "<group>"; };
+		876DE750BB9946087FE619AD /* Keychain.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Keychain.modulemap; sourceTree = "<group>"; };
+		8796836647116A94A66279AE /* Stella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87ABF8E75BDD3521A3E2346F /* NMBExceptionCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBExceptionCapture.m; path = Sources/NimbleObjectiveC/NMBExceptionCapture.m; sourceTree = "<group>"; };
 		89E3A17D93B195EDC60F3F10 /* XCTestSuite+QuickTestSuiteBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestSuite+QuickTestSuiteBuilder.m"; path = "Sources/QuickObjectiveC/XCTestSuite+QuickTestSuiteBuilder.m"; sourceTree = "<group>"; };
 		8C2D9169FC964A37836D5553 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Quick/Filter.swift; sourceTree = "<group>"; };
-		8C35535C0E6343F26DE937D2 /* Keychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Keychain.framework; path = Keychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C35535C0E6343F26DE937D2 /* Keychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Keychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC6CA5F3AED750C0B056581 /* Pods-Stella_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Stella_Tests-resources.sh"; sourceTree = "<group>"; };
 		8F15885866D824B6FE49DE31 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		907EB2E8C34271C35DF15077 /* Print.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Print.swift; sourceTree = "<group>"; };
@@ -268,15 +269,16 @@
 		B225632936C5E838133FD503 /* NMBStringify.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBStringify.h; path = Sources/NimbleObjectiveC/NMBStringify.h; sourceTree = "<group>"; };
 		B4B8906346D3A9F081F77663 /* CurrentTestCaseTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CurrentTestCaseTracker.h; path = Sources/NimbleObjectiveC/CurrentTestCaseTracker.h; sourceTree = "<group>"; };
 		B520D7FACF17D947C3404E52 /* NMBObjCMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBObjCMatcher.swift; path = Sources/Nimble/Adapters/NMBObjCMatcher.swift; sourceTree = "<group>"; };
-		B85678ECF257EB77C396B6A6 /* Pods-Stella Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Stella Example.modulemap"; sourceTree = "<group>"; };
+		B85678ECF257EB77C396B6A6 /* Pods-Stella Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Stella Example.modulemap"; sourceTree = "<group>"; };
 		BBB1D16BA48CCEFBA69B515C /* Stella-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Stella-dummy.m"; sourceTree = "<group>"; };
 		BD02E09548896FA4FE7859A0 /* Stella-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Stella-umbrella.h"; sourceTree = "<group>"; };
 		C0731449BC72ED0D229655B7 /* Quick.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Quick.h; path = Sources/QuickObjectiveC/Quick.h; sourceTree = "<group>"; };
+		C0D299361EB9DEE200C8152E /* NumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumberFormatter.swift; path = NumberFormatter/NumberFormatter.swift; sourceTree = "<group>"; };
 		C264B2BA5D220D6D3A8DC341 /* Closures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Closures.swift; path = Sources/Quick/Hooks/Closures.swift; sourceTree = "<group>"; };
 		C27D66119005955A616367DE /* Functional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Functional.swift; path = Sources/Nimble/Utils/Functional.swift; sourceTree = "<group>"; };
 		C4D408DED1B8D8EB982F5C57 /* ExampleHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleHooks.swift; path = Sources/Quick/Hooks/ExampleHooks.swift; sourceTree = "<group>"; };
 		C57487CAB6A5455849A06302 /* Stella-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Stella-prefix.pch"; sourceTree = "<group>"; };
-		C590F7CC7AC345EAFCB9E691 /* Pods-Stella_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Stella_Tests.modulemap"; sourceTree = "<group>"; };
+		C590F7CC7AC345EAFCB9E691 /* Pods-Stella_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Stella_Tests.modulemap"; sourceTree = "<group>"; };
 		CCC3AEFAFA3650148FCBC907 /* NSBundle+CurrentTestBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSBundle+CurrentTestBundle.swift"; path = "Sources/Quick/NSBundle+CurrentTestBundle.swift"; sourceTree = "<group>"; };
 		D12EAC466903E68A0D9E40C9 /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/Nimble/Utils/Errors.swift; sourceTree = "<group>"; };
 		D739369CB0F36E47B9BC4FF1 /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = Keychain/Classes/Keychain.swift; sourceTree = "<group>"; };
@@ -291,7 +293,7 @@
 		EA39988C3B1971281497A79A /* BeIdenticalTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeIdenticalTo.swift; path = Sources/Nimble/Matchers/BeIdenticalTo.swift; sourceTree = "<group>"; };
 		EB04B51604CC7F03E251812D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB0B98CF70AFF8FAFC9E13C2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC46D73A154EB0311494E647 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		EC46D73A154EB0311494E647 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EC6F7EE95C1EB2C1CBE569F0 /* Pods-Stella_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Stella_Tests-umbrella.h"; sourceTree = "<group>"; };
 		ED999E1324BB5B5B81AE179E /* XCTestObservationCenter+Register.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestObservationCenter+Register.m"; path = "Sources/NimbleObjectiveC/XCTestObservationCenter+Register.m"; sourceTree = "<group>"; };
 		EED0F17D2FCD52E1B3C56855 /* Defaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
@@ -368,7 +370,6 @@
 				907EB2E8C34271C35DF15077 /* Print.swift */,
 				5EBB52FB86AC44DAE3011580 /* PrintLevel.swift */,
 			);
-			name = Printing;
 			path = Printing;
 			sourceTree = "<group>";
 		};
@@ -377,7 +378,6 @@
 			children = (
 				EED0F17D2FCD52E1B3C56855 /* Defaults.swift */,
 			);
-			name = Defaults;
 			path = Defaults;
 			sourceTree = "<group>";
 		};
@@ -449,7 +449,6 @@
 				ED999E1324BB5B5B81AE179E /* XCTestObservationCenter+Register.m */,
 				84A082541D897D0D0A1B811B /* Support Files */,
 			);
-			name = Nimble;
 			path = Nimble;
 			sourceTree = "<group>";
 		};
@@ -458,7 +457,6 @@
 			children = (
 				77FBBC9CEE462B3551E45EC9 /* Keychain.swift */,
 			);
-			name = Keychain;
 			path = Keychain;
 			sourceTree = "<group>";
 		};
@@ -552,19 +550,18 @@
 				77F98239348B46EE0547932D /* KeychainProtocolType.swift */,
 				DC940D6117E3B4C2F13A5B54 /* Support Files */,
 			);
-			name = Keychain;
 			path = Keychain;
 			sourceTree = "<group>";
 		};
 		97DB7C46F1C90A80FC998F9B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C0D299351EB9DECB00C8152E /* NumberFormatter */,
 				2F72AA61BF2FD189DF449D50 /* Defaults */,
 				558D8F64F28779FDD601A761 /* Keychain */,
 				EF8B454A855E5B81A21CE2C2 /* Localization */,
 				18A8A1BAF1D6486B8D7CD925 /* Printing */,
 			);
-			name = Sources;
 			path = Sources;
 			sourceTree = "<group>";
 		};
@@ -603,7 +600,6 @@
 				89E3A17D93B195EDC60F3F10 /* XCTestSuite+QuickTestSuiteBuilder.m */,
 				818A0E40FD5ED63BC43F52BA /* Support Files */,
 			);
-			name = Quick;
 			path = Quick;
 			sourceTree = "<group>";
 		};
@@ -623,6 +619,14 @@
 			);
 			name = "Pods-Stella_Tests";
 			path = "Target Support Files/Pods-Stella_Tests";
+			sourceTree = "<group>";
+		};
+		C0D299351EB9DECB00C8152E /* NumberFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				C0D299361EB9DEE200C8152E /* NumberFormatter.swift */,
+			);
+			name = NumberFormatter;
 			sourceTree = "<group>";
 		};
 		DC940D6117E3B4C2F13A5B54 /* Support Files */ = {
@@ -658,7 +662,6 @@
 			children = (
 				3B801A3B700AC3A146F261F1 /* Localization.swift */,
 			);
-			name = Localization;
 			path = Localization;
 			sourceTree = "<group>";
 		};
@@ -946,6 +949,7 @@
 				367E91BA04AFE178CA12178F /* Localization.swift in Sources */,
 				AC168A6C1E1522D6C5EA3B32 /* Print.swift in Sources */,
 				00B9A4F2942DB656F57F2DC8 /* PrintLevel.swift in Sources */,
+				C0D2993C1EB9E0E100C8152E /* NumberFormatter.swift in Sources */,
 				98A3ABCDED257DCC2580F16B /* Stella-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
