@@ -25,7 +25,6 @@ class StringSizeCalculationSpec: QuickSpec {
 			let width:CGFloat = 200
 
 			it("Regular strings"){
-
 				expect(string.height(constraintTo: width, font: font)).to(beCloseTo(304, within: 1))
 				expect(smallerString.height(constraintTo: 200, font: font)).to(beCloseTo(40, within: 1))
 			}
