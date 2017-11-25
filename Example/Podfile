@@ -16,8 +16,8 @@ target 'Stella Example' do
     pod 'Keychain', '~> 0.3'
 
     # The test frameworks
-    pod 'Quick',  '~> 0.10'
-    pod 'Nimble', '~> 5.0'
+    pod 'Quick',  '~> 1.2'
+    pod 'Nimble', '~> 7.0'
   end
 end
 

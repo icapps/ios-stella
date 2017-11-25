@@ -30,7 +30,7 @@ class StringSizeCalculationSpec: QuickSpec {
 			}
 
 			it("Attributed strings"){
-				let fontAttribute = [ NSFontAttributeName: UIFont.systemFont(ofSize: 17) ]
+				let fontAttribute = [ NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17) ]
 
 				let attributedString = NSAttributedString(string: string, attributes: fontAttribute)
 				let smallerAttributedString = NSAttributedString(string: smallerString, attributes: fontAttribute)
