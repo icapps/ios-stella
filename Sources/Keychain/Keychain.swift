@@ -12,7 +12,7 @@ public let Keychain = KeychainHandler.shared
 /// The `KeychainHandler` class is responsible for the interaction with the keychain.
 public class KeychainHandler {
     
-    public static var accessGroupName: String?
+    public var accessGroupName: String?
     public static let shared = KeychainHandler()
     
     fileprivate func data(for key: String) -> Data? {
@@ -24,7 +24,7 @@ public class KeychainHandler {
             kSecAttrAccount as String: key as AnyObject
         ]
         
-        if let accessGroupName = KeychainHandler.accessGroupName {
+        if let accessGroupName = self.accessGroupName {
             query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
         }
         
@@ -37,7 +37,7 @@ public class KeychainHandler {
             kSecAttrAccount as String: key as AnyObject,
             kSecAttrService as String: (Bundle.main.bundleIdentifier ?? "") as AnyObject,
         ]
-        if let accessGroupName = KeychainHandler.accessGroupName {
+        if let accessGroupName = self.accessGroupName {
             query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
         }
         if let data = data {
