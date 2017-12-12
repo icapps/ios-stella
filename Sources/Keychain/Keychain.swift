@@ -12,7 +12,9 @@ public let Keychain = KeychainHandler.shared
 /// The `KeychainHandler` class is responsible for the interaction with the keychain.
 public class KeychainHandler {
     
+    // The value for `kSecAttrAccessGroup` if Keychain Sharing is enabled. Example:`AB123CDE45.myKeychainGroup1`
     public var accessGroupName: String?
+    
     public static let shared = KeychainHandler()
     
     fileprivate func data(for key: String) -> Data? {
