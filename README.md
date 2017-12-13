@@ -17,6 +17,7 @@
   - [Localization](#localization)
   - [Printing](#printing)
   - [Number formatting](#numberformatting)
+  - [String Size Calulations](#stringSizeCalulations)
 - [Bucket List](#bucket-list)
 - [Author](#author)
 - [License](#license)
@@ -180,6 +181,23 @@ let double: Double = 22.56989123
 print(double.roundedStringNoDecimals)
 // The debug console prints "23"
 ```
+
+## String Size Calulations
+
+Usefull when you want a `UILabel` to have a specific height to contain all the text.
+
+```swift
+let string = "Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+let font = UIFont.systemFont(ofSize: 17)
+let constraintWidth:CGFloat = 200
+
+print(string.height(constraintTo: width, font: font))
+// The debug console will print 304,89...
+
+```
+
+This also works for attributed strings, see `StringSizeCalculationSpec`.
+
 ## Bucket List
 
 Here is an overview what is on our todo list.

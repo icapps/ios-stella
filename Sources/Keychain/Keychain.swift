@@ -16,7 +16,7 @@ public class KeychainHandler {
     public static let shared = KeychainHandler()
     
     fileprivate func data(for key: String) -> Data? {
-        let query: [String: AnyObject] = [
+        var query: [String: AnyObject] = [
             kSecClass as String      : kSecClassGenericPassword as NSString,
             kSecMatchLimit as String : kSecMatchLimitOne,
             kSecReturnData as String : kCFBooleanTrue,
