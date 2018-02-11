@@ -11,7 +11,6 @@
 		62690A0A1DA52FDF005680EB /* KeychainSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62690A091DA52FDF005680EB /* KeychainSpec.swift */; };
 		629CA9DC1D071666008E9648 /* LocalizationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CA9DA1D0715F5008E9648 /* LocalizationSpec.swift */; };
 		9411C42FBA245AF580621E92 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB763ED70A71190D9C432080 /* Pods_Tests.framework */; };
-		C0D2993B1EB9E07200C8152E /* NumberFormatterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D299391EB9E05500C8152E /* NumberFormatterSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +21,6 @@
 		621A5AEC1D080A8A00CA812B /* DefaultsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsSpec.swift; sourceTree = "<group>"; };
 		62690A091DA52FDF005680EB /* KeychainSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSpec.swift; sourceTree = "<group>"; };
 		629CA9DA1D0715F5008E9648 /* LocalizationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationSpec.swift; sourceTree = "<group>"; };
-		C0D299391EB9E05500C8152E /* NumberFormatterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumberFormatterSpec.swift; path = NumberFormatter/NumberFormatterSpec.swift; sourceTree = "<group>"; };
 		EB763ED70A71190D9C432080 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,7 +90,6 @@
 		62263AAD1D0704F700393E94 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
-				C0D299381EB9E02B00C8152E /* NumberFormatter */,
 				621A5AEB1D080A7F00CA812B /* Defaults */,
 				62690A081DA52FD0005680EB /* Keychain */,
 				620750BC1D076F22000E3494 /* Localization */,
@@ -115,14 +112,6 @@
 				0059F9DC68F749CA04B1834A /* Pods-Tests.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		C0D299381EB9E02B00C8152E /* NumberFormatter */ = {
-			isa = PBXGroup;
-			children = (
-				C0D299391EB9E05500C8152E /* NumberFormatterSpec.swift */,
-			);
-			name = NumberFormatter;
 			sourceTree = "<group>";
 		};
 		F118CF65724F2B470F8D8B0A /* Frameworks */ = {
@@ -268,7 +257,6 @@
 				62690A0A1DA52FDF005680EB /* KeychainSpec.swift in Sources */,
 				629CA9DC1D071666008E9648 /* LocalizationSpec.swift in Sources */,
 				621A5AED1D080A8A00CA812B /* DefaultsSpec.swift in Sources */,
-				C0D2993B1EB9E07200C8152E /* NumberFormatterSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
