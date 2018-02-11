@@ -22,11 +22,7 @@ extension UIViewController {
         addChildViewController(controller)
         
         // Configure Child View
-        controller.view.translatesAutoresizingMaskIntoConstraints = false
-        controller.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        controller.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        controller.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        controller.view.constraint(to: view)
         
         // Notify Child View Controller
         controller.didMove(toParentViewController: self)
