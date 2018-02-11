@@ -27,8 +27,10 @@
 Stella is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
 
 ```ruby
-pod 'Stella', '~> 1.1'
+pod 'Stella', git: 'https://github.com/icapps/ios-stella.git', commit: '...'
 ```
+
+_Pass the correct commit reference to make sure your code doesn't break in future updates._
 
 ## Features
 
