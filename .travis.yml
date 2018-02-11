@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode8.3
+osx_image: xcode9.2
 
 before_install:
     - gem install xcpretty -N --no-ri --no-rdoc
@@ -7,14 +7,6 @@ before_install:
 script:
     - set -o pipefail
     - xcodebuild clean test -workspace Example/Stella.xcworkspace -scheme Stella -destination "platform=iOS Simulator,name=iPhone 6 Plus" | xcpretty
-
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: ./scripts/deploy.sh
-  on:
-    tags: true
-    branch: master
 
 notifications:
   slack:
