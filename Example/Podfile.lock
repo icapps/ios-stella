@@ -1,12 +1,12 @@
 PODS:
   - Keychain (0.3.1)
-  - Nimble (7.0.3)
+  - Nimble (7.0.2)
   - Quick (1.2.0)
   - Stella (1.1.1)
 
 DEPENDENCIES:
   - Keychain (~> 0.3)
-  - Nimble (~> 7.0)
+  - Nimble (= 7.0.2)
   - Quick (~> 1.2)
   - Stella (from `../`)
 
@@ -16,10 +16,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Keychain: ef812eafcf6593fe4409b07cfecc00b95fb373ed
-  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   Stella: d10cc49460eabe495a3589bd63cec8334f7f7f5e
 
-PODFILE CHECKSUM: 12dfb5e32f4c0275e56caa3e27c68bdc422240ba
+PODFILE CHECKSUM: dd445bb48362ca15adff1572dcf4b035d4ee038e
 
 COCOAPODS: 1.4.0
