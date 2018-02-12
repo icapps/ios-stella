@@ -24,7 +24,9 @@ extension UICollectionView {
     /// Example: `collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: IndexPath(...)) as UICollectionReusableView`
     public func dequeueReusableSupplementaryView<T: UICollectionReusableView>(ofKind: String, for indexPath: IndexPath) -> T {
         // swiftlint:disable force_cast
-        return dequeueReusableSupplementaryView(ofKind: ofKind, withReuseIdentifier: T.reuseIdentifier, for: indexPath) as! T
+        return dequeueReusableSupplementaryView(ofKind: ofKind,
+                                                withReuseIdentifier: T.reuseIdentifier,
+                                                for: indexPath) as! T
     }
     
     /// Register a cell class with the same name as a reusable cell.
@@ -34,7 +36,9 @@ extension UICollectionView {
     
     /// Register a reusable view class with the same name as a reusable view.
     public func register<T: UICollectionReusableView>(class classType: T.Type, forSupplementaryViewOfKind: String) {
-        register(classType.nib, forSupplementaryViewOfKind: forSupplementaryViewOfKind, withReuseIdentifier: classType.reuseIdentifier)
+        register(classType.nib,
+                 forSupplementaryViewOfKind: forSupplementaryViewOfKind,
+                 withReuseIdentifier: classType.reuseIdentifier)
     }
 }
 
