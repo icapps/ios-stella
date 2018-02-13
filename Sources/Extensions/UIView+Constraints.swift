@@ -9,7 +9,7 @@ import UIKit
 
 extension UIView {
     
-    public func constraint(to view: UIView) {
+    public func constraintEdges(to view: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         
         leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true

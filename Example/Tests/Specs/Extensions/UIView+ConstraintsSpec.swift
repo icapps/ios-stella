@@ -31,7 +31,7 @@ class UIViewConstraintsSpec: QuickSpec {
                 let subview = UIView(frame: .zero)
                 subview.backgroundColor = UIColor.green
                 view.addSubview(subview)
-                subview.constraint(to: view)
+                subview.constraintEdges(to: view)
 
                 expect(view) == snapshot()
             }

@@ -23,7 +23,7 @@ class UIViewControllerChildSpec: QuickSpec {
 
             it("should have a child view controller") {
                 let controller = UIViewController()
-                parentController.add(controller: controller, to: parentController.view)
+                parentController.add(childController: controller, to: parentController.view)
 
                 expect(parentController.childViewControllers.count) == 1
                 expect(parentController.view.subviews.count) == 1
@@ -31,8 +31,8 @@ class UIViewControllerChildSpec: QuickSpec {
 
             it("should not have a child view controller after removal") {
                 let controller = UIViewController()
-                parentController.add(controller: controller, to: parentController.view)
-                parentController.remove(controller: controller)
+                parentController.add(childController: controller, to: parentController.view)
+                parentController.remove(childController: controller)
 
                 expect(parentController.childViewControllers.count) == 0
                 expect(parentController.view.subviews.count) == 0
