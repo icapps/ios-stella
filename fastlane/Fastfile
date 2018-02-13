@@ -1,0 +1,35 @@
+# This is the minimum Fastlane version to use.
+fastlane_version '2.80.0'
+
+skip_docs
+
+##########################
+### BUILD SERVER SETUP ###
+##########################
+
+setup_travis
+
+#############
+### LANES ###
+#############
+
+lane :pr do
+  # Check the code formatting.
+  # swiftlint strict: true
+
+  # Run the tests.
+  execute_tests
+end
+
+#####################
+### PRIVATE LANES ###
+#####################
+
+private_lane :execute_tests do
+  scan(
+    workspace:              'Example/Stella.xcworkspace',
+    scheme:                 'Tests',
+    clean:                  true,
+    skip_build:             true
+  )
+end
