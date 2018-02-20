@@ -31,6 +31,13 @@ class DefaultsSpec: QuickSpec {
                     let stringValue = UserDefaults.standard.string(forKey: "stringValue")
                     expect(stringValue).to(equal("A string value"))
                 }
+
+                it("should be able to clear the defaults") {
+                    Defaults[.stringValue] = "A string value"
+                    Defaults[.stringValue] = nil
+                    let stringValue = UserDefaults.standard.string(forKey: "stringValue")
+                    expect(stringValue).to(beNil())
+                }
                 
                 it("should be able to read to the defaults") {
                     UserDefaults.standard.set("Some string value", forKey: "stringValue")
@@ -43,6 +50,13 @@ class DefaultsSpec: QuickSpec {
                     Defaults[.integerValue] = 123
                     let integerValue = UserDefaults.standard.integer(forKey: "integerValue")
                     expect(integerValue).to(equal(123))
+                }
+
+                it("should be able to clear the defaults") {
+                    Defaults[.integerValue] = 123
+                    Defaults[.integerValue] = nil
+                    let integerValue = UserDefaults.standard.integer(forKey: "integerValue")
+                    expect(integerValue) == 0
                 }
                 
                 it("should be able to read to the defaults") {
@@ -57,6 +71,13 @@ class DefaultsSpec: QuickSpec {
                     let floatValue = UserDefaults.standard.float(forKey: "floatValue")
                     expect(floatValue).to(equal(123.123))
                 }
+
+                it("should be able to clear the defaults") {
+                    Defaults[.floatValue] = 123.123
+                    Defaults[.floatValue] = nil
+                    let floatValue = UserDefaults.standard.float(forKey: "floatValue")
+                    expect(floatValue) == 0
+                }
                 
                 it("should be able to read to the defaults") {
                     UserDefaults.standard.set(123.123, forKey: "floatValue")
@@ -69,6 +90,13 @@ class DefaultsSpec: QuickSpec {
                     Defaults[.doubleValue] = 123.123
                     let doubleValue = UserDefaults.standard.double(forKey: "doubleValue")
                     expect(doubleValue).to(equal(123.123))
+                }
+
+                it("should be able to clear the defaults") {
+                    Defaults[.doubleValue] = 123.123
+                    Defaults[.doubleValue] = nil
+                    let doubleValue = UserDefaults.standard.double(forKey: "doubleValue")
+                    expect(doubleValue) == 0
                 }
                 
                 it("should be able to read to the defaults") {
