@@ -20,6 +20,7 @@ extension UITableView {
     }
     
     /// Dequeue
+    
     func dequeueReusableCell<T: UITableViewCell>(forIndexPath indexPath: IndexPath) -> T {
         let cell = dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as! T
         return cell
@@ -30,12 +31,13 @@ extension UITableView {
         return cell
     }
     
-    func dequeueReusableHeaderFooter<T: UIView>(forSection section: Int) -> T {
-        let cell = dequeueReusableHeaderFooterView(withIdentifier: T.reuseIdentifier) as! T
+    func dequeueReusableHeaderFooter<T: UIView>(forIdentifier identifier: String) -> T {
+        let cell = dequeueReusableHeaderFooterView(withIdentifier: identifier) as! T
         return cell
     }
     
     /// Get
+    
     func cellForRow<T: UITableViewCell>(_ indexPath: IndexPath) -> T {
         let cell = cellForRow(at: indexPath) as! T
         return cell

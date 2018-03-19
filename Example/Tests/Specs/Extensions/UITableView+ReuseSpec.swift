@@ -11,6 +11,10 @@ import Nimble
 
 @testable import Stella
 
+private class MockedTableHeaderView: UITableViewHeaderFooterView {
+    
+}
+
 private class MockedTableViewCell: UITableViewCell {
     
 }
@@ -41,15 +45,27 @@ private class MockedTableView: UITableView {
         registeredCellIdentifier = identifier
     }
     
-    private(set) var registeredClass: AnyClass?
-    private(set) var registeredCellReuseIdentifier: String?
-    
-    override func register(_ cellClass: AnyClass?, forCellReuseIdentifier identifier: String) {
-        registeredClass = cellClass
-        registeredCellReuseIdentifier = identifier
+    private(set) var registerdHeaderNib: UINib?
+    private(set) var registerdHeaderIdentifier: String?
+
+    override func register(_ nib: UINib?, forHeaderFooterViewReuseIdentifier identifier: String) {
+        registerdHeaderNib = nib
+        registerdHeaderIdentifier = identifier
     }
     
-    // TODO: Header Footer
+    private(set) var dequeuedHeaderIdentifier: String?
+    
+    override func dequeueReusableHeaderFooterView(withIdentifier identifier: String) -> UITableViewHeaderFooterView? {
+        dequeuedHeaderIdentifier = identifier
+        return MockedTableHeaderView()
+    }
+    
+    private(set) var cellIndexPath: IndexPath?
+
+    override func cellForRow(at indexPath: IndexPath) -> UITableViewCell? {
+        cellIndexPath = indexPath
+        return MockedTableViewCell()
+    }
 }
 
 class UITableViewReuseSpec: QuickSpec {
@@ -75,7 +91,33 @@ class UITableViewReuseSpec: QuickSpec {
                 
                 expect(tableView.dequeuedReusableIdentfier) == identifier
             }
-
+    
+            it("should register the correct cell") {
+                tableView.register(class: MockedTableViewCell.self)
+                
+                expect(tableView.registeredNib).notTo(beNil())
+                expect(tableView.registeredCellIdentifier) == MockedTableViewCell.reuseIdentifier
+            }
+            
+            it("should register the correct header") {
+                tableView.registerHeaderFooter(class: MockedTableHeaderView.self)
+                
+                expect(tableView.registerdHeaderNib).notTo(beNil())
+                expect(tableView.registerdHeaderIdentifier) == MockedTableHeaderView.reuseIdentifier
+            }
+            
+            it("should dequeue the correct header") {
+                let _ = tableView.dequeueReusableHeaderFooter(forIdentifier: MockedTableHeaderView.reuseIdentifier)
+                expect(tableView.dequeuedHeaderIdentifier) == MockedTableHeaderView.reuseIdentifier
+            }
+            
+            it("should return the correct cell") {
+                let indexPath = IndexPath(row: 0, section: 1)
+                let _ = tableView.cellForRow(indexPath)
+                
+                expect(tableView.cellIndexPath).notTo(beNil())
+            }
+            
         }
     }
 }
