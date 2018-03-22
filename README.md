@@ -90,6 +90,17 @@ Keychain[.stringValue] = "A string value"
 print(Keychain[.stringValue]) // Prints 'A string value'
 ```
 
+In some cases you want to be able to set a custom access control value on the keychain item.
+
+```swift
+// Create the access control that makes sure the value is only available on this device, and as a result not backed up.
+let accessControl = SecAccessControlCreateWithFlags(kCFAllocatorDefault,
+                                                    kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly,
+                                                    .userPresence, 
+                                                    &error)
+static let noBackupValue = Key<String?>("noBackup", accessControl)
+```
+
 ### Localization
 
 Localize a key in no time with this handy localization function.
