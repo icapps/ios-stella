@@ -18,7 +18,7 @@ public class KeychainHandler {
 
     public static let shared = KeychainHandler()
     
-    fileprivate func data(for key: String, accessControl: SecAccessControl?) -> Data? {
+    fileprivate func data(for key: String) -> Data? {
         var query: [String: AnyObject] = [
             kSecClass as String      : kSecClassGenericPassword as NSString,
             kSecMatchLimit as String : kSecMatchLimitOne,
@@ -26,9 +26,6 @@ public class KeychainHandler {
             kSecAttrService as String: (Bundle.main.bundleIdentifier ?? "") as AnyObject,
             kSecAttrAccount as String: key as AnyObject
         ]
-        if let accessControl = accessControl {
-            query[kSecAttrAccessControl as String] = accessControl as AnyObject
-        }
         if let accessGroupName = self.accessGroupName {
             query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
         }
@@ -36,17 +33,18 @@ public class KeychainHandler {
         return self.secItemCopy(query).data as? Data
     }
     
-    fileprivate func set(_ data: Data?, for key: String, accessControl: SecAccessControl?) -> Bool {
+    fileprivate func set(_ data: Data?, for key: String, additionalQuery: [String: AnyObject]?) -> Bool {
         var query: [String: AnyObject] = [
             kSecClass as String      : (kSecClassGenericPassword as NSString),
             kSecAttrAccount as String: key as AnyObject,
             kSecAttrService as String: (Bundle.main.bundleIdentifier ?? "") as AnyObject,
         ]
-        if let accessControl = accessControl {
-            query[kSecAttrAccessControl as String] = accessControl as AnyObject
-        }
         if let accessGroupName = self.accessGroupName {
             query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
+        }
+        // Set additional query values when given.
+        if let additionalQuery = additionalQuery {
+            additionalQuery.forEach { key, value in query[key] = value }
         }
         if let data = data {
             query[kSecValueData as String] = data as AnyObject
@@ -91,19 +89,19 @@ open class Keys {}
 /// The `Key` defines the key and the value type for a certain keychain value.
 open class Key<ValueType>: Keys {
     fileprivate let key: String
-    fileprivate let accessControl: SecAccessControl?
+    fileprivate let additionalQuery: [String: AnyObject]?
     
     /// Initialize the key in your `Keys` extension.
     ///
     /// - parameter key: The key you want to use as the unique Keychain value.
-    /// - parameter accessControl: The access control you want to use for the given key.
+    /// - parameter additionalQuery: Additional query parameters you want to pass.
     ///
     /// ```
     /// static let string = Key<String?>("the string keychain key")
     /// ```
-    public init(_ key: String, accessControl: SecAccessControl? = nil) {
+    public init(_ key: String, additionalQuery: [String: AnyObject]? = nil) {
         self.key = key
-        self.accessControl = accessControl
+        self.additionalQuery = additionalQuery
     }
 }
 
@@ -121,14 +119,14 @@ public extension KeychainHandler {
     /// ```
     public subscript(key: Key<String?>) -> String? {
         get {
-            if let data = data(for: key.key, accessControl: key.accessControl) {
+            if let data = data(for: key.key) {
                 return String(data: data, encoding: .utf8)
             }
             return nil
         }
         set {
             let value = newValue?.data(using: .utf8, allowLossyConversion: false)
-            let _ = set(value, for: key.key, accessControl: key.accessControl)
+            let _ = set(value, for: key.key, additionalQuery: key.additionalQuery)
         }
     }
 }
