@@ -8,8 +8,7 @@
 
 import Quick
 import Nimble
-
-@testable import Stella
+import Stella
 
 private class MockedTableHeaderView: UITableViewHeaderFooterView {
     
