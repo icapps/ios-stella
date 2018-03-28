@@ -215,6 +215,7 @@ print(key.localizedString)
 ## Author
 
 Jelle Vandebeeck, jelle.vandebeeck@icapps.com
+Hannes Van den Berghe, hannes.vandenberghe@icapps.com
 
 ## License
 
