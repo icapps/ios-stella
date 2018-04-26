@@ -18,7 +18,7 @@ public class KeychainHandler {
 
     public static let shared = KeychainHandler()
     
-    fileprivate func data(for key: String) -> Data? {
+    fileprivate func data(for key: String, additionalQuery: [String: AnyObject]?) -> Data? {
         var query: [String: AnyObject] = [
             kSecClass as String      : kSecClassGenericPassword as NSString,
             kSecMatchLimit as String : kSecMatchLimitOne,
@@ -29,7 +29,10 @@ public class KeychainHandler {
         if let accessGroupName = self.accessGroupName {
             query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
         }
-        
+        // Set additional query values when given.
+        if let additionalQuery = additionalQuery {
+            additionalQuery.forEach { key, value in query[key] = value }
+        }
         return self.secItemCopy(query).data as? Data
     }
     
@@ -119,7 +122,7 @@ public extension KeychainHandler {
     /// ```
     public subscript(key: Key<String?>) -> String? {
         get {
-            if let data = data(for: key.key) {
+            if let data = data(for: key.key, additionalQuery: key.additionalQuery) {
                 return String(data: data, encoding: .utf8)
             }
             return nil
