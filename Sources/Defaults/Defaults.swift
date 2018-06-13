@@ -18,7 +18,7 @@ public let Defaults = UserDefaults.standard
 /// ```
 open class DefaultsKeys {}
 
-/// The `DefaulesKey` defines the key and the value type for a certain user default value.
+/// The `DefaultsKey` defines the key and the value type for a certain user default value.
 open class DefaultsKey<ValueType>: DefaultsKeys {
     fileprivate let key: String
     
