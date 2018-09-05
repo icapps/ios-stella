@@ -10,8 +10,24 @@ import Quick
 import Nimble
 import Stella
 
+/// An enum for our enumStringTypeValue test case
+enum SomeStringEnum: String {
+    case type1
+    case type2
+    case type3
+}
+
+/// An enum for our enumStringTypeValue test case
+enum SomeIntEnum: Int {
+    case type1
+    case type2
+    case type3
+}
+
 // Define the keys used for this test.
 extension DefaultsKeys {
+    static let enumStringTypeValue = DefaultsKey<SomeStringEnum?>("enumStringTypeValue")
+    static let enumIntTypeValue = DefaultsKey<SomeIntEnum?>("enumIntTypeValue")
     static let stringValue = DefaultsKey<String?>("stringValue")
     static let integerValue = DefaultsKey<Int?>("integerValue")
     static let doubleValue = DefaultsKey<Double?>("doubleValue")
@@ -25,6 +41,48 @@ class DefaultsSpec: QuickSpec {
     override func spec() {
         
         describe("defaults") {
+            context("enumType value + String") {
+                it("should be able to write to the defaults") {
+                    Defaults[.enumStringTypeValue] = .type1
+                    let enumTypeValue = SomeStringEnum(rawValue: UserDefaults.standard.string(forKey: "enumStringTypeValue") ?? "")
+                    expect(enumTypeValue).to(equal(.type1))
+                }
+                
+                it("should be able to clear the defaults") {
+                    Defaults[.enumStringTypeValue] = .type1
+                    Defaults[.enumStringTypeValue] = nil
+                    let stringValue = SomeStringEnum(rawValue: UserDefaults.standard.string(forKey: "enumStringTypeValue") ?? "")
+                    expect(stringValue).to(beNil())
+                }
+                
+                it("should be able to read from the defaults") {
+                    UserDefaults.standard.set("type1", forKey: "enumStringTypeValue")
+                    expect(Defaults[.enumStringTypeValue]).to(equal(.type1))
+                }
+            }
+            
+            context("enumType value + Int") {
+                it("should be able to write to the defaults") {
+                    Defaults[.enumIntTypeValue] = .type1
+                    let enumTypeValue = SomeIntEnum(rawValue: UserDefaults.standard.integer(forKey: "enumIntTypeValue"))
+                    expect(enumTypeValue).to(equal(.type1))
+                }
+                
+                // We will not be able to clear the defaults because this will always return a 0 integer
+                // 0 integer == first case -> .type1
+                it("should not be able to clear the defaults") {
+                    Defaults[.enumIntTypeValue] = .type1
+                    Defaults[.enumIntTypeValue] = nil
+                    let stringValue = SomeIntEnum(rawValue: UserDefaults.standard.integer(forKey: "enumIntTypeValue"))
+                    expect(stringValue).to(equal(.type1))
+                }
+                
+                it("should be able to read from the defaults") {
+                    UserDefaults.standard.set("type1", forKey: "enumIntTypeValue")
+                    expect(Defaults[.enumIntTypeValue]).to(equal(.type1))
+                }
+            }
+            
             context("string value") {
                 it("should be able to write to the defaults") {
                     Defaults[.stringValue] = "A string value"
