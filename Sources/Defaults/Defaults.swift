@@ -34,6 +34,35 @@ open class DefaultsKey<ValueType>: DefaultsKeys {
 
 public extension UserDefaults {
     
+    /// Get the defaults Enum (type String) value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    ///
+    /// ```
+    /// static let enumType = DefaultsKey<SomeEnumStringType?>("the enumType's defaults key")
+    /// ```
+    public subscript<T: RawRepresentable>(key: DefaultsKey<T?>) -> T? where T.RawValue == String {
+        get {
+            guard let rawValue = string(forKey: key.key) else { return nil }
+            return T(rawValue: rawValue)
+        }
+        set {
+            set(newValue?.rawValue, forKey: key.key)
+        }
+    }
+    
+    /// Get the defaults Enum (type Int) value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    ///
+    /// ```
+    /// static let enumType = DefaultsKey<SomeEnumIntType?>("the enumType's defaults key")
+    /// ```
+    public subscript<T: RawRepresentable>(key: DefaultsKey<T?>) -> T? where T.RawValue == Int {
+        get {
+            return T(rawValue: integer(forKey: key.key))
+        }
+        set {
+            set(newValue?.rawValue, forKey: key.key)
+        }
+    }
+    
     /// Get the defaults String value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
     ///
     /// ```
