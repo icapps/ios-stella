@@ -17,11 +17,12 @@ public class KeychainHandler {
     
     fileprivate func data(for key: String) -> Data? {
         var query: [String: AnyObject] = [
-            kSecClass as String      : kSecClassGenericPassword as NSString,
-            kSecMatchLimit as String : kSecMatchLimitOne,
-            kSecReturnData as String : kCFBooleanTrue,
-            kSecAttrService as String: (Bundle.main.bundleIdentifier ?? "") as AnyObject,
-            kSecAttrAccount as String: key as AnyObject
+            kSecClass as String             : kSecClassGenericPassword as NSString,
+            kSecAttrAccessible as String    : kSecAttrAccessibleAlways,
+            kSecMatchLimit as String        : kSecMatchLimitOne,
+            kSecReturnData as String        : kCFBooleanTrue,
+            kSecAttrService as String       : (Bundle.main.bundleIdentifier ?? "") as AnyObject,
+            kSecAttrAccount as String       : key as AnyObject
         ]
         
         if let accessGroupName = self.accessGroupName {
@@ -33,9 +34,10 @@ public class KeychainHandler {
     
     fileprivate func set(_ data: Data?, for key: String) -> Bool {
         var query: [String: AnyObject] = [
-            kSecClass as String      : (kSecClassGenericPassword as NSString),
-            kSecAttrAccount as String: key as AnyObject,
-            kSecAttrService as String: (Bundle.main.bundleIdentifier ?? "") as AnyObject,
+            kSecClass as String             : (kSecClassGenericPassword as NSString),
+            kSecAttrAccount as String       : key as AnyObject,
+            kSecAttrAccessible as String    : kSecAttrAccessibleAlways,
+            kSecAttrService as String       : (Bundle.main.bundleIdentifier ?? "") as AnyObject,
         ]
         if let accessGroupName = self.accessGroupName {
             query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
