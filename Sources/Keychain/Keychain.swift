@@ -31,7 +31,7 @@ public class KeychainHandler {
         }
         
         if backgroundAccessEnabled {
-            query[kSecAttrAccessible as String] = kSecAttrAccessibleWhenUnlockedThisDeviceOnly as NSString
+            query[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly as NSString
         }
         
         return self.secItemCopy(query).data as? Data
@@ -47,7 +47,7 @@ public class KeychainHandler {
             query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
         }
         if backgroundAccessEnabled {
-            query[kSecAttrAccessible as String] = kSecAttrAccessibleWhenUnlockedThisDeviceOnly as NSString
+            query[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly as NSString
         }
         if let data = data {
             query[kSecValueData as String] = data as AnyObject
