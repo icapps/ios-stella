@@ -30,10 +30,6 @@ public class KeychainHandler {
             query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
         }
         
-        if backgroundAccessEnabled {
-            query[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlock as AnyObject
-        }
-        
         return self.secItemCopy(query).data as? Data
     }
     
