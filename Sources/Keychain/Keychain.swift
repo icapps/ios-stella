@@ -13,12 +13,13 @@ public let Keychain = KeychainHandler.shared
 public class KeychainHandler {
     
     public var accessGroupName: String?
+    public var backgroundAccessEnabled: Bool = false
+    
     public static let shared = KeychainHandler()
     
     fileprivate func data(for key: String) -> Data? {
         var query: [String: AnyObject] = [
             kSecClass as String             : kSecClassGenericPassword as NSString,
-            kSecAttrAccessible as String    : kSecAttrAccessibleAlways,
             kSecMatchLimit as String        : kSecMatchLimitOne,
             kSecReturnData as String        : kCFBooleanTrue,
             kSecAttrService as String       : (Bundle.main.bundleIdentifier ?? "") as AnyObject,
@@ -29,6 +30,10 @@ public class KeychainHandler {
             query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
         }
         
+        if backgroundAccessEnabled {
+            query[kSecAttrAccessible as String] = kSecAttrAccessibleWhenUnlockedThisDeviceOnly as NSString
+        }
+        
         return self.secItemCopy(query).data as? Data
     }
     
@@ -36,11 +41,13 @@ public class KeychainHandler {
         var query: [String: AnyObject] = [
             kSecClass as String             : (kSecClassGenericPassword as NSString),
             kSecAttrAccount as String       : key as AnyObject,
-            kSecAttrAccessible as String    : kSecAttrAccessibleAlways,
             kSecAttrService as String       : (Bundle.main.bundleIdentifier ?? "") as AnyObject,
         ]
         if let accessGroupName = self.accessGroupName {
             query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
+        }
+        if backgroundAccessEnabled {
+            query[kSecAttrAccessible as String] = kSecAttrAccessibleWhenUnlockedThisDeviceOnly as NSString
         }
         if let data = data {
             query[kSecValueData as String] = data as AnyObject
