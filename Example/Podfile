@@ -18,6 +18,9 @@ target 'Application' do
     # Frameworks needed for testing.
     pod 'Keychain', '~> 0.3'
 
+    # Linter
+    pod 'SwiftLint', '~> 0.27'
+
     # The test frameworks
     pod 'Quick',            '~> 1.3'
     pod 'Nimble',           '~> 7.3'
