@@ -95,6 +95,15 @@ bundle.shortVersionString // Returns 1.2.3
 bundle.bundleVersion // Returns 1 (the build version)
 ```
 
+#### UIView+Responder
+
+Get the `UIViewController` that manages your view.
+
+```swift
+let controller = UIViewController()
+controller.view.respondingController // Returns the controller instance.
+```
+
 #### UICollectionView+Reuse
 
 Register and reuse cells in a type safe way.
