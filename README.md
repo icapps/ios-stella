@@ -12,13 +12,23 @@
 - [Installation](#installation)
 - [Features](#features)
   - [Defaults](#defaults)
-  - [Extensions](#extensions)
   - [Keychain](#keychain)
   - [Localization](#localization)
-- [Author](#author)
+  - [Extensions](#extensions)
+    - [Array+Safe](#arraysafe)
+    - [Bundle+Versionse](#bundleversions)
+    - [UIView+Responder](#uiviewresponder)
+    - [UICollectionView+Reuse](#uicollectionviewreuse)
+    - [UITableView+Reuse](#uitableviewreuse)
+    - [UIView+Constraints](#uiviewconstraints)
+    - [UIView+Nib](#uiviewnib)
+    - [UIViewController+Child](#uiviewcontrollerchild)
+- [Contribute](#contribute)
+  - [How to contribute?](#howtocontribute)
+  - [Contributors](#contributors)
 - [License](#license)
 
-## Installation
+## Installation 💾
 
 Stella is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
 
@@ -71,6 +81,43 @@ print(Defaults[.booleanValue]) // Prints 'true'
 
 Defaults[.dateValue] = NSDate()
 print(Defaults[.dateValue]) // Prints '1996-12-19T16:39:57-08:00'
+```
+
+### Keychain
+
+We have a cleaner way to use the `Keychain`. Define the user defaults by extending the `Keys` class.
+
+```swift
+extension Keys {
+  // Writes a string object to the keychain with the 'stringValue' key.
+  static let stringValue = Key<String?>("stringValue")
+}
+```
+
+You can read/write the from/to the `Keychain` by using the `subscript` on the `Keychain` class.
+
+```swift
+Keychain[.stringValue] = "A string value"
+print(Keychain[.stringValue]) // Prints 'A string value'
+```
+
+In some cases you want to be able to set additional keychain query paramaters on an item.
+
+```swift
+static let noBackupValue = Key<String?>("noBackup", {
+  return [kSecAttrAccessible as String: kSecAttrAccessibleAlwaysThisDeviceOnly]
+}())
+```
+
+### Localization
+
+Localize a key in no time with this handy localization function.
+
+```swift
+let key = "this_is_your_localization_key"
+print(key.localizedString)
+// The debug console will print the localized
+// string found in your .strings file.
 ```
 
 ### Extensions
@@ -184,47 +231,23 @@ rootController.add(childController: controller, to: containerView)
 rootController.remove(childController: controller)
 ```
 
-### Keychain
+## Contrinute
 
-We have a cleaner way to use the `Keychain`. Define the user defaults by extending the `Keys` class.
+### How to contribute ❓
 
-```swift
-extension Keys {
-  // Writes a string object to the keychain with the 'stringValue' key.
-  static let stringValue = Key<String?>("stringValue")
-}
-```
+1. Add a Github issue describing the missing functionality or bug.
+2. Implement the changes according to the `Swiftlint` coding guidelines.
+3. Fully test the added changes.
+4. Send a pull-request.
 
-You can read/write the from/to the `Keychain` by using the `subscript` on the `Keychain` class.
+### Contributors 🤙
 
-```swift
-Keychain[.stringValue] = "A string value"
-print(Keychain[.stringValue]) // Prints 'A string value'
-```
-
-In some cases you want to be able to set additional keychain query paramaters on an item.
-
-```swift
-static let noBackupValue = Key<String?>("noBackup", {
-  return [kSecAttrAccessible as String: kSecAttrAccessibleAlwaysThisDeviceOnly]
-}())
-```
-
-### Localization
-
-Localize a key in no time with this handy localization function.
-
-```swift
-let key = "this_is_your_localization_key"
-print(key.localizedString)
-// The debug console will print the localized
-// string found in your .strings file.
-```
-
-## Author
-
-Jelle Vandebeeck, jelle.vandebeeck@icapps.com
-Hannes Van den Berghe, hannes.vandenberghe@icapps.com
+- Jelle Vandebeeck, [@fousa](https://github.com/fousa)
+- Dylan Gyesbreghs, [@dgyesbreghs](https://github.com/dgyesbreghs)
+- Hans Van Herreweghe, [@herre](https://github.com/herre)
+- Hannes Van den Berghe, [@HannesVDB](https://github.com/HannesVDB)
+- Alain Hufkens, [@hufkens](https://github.com/HannesVDB)
+- Stijn Willems, [@doozMen](https://github.com/doozMen)
 
 ## License
 
