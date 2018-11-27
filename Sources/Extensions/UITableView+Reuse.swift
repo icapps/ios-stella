@@ -26,10 +26,11 @@ extension UITableView {
     /// We dequeue the cell and infer the cell to the correct type. This way we don't have to
     /// force cast every time we try to dequeue a cell.
     ///
-    /// Example: `tableView.dequeueReusableCell(withIdentifier: String(...), for indexPath: IndexPath(...)) as UITableViewCell`
+    /// Example: `tableView.dequeueReusableCell(withIdentifier: String(...),
+    ///                                         for indexPath: IndexPath(...)) as UITableViewCell`
     public func dequeueReusableCell<T: UITableViewCell>(forIndexPath indexPath: IndexPath) -> T {
-        let cell = dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as! T
-        return cell
+        // swiftlint:disable force_cast
+        return dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as! T
     }
     
     /// We dequeue the cell and infer the cell to the correct type. This way we don't have to
@@ -37,8 +38,8 @@ extension UITableView {
     ///
     /// Example: `tableView.dequeueReusableCell(withIdentifier: String(...)) as UITableViewCell`
     public func dequeueReusableCell<T: UITableViewCell>(forIdentifier identifier: String) -> T {
-        let cell = dequeueReusableCell(withIdentifier: identifier) as! T
-        return cell
+        // swiftlint:disable force_cast
+        return dequeueReusableCell(withIdentifier: identifier) as! T
     }
     
     /// We dequeue the header or footer and infer the header or footer to the correct type. This way we don't have to
@@ -46,8 +47,8 @@ extension UITableView {
     ///
     /// Example: `tableView.dequeueReusableHeaderFooterView(withIdentifier: String(...)) as UIView`
     public func dequeueReusableHeaderFooter<T: UIView>(forIdentifier identifier: String) -> T {
-        let cell = dequeueReusableHeaderFooterView(withIdentifier: identifier) as! T
-        return cell
+        // swiftlint:disable force_cast
+        return dequeueReusableHeaderFooterView(withIdentifier: identifier) as! T
     }
     
     /// Get
@@ -57,9 +58,7 @@ extension UITableView {
     ///
     /// Example: `tableView.cellForRow(at indexPath: IndexPath(...)) as UITableViewCell
     public func cellForRow<T: UITableViewCell>(_ indexPath: IndexPath) -> T {
-        let cell = cellForRow(at: indexPath) as! T
-        return cell
+        // swiftlint:disable force_cast
+        return cellForRow(at: indexPath) as! T
     }
 }
-
-

@@ -106,13 +106,13 @@ class UITableViewReuseSpec: QuickSpec {
             }
             
             it("should dequeue the correct header") {
-                let _ = tableView.dequeueReusableHeaderFooter(forIdentifier: MockedTableHeaderView.reuseIdentifier)
+                _ = tableView.dequeueReusableHeaderFooter(forIdentifier: MockedTableHeaderView.reuseIdentifier)
                 expect(tableView.dequeuedHeaderIdentifier) == MockedTableHeaderView.reuseIdentifier
             }
             
             it("should return the correct cell") {
                 let indexPath = IndexPath(row: 0, section: 1)
-                let _ = tableView.cellForRow(indexPath)
+                _ = tableView.cellForRow(indexPath)
                 
                 expect(tableView.cellIndexPath).notTo(beNil())
             }

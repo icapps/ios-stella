@@ -21,8 +21,10 @@ extension UICollectionView {
     /// We dequeue the reusable view and infer the reusable view to the correct type. This way we
     /// don't have to force cast every time we try to dequeue a reusable view.
     ///
-    /// Example: `collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: IndexPath(...)) as UICollectionReusableView`
-    public func dequeueReusableSupplementaryView<T: UICollectionReusableView>(ofKind: String, for indexPath: IndexPath) -> T {
+    /// Example: `collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+    ///                                                           for: IndexPath(...)) as UICollectionReusableView`
+    public func dequeueReusableSupplementaryView<T: UICollectionReusableView>(ofKind: String,
+                                                                              for indexPath: IndexPath) -> T {
         // swiftlint:disable force_cast
         return dequeueReusableSupplementaryView(ofKind: ofKind,
                                                 withReuseIdentifier: T.reuseIdentifier,
@@ -41,4 +43,3 @@ extension UICollectionView {
                  withReuseIdentifier: classType.reuseIdentifier)
     }
 }
-

@@ -13,32 +13,32 @@ extension UIViewController {
     /// controller's view is added as a subview to the given `UIView`.
     public func add(childController controller: UIViewController, to view: UIView) {
         // Notify Child View Controller
-        controller.willMove(toParentViewController: self)
+        controller.willMove(toParent: self)
         
         // Add Child View as Subview
         view.addSubview(controller.view)
         
         // Add Child View Controller
-        addChildViewController(controller)
+        addChild(controller)
         
         // Configure Child View
         controller.view.constraintEdges(to: view)
         
         // Notify Child View Controller
-        controller.didMove(toParentViewController: self)
+        controller.didMove(toParent: self)
     }
     
     /// Remove the given controller as a child from the current controller. It's view will
     /// also be removed as a subview.
     public func remove(childController controller: UIViewController) {
         // Notify Child View Controller
-        controller.willMove(toParentViewController: nil)
+        controller.willMove(toParent: nil)
         
         // Remove Child View From Superview
         controller.viewIfLoaded?.removeFromSuperview()
         
         // Notify Child View Controller
-        controller.removeFromParentViewController()
+        controller.removeFromParent()
     }
     
 }

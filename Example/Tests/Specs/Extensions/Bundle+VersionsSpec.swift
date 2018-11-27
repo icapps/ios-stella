@@ -13,7 +13,7 @@ import Nimble
 
 private class MockedBundle: Bundle {
     
-    override var infoDictionary: [String : Any]? {
+    override var infoDictionary: [String: Any]? {
         return [
             "CFBundleShortVersionString": "CFBundleShortVersionStringValue",
             "CFBundleVersion": "CFBundleVersionValue"

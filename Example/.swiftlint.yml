@@ -1,0 +1,7 @@
+included:
+  - Applications
+  - Tests
+  - ../Sources
+
+disabled_rules:
+  - trailing_whitespace

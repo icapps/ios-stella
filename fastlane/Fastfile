@@ -1,5 +1,8 @@
 # This is the minimum Fastlane version to use.
-fastlane_version '2.80.0'
+fastlane_version '2.108.0'
+
+# Don't generate README files.
+skip_docs
 
 skip_docs
 
@@ -15,17 +18,14 @@ setup_travis
 
 lane :pr do
   # Check the code formatting.
-  # swiftlint strict: true
+  swiftlint strict: true,
+            path: "Example",
+            executable: 'Example/Pods/Swiftlint/swiftlint'
+
+  # Validate the QuickSpec to not use `fit`, `fcontext`, or `fdescribe`.
+  validate_specs directories: ['SwoopTests']
 
   # Run the tests.
-  execute_tests
-end
-
-#####################
-### PRIVATE LANES ###
-#####################
-
-private_lane :execute_tests do
   scan(
     workspace:              'Example/Stella.xcworkspace',
     scheme:                 'Tests',

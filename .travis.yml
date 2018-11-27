@@ -1,16 +1,10 @@
 language: objective-c
 cache:
    - bundler
-   - cocoapods
-osx_image: xcode9.2
-
-before_install:
-    - gem install cocoapods -v '1.4.0'
-    - pod install --project-directory=Example
+osx_image: xcode10.1
 
 install:
     - bundle install
-
 script:
     - fastlane pr
 

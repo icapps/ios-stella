@@ -38,20 +38,22 @@ extension DefaultsKeys {
 }
 
 class DefaultsSpec: QuickSpec {
+    // swiftlint:disable function_body_length
     override func spec() {
-        
         describe("defaults") {
             context("enumType value + String") {
                 it("should be able to write to the defaults") {
                     Defaults[.enumStringTypeValue] = .type1
-                    let enumTypeValue = SomeStringEnum(rawValue: UserDefaults.standard.string(forKey: "enumStringTypeValue") ?? "")
+                    let value = UserDefaults.standard.string(forKey: "enumStringTypeValue") ?? ""
+                    let enumTypeValue = SomeStringEnum(rawValue: value)
                     expect(enumTypeValue).to(equal(.type1))
                 }
                 
                 it("should be able to clear the defaults") {
                     Defaults[.enumStringTypeValue] = .type1
                     Defaults[.enumStringTypeValue] = nil
-                    let stringValue = SomeStringEnum(rawValue: UserDefaults.standard.string(forKey: "enumStringTypeValue") ?? "")
+                    let value = UserDefaults.standard.string(forKey: "enumStringTypeValue") ?? ""
+                    let stringValue = SomeStringEnum(rawValue: value)
                     expect(stringValue).to(beNil())
                 }
                 
@@ -180,6 +182,7 @@ class DefaultsSpec: QuickSpec {
                 it("should be able to write to the defaults") {
                     let date = Date(timeIntervalSince1970: 200)
                     Defaults[.dateValue] = date
+                    // swiftlint:disable force_cast
                     let dateValue = UserDefaults.standard.object(forKey: "dateValue") as! Date
                     expect(dateValue).to(equal(date))
                 }
@@ -195,6 +198,7 @@ class DefaultsSpec: QuickSpec {
                 it("should be able to write to the defaults") {
                     let strings = ["string1", "string2", "string3"]
                     Defaults[.stringsValue] = strings
+                    // swiftlint:disable force_cast
                     let stringArrayValue = UserDefaults.standard.object(forKey: "stringsValue") as! [String]
                     expect(stringArrayValue).to(equal(strings))
                 }
