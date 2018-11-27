@@ -33,9 +33,18 @@ class UIViewControllerChildSpec: QuickSpec {
                 expect(parentController.view) == snapshot()
             }
             
-            it("should constraont the view to the parent controller's view") {
+            it("should constraint the view to the parent controller's view") {
                 let insets: UIEdgeInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom: 30.0, right: 40.0)
                 parentController.add(childController: controller, to: parentController.view, insets: insets)
+                
+                expect(parentController.children.count) == 1
+                expect(parentController.view.subviews.count) == 1
+                expect(parentController.view) == snapshot()
+            }
+            
+            it("should constraint the view to the parent controller's view with safe areao") {
+                let insets: UIEdgeInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom: 30.0, right: 40.0)
+                parentController.add(childController: controller, to: parentController.view, safeAreaInsets: insets)
                 
                 expect(parentController.children.count) == 1
                 expect(parentController.view.subviews.count) == 1

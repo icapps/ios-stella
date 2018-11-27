@@ -30,6 +30,20 @@ extension UIView {
         leftAnchor.constraint(equalTo: view.leftAnchor, constant: insets.left).isActive = true
     }
     
+    /// Constrain this view to the given view's safe areas.
+    ///
+    /// - parameter view: The view to constraint it's edges to.
+    /// - parameter safeAreaInsets: The insets that give a some padding if needed.
+    @available(iOS 11.0, *)
+    public func constraint(to view: UIView, safeAreaInsets insets: UIEdgeInsets) {
+        translatesAutoresizingMaskIntoConstraints = false
+        topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: insets.top).isActive = true
+        rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -insets.right).isActive = true
+        bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
+                                constant: -insets.bottom).isActive = true
+        leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: insets.left).isActive = true
+    }
+    
     // MARK: - Deprecated
     
     /// Constrain this view to the given view.

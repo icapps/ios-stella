@@ -44,6 +44,12 @@ class UIViewConstraintsSpec: QuickSpec {
                     expect(view) == snapshot()
                 }
                 
+                it("should constraint a subview to the given view's safe area with the given edge insets") {
+                    let insets: UIEdgeInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom: 30.0, right: 40.0)
+                    subview.constraint(to: view, safeAreaInsets: insets)
+                    expect(view) == snapshot()
+                }
+                
                 it("should constraint a subview to it's superview") {
                     subview.constraintToSuperview()
                     expect(view) == snapshot()
