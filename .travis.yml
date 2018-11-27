@@ -1,12 +1,8 @@
 language: objective-c
 cache:
    - bundler
-   - cocoapods
 osx_image: xcode10.1
 
-before_install:
-    - gem install cocoapods -v '1.5.3'
-    - pod install --project-directory=Example
 install:
     - bundle install
 script:
