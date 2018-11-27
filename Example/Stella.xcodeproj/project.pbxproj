@@ -22,6 +22,8 @@
 		9D7041BE2032DA2100E8CF75 /* UIView+ConstraintsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7041BD2032DA2100E8CF75 /* UIView+ConstraintsSpec.swift */; };
 		9D8A2D9720A1A7D300AD8E0B /* UIView+ResponderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A2D9620A1A7D300AD8E0B /* UIView+ResponderSpec.swift */; };
 		9D914044203205CC00BEF2E6 /* UICollectionView+ReuseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D914043203205CC00BEF2E6 /* UICollectionView+ReuseSpec.swift */; };
+		9DB3873D21ADF58D00B93D6B /* Rocket.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3873C21ADF58D00B93D6B /* Rocket.png */; };
+		9DCEBC5321ADF3320031AC75 /* OptionalsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEBC5221ADF3320031AC75 /* OptionalsSpec.swift */; };
 		A05E963EB0037C17DFB475DD /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE6F213130F34C4312BA789 /* Pods_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		9D7041BD2032DA2100E8CF75 /* UIView+ConstraintsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstraintsSpec.swift"; sourceTree = "<group>"; };
 		9D8A2D9620A1A7D300AD8E0B /* UIView+ResponderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ResponderSpec.swift"; sourceTree = "<group>"; };
 		9D914043203205CC00BEF2E6 /* UICollectionView+ReuseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ReuseSpec.swift"; sourceTree = "<group>"; };
+		9DB3873C21ADF58D00B93D6B /* Rocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocket.png; sourceTree = "<group>"; };
+		9DCEBC5221ADF3320031AC75 /* OptionalsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalsSpec.swift; sourceTree = "<group>"; };
 		AFA5E717118CEC1075859039 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CB6DD00D7AC3840D5D017C11 /* Pods-Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Application/Pods-Application.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACEA1AFB9204008FA782 /* Info.plist */,
+				9DB3873E21ADF58F00B93D6B /* Resources */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			children = (
 				9D6524092030D86E0044395F /* Array+SafeSpec.swift */,
 				9D652415203202620044395F /* Bundle+VersionsSpec.swift */,
+				9DCEBC5221ADF3320031AC75 /* OptionalsSpec.swift */,
 				9D914043203205CC00BEF2E6 /* UICollectionView+ReuseSpec.swift */,
 				84D147BE20540AC5005DBC6B /* UITableView+ReuseSpec.swift */,
 				9D7041BD2032DA2100E8CF75 /* UIView+ConstraintsSpec.swift */,
@@ -186,6 +192,14 @@
 				9D1C42C32032DF5A0072E6D7 /* UIViewController+ChildSpec.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9DB3873E21ADF58F00B93D6B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9DB3873C21ADF58D00B93D6B /* Rocket.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		9DCEBC5021ADE92B0031AC75 /* Supporting files */ = {
@@ -306,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DB3873D21ADF58D00B93D6B /* Rocket.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +443,7 @@
 			files = (
 				62690A0A1DA52FDF005680EB /* KeychainSpec.swift in Sources */,
 				9D914044203205CC00BEF2E6 /* UICollectionView+ReuseSpec.swift in Sources */,
+				9DCEBC5321ADF3320031AC75 /* OptionalsSpec.swift in Sources */,
 				9D652416203202620044395F /* Bundle+VersionsSpec.swift in Sources */,
 				9D1C42C42032DF5A0072E6D7 /* UIViewController+ChildSpec.swift in Sources */,
 				629CA9DC1D071666008E9648 /* LocalizationSpec.swift in Sources */,

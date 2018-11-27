@@ -18,7 +18,6 @@ extension Keys {
 
 class KeychainSpec: QuickSpec {
     override func spec() {
-        
         describe("keychain") {
             context("string value") {
                 it("should be able to write to the keychain") {
