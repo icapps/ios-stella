@@ -8,7 +8,6 @@
 import UIKit
 
 extension UICollectionView {
-    
     /// We dequeue the cell and infer the cell to the correct type. This way we don't have to
     /// force cast every time we try to dequeue a cell.
     ///

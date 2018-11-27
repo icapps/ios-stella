@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIViewController {
-    
     /// Add a given controller to the current controller as a child view controller. The given
     /// controller's view is added as a subview to the given `UIView`.
     public func add(childController controller: UIViewController, to view: UIView) {
@@ -40,5 +39,4 @@ extension UIViewController {
         // Notify Child View Controller
         controller.removeFromParent()
     }
-    
 }

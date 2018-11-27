@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIView {
-    
     /// Return the name of the view's class as it's reuse identifier.
     public class var reuseIdentifier: String {
         return String(describing: self)
@@ -23,5 +22,4 @@ extension UIView {
     public class var nib: UINib {
         return UINib(nibName: nibName, bundle: Bundle(for: self))
     }
-    
 }
