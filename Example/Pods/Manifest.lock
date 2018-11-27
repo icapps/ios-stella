@@ -21,7 +21,7 @@ DEPENDENCIES:
   - Nimble-Snapshots (~> 6.9)
   - Quick (~> 1.3)
   - Stella (from `../`)
-  - SwiftLint (~> 0.27)
+  - SwiftLint (~> 0.28)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -45,6 +45,6 @@ SPEC CHECKSUMS:
   Stella: 151e53fd49a3e29b6539ee2cf46b951f67e86440
   SwiftLint: f1629ae733b64e9cad20052de01d1debd5b640e7
 
-PODFILE CHECKSUM: 444dfc30e46ba8e127914c277481dcb98ec7d6a5
+PODFILE CHECKSUM: 5016107129a503a21ae7726caf6ae0582831f7ed
 
 COCOAPODS: 1.5.3

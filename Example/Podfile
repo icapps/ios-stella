@@ -19,7 +19,7 @@ target 'Application' do
     pod 'Keychain', '~> 0.3'
 
     # Linter
-    pod 'SwiftLint', '~> 0.27'
+    pod 'SwiftLint', '~> 0.28'
 
     # The test frameworks
     pod 'Quick',            '~> 1.3'
