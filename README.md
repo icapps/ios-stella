@@ -200,8 +200,14 @@ tableView.cellForRow(at: indexPath) as CustomTableViewCell
 
 Constraint a subview quickly to the bounds of the superview.
 
+_Optionally you can add insets that set some spacing inside the view._
+
 ```swift
-view.constraintEdges(to: superview)
+view.constraint(to: superview)
+view.constraint(to: superview, insets: .zero)
+
+// Same as above but take safe area's into account.
+view.constraint(to: superview, safeAreaInsets: .zero)
 ```
 
 #### UIView+Nib
@@ -223,9 +229,15 @@ UIView.nib
 
 Easily add and remove a controller as a childViewController.
 
+_Optionally you can add insets that set some spacing inside the container view._
+
 ```swift
 // Add the controller to the container view, pin it and handle the containment correctly.
 rootController.add(childController: controller, to: containerView)
+rootController.add(childController: controller, to: containerView, insets: .zero)
+
+// Add the same child controller as above, but take the safe area's into account.
+rootController.add(childController: controller, to: containerView, safeAreaInsets: .zero)
 
 // Remove the controller and handle the containtment correctly.
 rootController.remove(childController: controller)
