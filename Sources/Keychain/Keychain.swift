@@ -6,6 +6,7 @@
 //
 //
 
+// swiftlint:disable identifier_name
 /// `Keychain` is a wrapper for the Keychain shared instance.
 public let Keychain = KeychainHandler.shared
 
@@ -20,9 +21,9 @@ public class KeychainHandler {
     
     fileprivate func data(for key: String, additionalQuery: [String: AnyObject]?) -> Data? {
         var query: [String: AnyObject] = [
-            kSecClass as String      : kSecClassGenericPassword as NSString,
-            kSecMatchLimit as String : kSecMatchLimitOne,
-            kSecReturnData as String : kCFBooleanTrue,
+            kSecClass as String: kSecClassGenericPassword as NSString,
+            kSecMatchLimit as String: kSecMatchLimitOne,
+            kSecReturnData as String: kCFBooleanTrue,
             kSecAttrService as String: (Bundle.main.bundleIdentifier ?? "") as AnyObject,
             kSecAttrAccount as String: key as AnyObject
         ]
@@ -38,9 +39,9 @@ public class KeychainHandler {
     
     fileprivate func set(_ data: Data?, for key: String, additionalQuery: [String: AnyObject]?) -> Bool {
         var query: [String: AnyObject] = [
-            kSecClass as String      : (kSecClassGenericPassword as NSString),
+            kSecClass as String: (kSecClassGenericPassword as NSString),
             kSecAttrAccount as String: key as AnyObject,
-            kSecAttrService as String: (Bundle.main.bundleIdentifier ?? "") as AnyObject,
+            kSecAttrService as String: (Bundle.main.bundleIdentifier ?? "") as AnyObject
         ]
         if let accessGroupName = self.accessGroupName {
             query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
@@ -110,7 +111,8 @@ open class Key<ValueType>: Keys {
 
 public extension KeychainHandler {
     
-    /// Get the keychain String value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    /// Get the keychain String value for the given `DefaultsKey`. The preferred way to do this is to pass the static
+    /// key variable defined in the `DefaultsKeys` extension.
     ///
     /// ```
     /// static let string = Key<String?>("the string defaults key")
@@ -129,7 +131,7 @@ public extension KeychainHandler {
         }
         set {
             let value = newValue?.data(using: .utf8, allowLossyConversion: false)
-            let _ = set(value, for: key.key, additionalQuery: key.additionalQuery)
+            _ = set(value, for: key.key, additionalQuery: key.additionalQuery)
         }
     }
 }

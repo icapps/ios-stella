@@ -21,7 +21,8 @@ private class MockedCollectionView: UICollectionView {
     private(set) var dequeuedIdentifier: String?
     private(set) var dequeuedIndexPath: IndexPath?
     
-    override func dequeueReusableCell(withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionViewCell {
+    override func dequeueReusableCell(withReuseIdentifier identifier: String,
+                                      for indexPath: IndexPath) -> UICollectionViewCell {
         dequeuedIdentifier = identifier
         dequeuedIndexPath = indexPath
         return MockedCollectionViewCell()
@@ -31,7 +32,9 @@ private class MockedCollectionView: UICollectionView {
     private(set) var dequeuedSupplementaryKind: String?
     private(set) var dequeuedSupplementaryIndexPath: IndexPath?
     
-    override func dequeueReusableSupplementaryView(ofKind elementKind: String, withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionReusableView {
+    override func dequeueReusableSupplementaryView(ofKind elementKind: String,
+                                                   withReuseIdentifier identifier: String,
+                                                   for indexPath: IndexPath) -> UICollectionReusableView {
         dequeuedSupplementaryKind = elementKind
         dequeuedSupplementaryIndexPath = indexPath
         dequeuedSupplementaryIdentifier = identifier
@@ -50,7 +53,8 @@ private class MockedCollectionView: UICollectionView {
     private(set) var registeredSupplementaryKind: String?
     private(set) var registeredSupplementaryIdentifier: String?
 
-    override func register(_ nib: UINib?, forSupplementaryViewOfKind kind: String, withReuseIdentifier identifier: String) {
+    override func register(_ nib: UINib?, forSupplementaryViewOfKind kind: String,
+                           withReuseIdentifier identifier: String) {
         registeredSupplementaryNib = nib
         registeredSupplementaryKind = kind
         registeredSupplementaryIdentifier = identifier
@@ -79,7 +83,8 @@ class UICollectionViewReuseSpec: QuickSpec {
             
             it("should deque the correct supplementary view") {
                 let indexPath = IndexPath(item: 0, section: 0)
-                _ = collectionView.dequeueReusableSupplementaryView(ofKind: "Some", for: indexPath) as MockedCollectionReusableView
+                _ = collectionView.dequeueReusableSupplementaryView(ofKind: "Some",
+                                                                    for: indexPath) as MockedCollectionReusableView
                 
                 expect(collectionView.dequeuedSupplementaryIdentifier) == MockedCollectionReusableView.reuseIdentifier
                 expect(collectionView.dequeuedSupplementaryIndexPath) == indexPath

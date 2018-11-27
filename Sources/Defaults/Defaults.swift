@@ -6,6 +6,7 @@
 //
 //
 
+// swiftlint:disable identifier_name
 /// `Defaults` is a wrapper for the UserDefaults standard defaults instance.
 public let Defaults = UserDefaults.standard
 
@@ -34,7 +35,8 @@ open class DefaultsKey<ValueType>: DefaultsKeys {
 
 public extension UserDefaults {
     
-    /// Get the defaults Enum (type String) value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    /// Get the defaults Enum (type String) value for the given `DefaultsKey`. The preferred way to do this is to pass
+    /// the static key variable defined in the `DefaultsKeys` extension.
     ///
     /// ```
     /// static let enumType = DefaultsKey<SomeEnumStringType?>("the enumType's defaults key")
@@ -49,7 +51,8 @@ public extension UserDefaults {
         }
     }
     
-    /// Get the defaults Enum (type Int) value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    /// Get the defaults Enum (type Int) value for the given `DefaultsKey`. The preferred way to do this is to pass
+    /// the static key variable defined in the `DefaultsKeys` extension.
     ///
     /// ```
     /// static let enumType = DefaultsKey<SomeEnumIntType?>("the enumType's defaults key")
@@ -63,7 +66,8 @@ public extension UserDefaults {
         }
     }
     
-    /// Get the defaults String value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    /// Get the defaults String value for the given `DefaultsKey`. The preferred way to do this is to pass the static
+    /// key variable defined in the `DefaultsKeys` extension.
     ///
     /// ```
     /// static let string = DefaultsKey<String?>("the string defaults key")
@@ -77,7 +81,8 @@ public extension UserDefaults {
         }
     }
     
-    /// Get the defaults Int value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    /// Get the defaults Int value for the given `DefaultsKey`. The preferred way to do this is to pass the static
+    /// key variable defined in the `DefaultsKeys` extension.
     ///
     /// ```
     /// static let integer = DefaultsKey<Int?>("the integer defaults key")
@@ -95,7 +100,8 @@ public extension UserDefaults {
         }
     }
     
-    /// Get the defaults Float value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    /// Get the defaults Float value for the given `DefaultsKey`. The preferred way to do this is to pass the static
+    /// key variable defined in the `DefaultsKeys` extension.
     ///
     /// ```
     /// static let float = DefaultsKey<Float?>("the float defaults key")
@@ -113,7 +119,8 @@ public extension UserDefaults {
         }
     }
     
-    /// Get the defaults Double value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    /// Get the defaults Double value for the given `DefaultsKey`. The preferred way to do this is to pass the static
+    /// key variable defined in the `DefaultsKeys` extension.
     ///
     /// ```
     /// static let double = DefaultsKey<Double?>("the double defaults key")
@@ -131,7 +138,8 @@ public extension UserDefaults {
         }
     }
     
-    /// Get the defaults Bool value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    /// Get the defaults Bool value for the given `DefaultsKey`. The preferred way to do this is to pass the static
+    /// key variable defined in the `DefaultsKeys` extension.
     ///
     /// ```
     /// static let boolean = DefaultsKey<Bool?>("the boolean defaults key")
@@ -145,7 +153,8 @@ public extension UserDefaults {
         }
     }
     
-    /// Get the defaults NSDate value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    /// Get the defaults NSDate value for the given `DefaultsKey`. The preferred way to do this is to pass the static
+    /// key variable defined in the `DefaultsKeys` extension.
     ///
     /// ```
     /// static let date = DefaultsKey<NSDate?>("the date defaults key")
@@ -159,7 +168,8 @@ public extension UserDefaults {
         }
     }
     
-    /// Get the defaults [String] value for the given `DefaultsKey`. The preferred way to do this is to pass the static key variable defined in the `DefaultsKeys` extension.
+    /// Get the defaults [String] value for the given `DefaultsKey`. The preferred way to do this is to pass the static
+    /// key variable defined in the `DefaultsKeys` extension.
     ///
     /// ```
     /// static let strings = DefaultsKey<[String]?>("the strings defaults key")
