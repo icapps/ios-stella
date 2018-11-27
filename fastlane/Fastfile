@@ -19,7 +19,8 @@ setup_travis
 lane :pr do
   # Check the code formatting.
   swiftlint strict: true,
-            executable: 'Pods/Swiftlint/swiftlint'
+            path: "Example",
+            executable: 'Example/Pods/Swiftlint/swiftlint'
 
   # Validate the QuickSpec to not use `fit`, `fcontext`, or `fdescribe`.
   validate_specs directories: ['SwoopTests']
