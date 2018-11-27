@@ -167,9 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				9D6523F32030AF0B0044395F /* AppDelegate.swift */,
-				9D6523FA2030AF0B0044395F /* Assets.xcassets */,
-				9D6523FC2030AF0B0044395F /* LaunchScreen.storyboard */,
-				9D6523FF2030AF0B0044395F /* Info.plist */,
+				9DCEBC5121ADE9330031AC75 /* UI */,
+				9DCEBC5021ADE92B0031AC75 /* Supporting files */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -187,6 +186,23 @@
 				9D1C42C32032DF5A0072E6D7 /* UIViewController+ChildSpec.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9DCEBC5021ADE92B0031AC75 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				9D6523FF2030AF0B0044395F /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		9DCEBC5121ADE9330031AC75 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9D6523FA2030AF0B0044395F /* Assets.xcassets */,
+				9D6523FC2030AF0B0044395F /* LaunchScreen.storyboard */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		AE63380C362C0E4FDC8A4DC5 /* Pods */ = {
@@ -617,7 +633,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Application/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Application/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icapps.stella.Application;
@@ -644,7 +660,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Application/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Application/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icapps.stella.Application;
