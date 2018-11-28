@@ -34,30 +34,30 @@ class UIViewConstraintsSpec: QuickSpec {
                 }
                 
                 it("should constraint a subview to the entire given view") {
-                    subview.constraint(to: view)
+                    subview.constrain(to: view)
                     expect(view) == snapshot()
                 }
                 
                 it("should constraint a subview to the given view with the given edge insets") {
                     let insets: UIEdgeInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom: 30.0, right: 40.0)
-                    subview.constraint(to: view, insets: insets)
+                    subview.constrain(to: view, insets: insets)
                     expect(view) == snapshot()
                 }
                 
                 it("should constraint a subview to the given view's safe area with the given edge insets") {
                     let insets: UIEdgeInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom: 30.0, right: 40.0)
-                    subview.constraint(to: view, safeAreaInsets: insets)
+                    subview.constrain(to: view, safeAreaInsets: insets)
                     expect(view) == snapshot()
                 }
                 
                 it("should constraint a subview to it's superview") {
-                    subview.constraintToSuperview()
+                    subview.constrainToSuperview()
                     expect(view) == snapshot()
                 }
                 
                 it("should constraint a subview to it's superview with the given edge insets") {
                     let insets: UIEdgeInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom: 30.0, right: 40.0)
-                    subview.constraintToSuperview(insets: insets)
+                    subview.constrainToSuperview(insets: insets)
                     expect(view) == snapshot()
                 }
             }

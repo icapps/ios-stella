@@ -11,17 +11,17 @@ extension UIView {
     /// Constrain this view to the it's parent view.
     ///
     /// - parameter insets: The insets that give a some padding if needed.
-    public func constraintToSuperview(insets: UIEdgeInsets = .zero) {
+    public func constrainToSuperview(insets: UIEdgeInsets = .zero) {
         // A superview should be set before setting constraints.
         guard let superview = superview else { return }
-        constraintEdges(to: superview, insets: insets)
+        constrain(to: superview, insets: insets)
     }
     
     /// Constrain this view to the given view.
     ///
     /// - parameter view: The view to constraint it's edges to.
     /// - parameter insets: The insets that give a some padding if needed.
-    public func constraint(to view: UIView, insets: UIEdgeInsets = .zero) {
+    public func constrain(to view: UIView, insets: UIEdgeInsets = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
         
         topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top).isActive = true
@@ -35,7 +35,7 @@ extension UIView {
     /// - parameter view: The view to constraint it's edges to.
     /// - parameter safeAreaInsets: The insets that give a some padding if needed.
     @available(iOS 11.0, *)
-    public func constraint(to view: UIView, safeAreaInsets insets: UIEdgeInsets) {
+    public func constrain(to view: UIView, safeAreaInsets insets: UIEdgeInsets) {
         translatesAutoresizingMaskIntoConstraints = false
         topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: insets.top).isActive = true
         rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -insets.right).isActive = true
@@ -52,6 +52,6 @@ extension UIView {
     /// - parameter insets: The insets that give a some padding if needed.
     @available(*, deprecated, message: "Use constraint(to:insets) instead")
     public func constraintEdges(to view: UIView, insets: UIEdgeInsets = .zero) {
-        constraint(to: view, insets: insets)
+        constrain(to: view, insets: insets)
     }
 }

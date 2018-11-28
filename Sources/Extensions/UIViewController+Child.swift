@@ -22,7 +22,7 @@ extension UIViewController {
         // Add Child View Controller
         addChild(controller)
         // Configure Child View inside the container view.
-        controller.view.constraint(to: view, insets: insets)
+        controller.view.constrain(to: view, insets: insets)
         // Notify Child View Controller
         controller.didMove(toParent: self)
     }
@@ -44,7 +44,7 @@ extension UIViewController {
         // Add Child View Controller
         addChild(controller)
         // Configure Child View inside the container view.
-        controller.view.constraint(to: view, safeAreaInsets: insets)
+        controller.view.constrain(to: view, safeAreaInsets: insets)
         // Notify Child View Controller
         controller.didMove(toParent: self)
     }
