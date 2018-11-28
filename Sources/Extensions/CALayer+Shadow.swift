@@ -20,7 +20,6 @@ extension CALayer {
     //
     /// Example: `view.layer.applyShadow()
     ///
-    
     // swiftlint:disable identifier_name
     public func applyShadow(color: UIColor = .black,
                             opacity: Float = 0.1,
@@ -50,5 +49,4 @@ extension CALayer {
         shadowRadius = 0
         shadowPath = nil
     }
-    
 }

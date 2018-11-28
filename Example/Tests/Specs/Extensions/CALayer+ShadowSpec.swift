@@ -14,13 +14,10 @@ import Nimble_Snapshots
 class CALayerShadowSpec: QuickSpec {
     
     override func spec() {
-        
         describe("CALayer") {
-            
             var view: UIView!
             var subView: UIView!
             let frame = CGRect(x: 0, y: 0, width: 250, height: 250)
-            
             beforeEach {
                 view = UIView(frame: frame)
                 view.backgroundColor = UIColor.white
@@ -32,7 +29,6 @@ class CALayerShadowSpec: QuickSpec {
             }
             
             context("apply shadow") {
-                
                 beforeEach {
                     subView.layer.applyShadow()
                 }
@@ -42,7 +38,6 @@ class CALayerShadowSpec: QuickSpec {
                 }
                 
                 context("remove shadow") {
-                    
                     beforeEach {
                         subView.layer.removeShadow()
                     }

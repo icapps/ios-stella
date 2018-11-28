@@ -156,6 +156,13 @@ let customShadowView = UIView()
 customShadowView.layer.applyShadow(color: .red, opacity: 0.2, x: 0, y: 4, blur: 10, spread: 0)
 ```
 
+Quickly remove a shadow from a certain view
+
+```swift
+let view = UIView()
+view.layer.removeShadow()
+```
+
 #### UIView+Responder
 
 Get the `UIViewController` that manages your view.
