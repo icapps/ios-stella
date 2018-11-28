@@ -34,7 +34,7 @@ class CALayerShadowSpec: QuickSpec {
             context("apply shadow") {
                 
                 beforeEach {
-                    subView.layer.applySketchShadow()
+                    subView.layer.applyShadow()
                 }
                 
                 it("should show the shadow") {
@@ -44,7 +44,7 @@ class CALayerShadowSpec: QuickSpec {
                 context("remove shadow") {
                     
                     beforeEach {
-                        subView.layer.removeSketchShadow()
+                        subView.layer.removeShadow()
                     }
                     
                     it("should not have a shadow") {
