@@ -23,11 +23,11 @@ extension CALayer {
     
     // swiftlint:disable identifier_name
     public func applyShadow(color: UIColor = .black,
-                                  opacity: Float = 0.1,
-                                  x: CGFloat = 0,
-                                  y: CGFloat = 2,
-                                  blur: CGFloat = 15,
-                                  spread: CGFloat = 0) {
+                            opacity: Float = 0.1,
+                            x: CGFloat = 0,
+                            y: CGFloat = 2,
+                            blur: CGFloat = 15,
+                            spread: CGFloat = 0) {
         shadowColor = color.cgColor
         shadowOpacity = opacity
         shadowOffset = CGSize(width: x, height: y)
