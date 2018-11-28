@@ -23,6 +23,7 @@
     - [UIView+Constraints](#uiviewconstraints)
     - [UIView+Nib](#uiviewnib)
     - [UIViewController+Child](#uiviewcontrollerchild)
+    - [Optionals](#optionals)
 - [Contribute](#contribute)
   - [How to contribute?](#howtocontribute)
   - [Contributors](#contributors)
@@ -241,6 +242,15 @@ rootController.add(childController: controller, to: containerView, safeAreaInset
 
 // Remove the controller and handle the containtment correctly.
 rootController.remove(childController: controller)
+```
+
+#### Optionals
+
+Added soms easy to used optional intializers.
+
+```swift
+URL(string: nil)
+UIImage(data: nil)
 ```
 
 ## Contribute
