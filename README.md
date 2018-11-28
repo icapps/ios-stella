@@ -237,8 +237,9 @@ rootController.remove(childController: controller)
 
 1. Add a Github issue describing the missing functionality or bug.
 2. Implement the changes according to the `Swiftlint` coding guidelines.
-3. Fully test the added changes.
-4. Send a pull-request.
+3. Make sure your changes don't break the current version. (`deprecate` is needed)
+4. Fully test the added changes.
+5. Send a pull-request.
 
 ### Contributors 🤙
 
