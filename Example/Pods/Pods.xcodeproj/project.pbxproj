@@ -177,7 +177,8 @@
 		000000001DB0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000001DA0 /* QuartzCore.framework */; };
 		000000001E90 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000001E80 /* FBSnapshotTestCase.framework */; };
 		000000001ED0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000001EC0 /* Nimble.framework */; };
-		84C4E50321AE861A006643C4 /* UIStackView+Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4E50221AE861A006643C4 /* UIStackView+Remove.swift */; };
+		844D740821AEC5070094848F /* UIStackView+Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4E50221AE861A006643C4 /* UIStackView+Remove.swift */; };
+		844D740921AEC50A0094848F /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D740621AEC4F50094848F /* CALayer+Shadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -459,6 +460,7 @@
 		000000001DA0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		000000001E80 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		000000001EC0 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		844D740621AEC4F50094848F /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
 		84C4E50221AE861A006643C4 /* UIStackView+Remove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Remove.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -787,13 +789,14 @@
 			children = (
 				000000000150 /* Array+Safe.swift */,
 				000000000160 /* Bundle+Versions.swift */,
+				844D740621AEC4F50094848F /* CALayer+Shadow.swift */,
 				000000000170 /* UICollectionView+Reuse.swift */,
+				84C4E50221AE861A006643C4 /* UIStackView+Remove.swift */,
 				000000000180 /* UITableView+Reuse.swift */,
 				000000000190 /* UIView+Constraints.swift */,
 				0000000001A0 /* UIView+Nib.swift */,
 				0000000001B0 /* UIView+Responder.swift */,
 				0000000001C0 /* UIViewController+Child.swift */,
-				84C4E50221AE861A006643C4 /* UIStackView+Remove.swift */,
 			);
 			name = Extensions;
 			path = Sources/Extensions;
@@ -1482,6 +1485,7 @@
 				000000001720 /* Array+Safe.swift in Sources */,
 				000000001730 /* Bundle+Versions.swift in Sources */,
 				000000001710 /* Defaults.swift in Sources */,
+				844D740921AEC50A0094848F /* CALayer+Shadow.swift in Sources */,
 				0000000017A0 /* Keychain.swift in Sources */,
 				0000000017B0 /* Localization.swift in Sources */,
 				000000001840 /* Stella-dummy.m in Sources */,
@@ -1491,6 +1495,7 @@
 				000000001770 /* UIView+Nib.swift in Sources */,
 				000000001780 /* UIView+Responder.swift in Sources */,
 				000000001790 /* UIViewController+Child.swift in Sources */,
+				844D740821AEC5070094848F /* UIStackView+Remove.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1505,7 +1510,6 @@
 				0000000019B0 /* SwiftSupport.swift in Sources */,
 				0000000018F0 /* UIImage+Compare.m in Sources */,
 				000000001900 /* UIImage+Diff.m in Sources */,
-				84C4E50321AE861A006643C4 /* UIStackView+Remove.swift in Sources */,
 				000000001910 /* UIImage+Snapshot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

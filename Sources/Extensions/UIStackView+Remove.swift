@@ -10,7 +10,7 @@ import UIKit
 @available(iOS 9.0, *)
 extension UIStackView {
     
-    //MARK: - Remove
+    // MARK: - Remove
     
     /// Removes all the arranged subviews of the UIStackView
     public func removeAll() {
