@@ -9,7 +9,7 @@ import UIKit
 
 extension UITableView {
     
-    /// Register
+    // MARK: - Register
     
     /// Register a cell class with the same name as a reusable cell.
     public func register<T: UITableViewCell>(class classType: T.Type) {
@@ -21,7 +21,7 @@ extension UITableView {
         register(classType.nib, forHeaderFooterViewReuseIdentifier: T.reuseIdentifier)
     }
     
-    /// Dequeue
+    // MARK: - Dequeue
     
     /// We dequeue the cell and infer the cell to the correct type. This way we don't have to
     /// force cast every time we try to dequeue a cell.
@@ -51,7 +51,7 @@ extension UITableView {
         return dequeueReusableHeaderFooterView(withIdentifier: identifier) as! T
     }
     
-    /// Get
+    // MARK: - Cell
     
     /// We ask the cell at indexpath and infer the cell to the correc type. This way we don't have to
     /// force cast every time we try to get the cell at a certain IndexPath

@@ -8,13 +8,9 @@
 import Foundation
 
 extension Array {
-    
     /// Return an optional `Element` value when the given index is not available in this array.
     public subscript (safe index: Int) -> Element? {
-        guard 0..<count ~= index else {
-            return nil
-        }
+        guard 0..<count ~= index else { return nil }
         return self[index]
     }
-    
 }

@@ -34,7 +34,6 @@ open class DefaultsKey<ValueType>: DefaultsKeys {
 }
 
 public extension UserDefaults {
-    
     /// Get the defaults Enum (type String) value for the given `DefaultsKey`. The preferred way to do this is to pass
     /// the static key variable defined in the `DefaultsKeys` extension.
     ///

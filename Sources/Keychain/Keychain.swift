@@ -12,7 +12,6 @@ public let Keychain = KeychainHandler.shared
 
 /// The `KeychainHandler` class is responsible for the interaction with the keychain.
 public class KeychainHandler {
-
     /// Define the access group if you want to share the keychain values with other applications. When not set
     /// this value will be ignored, and no access group will be set.
     public var accessGroupName: String?
@@ -110,7 +109,6 @@ open class Key<ValueType>: Keys {
 }
 
 public extension KeychainHandler {
-    
     /// Get the keychain String value for the given `DefaultsKey`. The preferred way to do this is to pass the static
     /// key variable defined in the `DefaultsKeys` extension.
     ///

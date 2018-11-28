@@ -8,7 +8,6 @@
 import Foundation
 
 extension Bundle {
-    
     /// Return the `CFBundleShortVersionString` read from the Info.plist file in the current
     /// bundle.
     public var shortVersionString: String? {
