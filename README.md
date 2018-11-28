@@ -160,7 +160,7 @@ Quickly remove a shadow from a certain view
 
 ```swift
 let view = UIView()
-view.layer.removeShadow()
+view.layer.removeShadow() 
 ```
 
 #### UIView+Responder
