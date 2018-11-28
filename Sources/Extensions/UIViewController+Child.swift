@@ -15,12 +15,10 @@ extension UIViewController {
     /// - parameter to: The container view in which to add the child controller's view.
     /// - parameter insets: The insets that give a some padding inside the container if needed.
     public func add(_ controller: UIViewController, to view: UIView, insets: UIEdgeInsets = .zero) {
-        // Notify Child View Controller
-        controller.willMove(toParent: self)
-        // Add Child View as Subview
-        view.addSubview(controller.view)
         // Add Child View Controller
         addChild(controller)
+        // Add Child View as Subview
+        view.addSubview(controller.view)
         // Configure Child View inside the container view.
         controller.view.constrain(to: view, insets: insets)
         // Notify Child View Controller
@@ -35,12 +33,10 @@ extension UIViewController {
     /// - parameter safeAreaInsets: The insets that give a some padding inside the container's safe area.
     @available(iOS 11.0, *)
     public func add(_ controller: UIViewController, to view: UIView, safeAreaInsets insets: UIEdgeInsets) {
-        // Notify Child View Controller
-        controller.willMove(toParent: self)
-        // Add Child View as Subview
-        view.addSubview(controller.view)
         // Add Child View Controller
         addChild(controller)
+        // Add Child View as Subview
+        view.addSubview(controller.view)
         // Configure Child View inside the container view.
         controller.view.constrain(to: view, safeAreaInsets: insets)
         // Notify Child View Controller
