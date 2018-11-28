@@ -23,11 +23,13 @@ extension UIView {
     /// - parameter insets: The insets that give a some padding if needed.
     public func constrain(to view: UIView, insets: UIEdgeInsets = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
-        
-        topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top).isActive = true
-        rightAnchor.constraint(equalTo: view.rightAnchor, constant: -insets.right).isActive = true
-        bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -insets.bottom).isActive = true
-        leftAnchor.constraint(equalTo: view.leftAnchor, constant: insets.left).isActive = true
+
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -insets.right),
+            bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -insets.bottom),
+            leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: insets.left)
+        ])
     }
     
     /// Constrain this view to the given view's safe areas.
@@ -37,11 +39,13 @@ extension UIView {
     @available(iOS 11.0, *)
     public func constrain(to view: UIView, safeAreaInsets insets: UIEdgeInsets) {
         translatesAutoresizingMaskIntoConstraints = false
-        topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: insets.top).isActive = true
-        rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -insets.right).isActive = true
-        bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-                                constant: -insets.bottom).isActive = true
-        leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: insets.left).isActive = true
+
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: insets.top),
+            trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -insets.right),
+            bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -insets.bottom),
+            leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: insets.left)
+        ])
     }
     
     // MARK: - Deprecated
