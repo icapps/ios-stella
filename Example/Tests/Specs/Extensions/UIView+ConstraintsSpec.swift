@@ -13,11 +13,9 @@ import Nimble_Snapshots
 @testable import Stella
 
 class UIViewConstraintsSpec: QuickSpec {
-
     override func spec() {
         describe("UIView+Constraints") {
             var view: UIView!
-
             beforeEach {
                 view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
                 view.backgroundColor = UIColor.red
@@ -26,16 +24,43 @@ class UIViewConstraintsSpec: QuickSpec {
             it("should present a simple view") {
                 expect(view) == snapshot()
             }
-
-            it("should constraint a subview to the entire superview") {
-                let subview = UIView(frame: .zero)
-                subview.backgroundColor = UIColor.green
-                view.addSubview(subview)
-                subview.constraintEdges(to: view)
-
-                expect(view) == snapshot()
+            
+            context("subview") {
+                var subview: UIView!
+                beforeEach {
+                    subview = UIView(frame: .zero)
+                    subview.backgroundColor = UIColor.green
+                    view.addSubview(subview)
+                }
+                
+                it("should constraint a subview to the entire given view") {
+                    subview.constrain(to: view)
+                    expect(view) == snapshot()
+                }
+                
+                it("should constraint a subview to the given view with the given edge insets") {
+                    let insets: UIEdgeInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom: 30.0, right: 40.0)
+                    subview.constrain(to: view, insets: insets)
+                    expect(view) == snapshot()
+                }
+                
+                it("should constraint a subview to the given view's safe area with the given edge insets") {
+                    let insets: UIEdgeInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom: 30.0, right: 40.0)
+                    subview.constrain(to: view, safeAreaInsets: insets)
+                    expect(view) == snapshot()
+                }
+                
+                it("should constraint a subview to it's superview") {
+                    subview.constrainToSuperview()
+                    expect(view) == snapshot()
+                }
+                
+                it("should constraint a subview to it's superview with the given edge insets") {
+                    let insets: UIEdgeInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom: 30.0, right: 40.0)
+                    subview.constrainToSuperview(insets: insets)
+                    expect(view) == snapshot()
+                }
             }
         }
     }
-
 }
