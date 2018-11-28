@@ -231,7 +231,7 @@ rootController.add(childController: controller, to: containerView)
 rootController.remove(childController: controller)
 ```
 
-## Contrinute
+## Contribute
 
 ### How to contribute ❓
 
