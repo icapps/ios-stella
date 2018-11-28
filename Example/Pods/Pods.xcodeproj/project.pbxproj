@@ -177,6 +177,7 @@
 		000000001DB0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000001DA0 /* QuartzCore.framework */; };
 		000000001E90 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000001E80 /* FBSnapshotTestCase.framework */; };
 		000000001ED0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000001EC0 /* Nimble.framework */; };
+		84C4E50321AE861A006643C4 /* UIStackView+Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4E50221AE861A006643C4 /* UIStackView+Remove.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -458,6 +459,7 @@
 		000000001DA0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		000000001E80 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		000000001EC0 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C4E50221AE861A006643C4 /* UIStackView+Remove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Remove.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -791,6 +793,7 @@
 				0000000001A0 /* UIView+Nib.swift */,
 				0000000001B0 /* UIView+Responder.swift */,
 				0000000001C0 /* UIViewController+Child.swift */,
+				84C4E50221AE861A006643C4 /* UIStackView+Remove.swift */,
 			);
 			name = Extensions;
 			path = Sources/Extensions;
@@ -1502,6 +1505,7 @@
 				0000000019B0 /* SwiftSupport.swift in Sources */,
 				0000000018F0 /* UIImage+Compare.m in Sources */,
 				000000001900 /* UIImage+Diff.m in Sources */,
+				84C4E50321AE861A006643C4 /* UIStackView+Remove.swift in Sources */,
 				000000001910 /* UIImage+Snapshot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
