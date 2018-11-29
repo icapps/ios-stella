@@ -15,7 +15,7 @@
   - [Keychain](#keychain)
   - [Localization](#localization)
   - [Extensions](#extensions)
-    - [Array+Safe](#arraysafe)
+    - [Array](#array)
     - [Bundle+Versions](#bundleversions)
     - [CALayer+Shadow](#calayershadow)
     - [UIView+Responder](#uiviewresponder)
@@ -125,7 +125,7 @@ print(key.localizedString)
 
 ### Extensions
 
-#### Array+Safe
+#### Array
 
 Fetch an element from an array that could possible be out of bounds.
 
@@ -133,6 +133,37 @@ Fetch an element from an array that could possible be out of bounds.
 let array = [1, 2, 3, 4]
 array[safe: 2] // Returns 3
 arra[safe: 10] // Returns nil
+```
+
+Returns the array with a limited subset starting from the front/rear.
+
+```swift
+let array = [1, 2, 3, 4]
+array.truncate(by: 2) // Returns [1, 2]
+array.reverseTruncate(by: 2) // Returns [3, 4]
+```
+
+Returns if an element is found in an array.
+
+```swift
+let array = [1, 2, 3, 4]
+array.contains(2) // Returns true
+array.contains(10) // Returns false
+```
+
+Returns an array with unique values depending on the `Hashable` value.
+
+```swift
+let array = [1, 2, 3, 2, 4, 1]
+array.unique // Returns [1, 2, 3, 4]
+```
+
+Remove an element from an array and returns the removed index.
+
+```swift
+var array = [1, 2, 3, 4]
+array.remove(3) // Returns 2
+array // Mutated to [1, 2, 4]
 ```
 
 #### Bundle+Versions
