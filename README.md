@@ -16,7 +16,8 @@
   - [Localization](#localization)
   - [Extensions](#extensions)
     - [Array+Safe](#arraysafe)
-    - [Bundle+Versionse](#bundleversions)
+    - [Bundle+Versions](#bundleversions)
+    - [CALayer+Shadow](#calayershadow)
     - [UIView+Responder](#uiviewresponder)
     - [UICollectionView+Reuse](#uicollectionviewreuse)
     - [UITableView+Reuse](#uitableviewreuse)
@@ -141,6 +142,25 @@ Get the marketing and build version quickly from the bundle.
 let bundle = Bundle.main
 bundle.shortVersionString // Returns 1.2.3
 bundle.bundleVersion // Returns 1 (the build version)
+```
+
+#### CALayer+Shadow
+
+Quickly add a shadow around a certain view
+
+```swift
+let view = UIView()
+view.layer.applyShadow()
+
+let customShadowView = UIView()
+customShadowView.layer.applyShadow(color: .red, opacity: 0.2, x: 0, y: 4, blur: 10, spread: 0)
+```
+
+Quickly remove a shadow from a certain view
+
+```swift
+let view = UIView()
+view.layer.removeShadow() 
 ```
 
 #### UIView+Responder

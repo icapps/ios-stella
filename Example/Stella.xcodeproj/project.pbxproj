@@ -11,6 +11,8 @@
 		621A5AED1D080A8A00CA812B /* DefaultsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A5AEC1D080A8A00CA812B /* DefaultsSpec.swift */; };
 		62690A0A1DA52FDF005680EB /* KeychainSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62690A091DA52FDF005680EB /* KeychainSpec.swift */; };
 		629CA9DC1D071666008E9648 /* LocalizationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CA9DA1D0715F5008E9648 /* LocalizationSpec.swift */; };
+		84B6441121AEC97C008C3BFE /* CALayer+ShadowSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6440F21AEC97C008C3BFE /* CALayer+ShadowSpec.swift */; };
+		84B6441221AEC97C008C3BFE /* UIStackView+RemoveAllSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6441021AEC97C008C3BFE /* UIStackView+RemoveAllSpec.swift */; };
 		84D147BF20540AC5005DBC6B /* UITableView+ReuseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D147BE20540AC5005DBC6B /* UITableView+ReuseSpec.swift */; };
 		9D1C42C42032DF5A0072E6D7 /* UIViewController+ChildSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C42C32032DF5A0072E6D7 /* UIViewController+ChildSpec.swift */; };
 		9D6523F42030AF0B0044395F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6523F32030AF0B0044395F /* AppDelegate.swift */; };
@@ -45,6 +47,8 @@
 		621A5AEC1D080A8A00CA812B /* DefaultsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsSpec.swift; sourceTree = "<group>"; };
 		62690A091DA52FDF005680EB /* KeychainSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSpec.swift; sourceTree = "<group>"; };
 		629CA9DA1D0715F5008E9648 /* LocalizationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationSpec.swift; sourceTree = "<group>"; };
+		84B6440F21AEC97C008C3BFE /* CALayer+ShadowSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+ShadowSpec.swift"; sourceTree = "<group>"; };
+		84B6441021AEC97C008C3BFE /* UIStackView+RemoveAllSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveAllSpec.swift"; sourceTree = "<group>"; };
 		84D147BE20540AC5005DBC6B /* UITableView+ReuseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReuseSpec.swift"; sourceTree = "<group>"; };
 		8FE6F213130F34C4312BA789 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C37AB0106034539442D068E /* Pods-Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application.release.xcconfig"; path = "Pods/Target Support Files/Pods-Application/Pods-Application.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,8 +187,10 @@
 			children = (
 				9D6524092030D86E0044395F /* Array+SafeSpec.swift */,
 				9D652415203202620044395F /* Bundle+VersionsSpec.swift */,
+				84B6440F21AEC97C008C3BFE /* CALayer+ShadowSpec.swift */,
 				9DCEBC5221ADF3320031AC75 /* OptionalsSpec.swift */,
 				9D914043203205CC00BEF2E6 /* UICollectionView+ReuseSpec.swift */,
+				84B6441021AEC97C008C3BFE /* UIStackView+RemoveAllSpec.swift */,
 				84D147BE20540AC5005DBC6B /* UITableView+ReuseSpec.swift */,
 				9D7041BD2032DA2100E8CF75 /* UIView+ConstraintsSpec.swift */,
 				9D6524172032033C0044395F /* UIView+NibSpec.swift */,
@@ -446,10 +452,12 @@
 				9DCEBC5321ADF3320031AC75 /* OptionalsSpec.swift in Sources */,
 				9D652416203202620044395F /* Bundle+VersionsSpec.swift in Sources */,
 				9D1C42C42032DF5A0072E6D7 /* UIViewController+ChildSpec.swift in Sources */,
+				84B6441121AEC97C008C3BFE /* CALayer+ShadowSpec.swift in Sources */,
 				629CA9DC1D071666008E9648 /* LocalizationSpec.swift in Sources */,
 				621A5AED1D080A8A00CA812B /* DefaultsSpec.swift in Sources */,
 				9D8A2D9720A1A7D300AD8E0B /* UIView+ResponderSpec.swift in Sources */,
 				9D65240A2030D86E0044395F /* Array+SafeSpec.swift in Sources */,
+				84B6441221AEC97C008C3BFE /* UIStackView+RemoveAllSpec.swift in Sources */,
 				84D147BF20540AC5005DBC6B /* UITableView+ReuseSpec.swift in Sources */,
 				9D7041BE2032DA2100E8CF75 /* UIView+ConstraintsSpec.swift in Sources */,
 				9D6524182032033C0044395F /* UIView+NibSpec.swift in Sources */,
