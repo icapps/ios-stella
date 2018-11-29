@@ -12,7 +12,6 @@ import Nimble
 @testable import Stella
 
 class ArraySafeSpec: QuickSpec {
-    
     override func spec() {
         describe("Array+Safe") {
             let list = [0, 1, 2, 3, 4]
@@ -30,5 +29,4 @@ class ArraySafeSpec: QuickSpec {
             }
         }
     }
-    
 }

@@ -15,6 +15,10 @@
 		84B6441221AEC97C008C3BFE /* UIStackView+RemoveAllSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6441021AEC97C008C3BFE /* UIStackView+RemoveAllSpec.swift */; };
 		84D147BF20540AC5005DBC6B /* UITableView+ReuseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D147BE20540AC5005DBC6B /* UITableView+ReuseSpec.swift */; };
 		9D1C42C42032DF5A0072E6D7 /* UIViewController+ChildSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C42C32032DF5A0072E6D7 /* UIViewController+ChildSpec.swift */; };
+		9D558DD921AEEC4E00B934DA /* Array+TruncateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D558DD821AEEC4E00B934DA /* Array+TruncateSpec.swift */; };
+		9D558DDF21AEEEA100B934DA /* Array+ContainsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D558DDE21AEEEA100B934DA /* Array+ContainsSpec.swift */; };
+		9D558DE321AEEF8B00B934DA /* Array+UniqueSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D558DE221AEEF8B00B934DA /* Array+UniqueSpec.swift */; };
+		9D558DE721AEF06400B934DA /* Array+RemoveSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D558DE621AEF06400B934DA /* Array+RemoveSpec.swift */; };
 		9D6523F42030AF0B0044395F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6523F32030AF0B0044395F /* AppDelegate.swift */; };
 		9D6523FB2030AF0B0044395F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6523FA2030AF0B0044395F /* Assets.xcassets */; };
 		9D6523FE2030AF0B0044395F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6523FC2030AF0B0044395F /* LaunchScreen.storyboard */; };
@@ -53,6 +57,10 @@
 		8FE6F213130F34C4312BA789 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C37AB0106034539442D068E /* Pods-Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application.release.xcconfig"; path = "Pods/Target Support Files/Pods-Application/Pods-Application.release.xcconfig"; sourceTree = "<group>"; };
 		9D1C42C32032DF5A0072E6D7 /* UIViewController+ChildSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildSpec.swift"; sourceTree = "<group>"; };
+		9D558DD821AEEC4E00B934DA /* Array+TruncateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+TruncateSpec.swift"; sourceTree = "<group>"; };
+		9D558DDE21AEEEA100B934DA /* Array+ContainsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ContainsSpec.swift"; sourceTree = "<group>"; };
+		9D558DE221AEEF8B00B934DA /* Array+UniqueSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+UniqueSpec.swift"; sourceTree = "<group>"; };
+		9D558DE621AEF06400B934DA /* Array+RemoveSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RemoveSpec.swift"; sourceTree = "<group>"; };
 		9D6523F12030AF0A0044395F /* Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Application.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6523F32030AF0B0044395F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D6523FA2030AF0B0044395F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,7 +193,11 @@
 		9D6524082030D85E0044395F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9D558DDE21AEEEA100B934DA /* Array+ContainsSpec.swift */,
+				9D558DE621AEF06400B934DA /* Array+RemoveSpec.swift */,
 				9D6524092030D86E0044395F /* Array+SafeSpec.swift */,
+				9D558DD821AEEC4E00B934DA /* Array+TruncateSpec.swift */,
+				9D558DE221AEEF8B00B934DA /* Array+UniqueSpec.swift */,
 				9D652415203202620044395F /* Bundle+VersionsSpec.swift */,
 				84B6440F21AEC97C008C3BFE /* CALayer+ShadowSpec.swift */,
 				9DCEBC5221ADF3320031AC75 /* OptionalsSpec.swift */,
@@ -450,6 +462,8 @@
 				62690A0A1DA52FDF005680EB /* KeychainSpec.swift in Sources */,
 				9D914044203205CC00BEF2E6 /* UICollectionView+ReuseSpec.swift in Sources */,
 				9DCEBC5321ADF3320031AC75 /* OptionalsSpec.swift in Sources */,
+				9D558DDF21AEEEA100B934DA /* Array+ContainsSpec.swift in Sources */,
+				9D558DE721AEF06400B934DA /* Array+RemoveSpec.swift in Sources */,
 				9D652416203202620044395F /* Bundle+VersionsSpec.swift in Sources */,
 				9D1C42C42032DF5A0072E6D7 /* UIViewController+ChildSpec.swift in Sources */,
 				84B6441121AEC97C008C3BFE /* CALayer+ShadowSpec.swift in Sources */,
@@ -461,6 +475,8 @@
 				84D147BF20540AC5005DBC6B /* UITableView+ReuseSpec.swift in Sources */,
 				9D7041BE2032DA2100E8CF75 /* UIView+ConstraintsSpec.swift in Sources */,
 				9D6524182032033C0044395F /* UIView+NibSpec.swift in Sources */,
+				9D558DE321AEEF8B00B934DA /* Array+UniqueSpec.swift in Sources */,
+				9D558DD921AEEC4E00B934DA /* Array+TruncateSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
