@@ -24,6 +24,7 @@
     - [UIView+Constraints](#uiviewconstraints)
     - [UIView+Nib](#uiviewnib)
     - [UIViewController+Child](#uiviewcontrollerchild)
+    - [UIViewController+Storyboard](#uiviewcontrollerstoryboard)
     - [Optionals](#optionals)
 - [Contribute](#contribute)
   - [How to contribute?](#howtocontribute)
@@ -277,6 +278,14 @@ UIView.nibName
 UIView.nib
 ```
 
+Load the `UIView` from a nib with the same name. 
+
+_It is important to type the destination property in orde to load the correct nib._
+
+```swift
+let view: SomeView = UIView.loadFromNib()
+```
+
 #### UIViewController+Child
 
 Easily add and remove a controller as a childViewController.
@@ -293,6 +302,21 @@ rootController.add(childController: controller, to: containerView, safeAreaInset
 
 // Remove the controller and handle the containtment correctly.
 rootController.remove(childController: controller)
+```
+
+#### UIViewController+Storyboard
+
+Load the view controller directly from a storyboard.
+
+```swift
+// Load the initial controller from the storyboard.
+let controller = SomeController.from(storyboard: "StoryboardName")
+
+// Pass a custom bundle to load from.
+let controller = SomeController.from(storyboard: "StoryboardName", bundle: CustomBundle())
+
+// Load a controller with the given storyboard identifier.
+let controller = SomeController.from(storyboard: "StoryboardName", identifier: "SomeControllerIdentifier")
 ```
 
 #### Optionals

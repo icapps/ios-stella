@@ -12,7 +12,6 @@ import Nimble
 @testable import Stella
 
 class UIViewNibSpec: QuickSpec {
-    
     // Mocked class is included in the spec because making it `private` outside of the spec
     // definition gives a weird result.
     class MockedView: UIView {
@@ -31,7 +30,11 @@ class UIViewNibSpec: QuickSpec {
             it("should containt the correct nib") {
                 expect(MockedView.nib).toNot(beNil())
             }
+
+            it("should load the view from a nib") {
+                let view: FirstView = UIView.loadFromNib()
+                expect(view).to(beAKindOf(FirstView.self))
+            }
         }
     }
-    
 }
