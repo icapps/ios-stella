@@ -134,11 +134,12 @@ array[safe: 2] // Returns 3
 arra[safe: 10] // Returns nil
 ```
 
-Returns the array with a limited subset starting from the rear.
+Returns the array with a limited subset starting from the front/rear.
 
 ```swift
 let array = [1, 2, 3, 4]
-array.truncate(by: 2) // Returns [3, 4]
+array.truncate(by: 2) // Returns [1, 2]
+array.reverseTruncate(by: 2) // Returns [3, 4]
 ```
 
 Returns if an element is found in an array.

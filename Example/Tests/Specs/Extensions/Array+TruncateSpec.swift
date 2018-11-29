@@ -15,11 +15,19 @@ class ArrayTruncateSpec: QuickSpec {
     override func spec() {
         describe("Array+Truncate") {
             it("should return the same truncated array") {
+                expect([1, 2, 3].reverseTruncate(by: 3)) == [1, 2, 3]
+            }
+
+            it("should return the reversed truncated array") {
+                expect([1, 2, 3, 4, 5].reverseTruncate(by: 3)) == [3, 4, 5]
+            }
+
+            it("should return the truncated array") {
                 expect([1, 2, 3].truncate(by: 3)) == [1, 2, 3]
             }
 
             it("should return the truncated array") {
-                expect([1, 2, 3, 4, 5].truncate(by: 3)) == [3, 4, 5]
+                expect([1, 2, 3, 4, 5].truncate(by: 3)) == [1, 2, 3]
             }
         }
     }
