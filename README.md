@@ -18,6 +18,7 @@
     - [Array](#array)
     - [Bundle+Versions](#bundleversions)
     - [CALayer+Shadow](#calayershadow)
+    - [CGFloat+Radians](#cgfloatradians)
     - [UIView+Responder](#uiviewresponder)
     - [UICollectionView+Reuse](#uicollectionviewreuse)
     - [UITableView+Reuse](#uitableviewreuse)
@@ -193,6 +194,15 @@ Quickly remove a shadow from a certain view
 ```swift
 let view = UIView()
 view.layer.removeShadow() 
+```
+
+#### CGFloat+Radians
+
+Convert from degrees to radians and vice versa.
+
+```swift
+CGFloat(180).degreesToRadians // Returns .pi
+CGFloat.pi.radiansToDegrees // Returns 180.0
 ```
 
 #### UIView+Responder
