@@ -31,7 +31,7 @@ extension UIViewController {
     /// - parameter controller: The controller to add to the current controller as a child.
     /// - parameter to: The container view in which to add the child controller's view.
     /// - parameter safeAreaInsets: The insets that give a some padding inside the container's safe area.
-    @available(iOS 11.0, *)
+    @available(iOS 11.0, tvOS 11.0, *)
     public func add(_ controller: UIViewController, to view: UIView, safeAreaInsets insets: UIEdgeInsets) {
         // Add Child View Controller
         addChild(controller)

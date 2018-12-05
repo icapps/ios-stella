@@ -36,7 +36,7 @@ extension UIView {
     ///
     /// - parameter view: The view to constraint it's edges to.
     /// - parameter safeAreaInsets: The insets that give a some padding if needed.
-    @available(iOS 11.0, *)
+    @available(iOS 11.0, tvOS 11.0, *)
     public func constrain(to view: UIView, safeAreaInsets insets: UIEdgeInsets) {
         translatesAutoresizingMaskIntoConstraints = false
 
