@@ -15,6 +15,8 @@ public class KeychainHandler {
     /// Define the access group if you want to share the keychain values with other applications. When not set
     /// this value will be ignored, and no access group will be set.
     public var accessGroupName: String?
+    
+    public var bundleIdentifier: String?
 
     public static let shared = KeychainHandler()
     
@@ -23,7 +25,7 @@ public class KeychainHandler {
             kSecClass as String: kSecClassGenericPassword as NSString,
             kSecMatchLimit as String: kSecMatchLimitOne,
             kSecReturnData as String: kCFBooleanTrue,
-            kSecAttrService as String: (Bundle.main.bundleIdentifier ?? "") as AnyObject,
+            kSecAttrService as String: (bundleIdentifier ?? Bundle.main.bundleIdentifier ?? "") as AnyObject,
             kSecAttrAccount as String: key as AnyObject
         ]
         if let accessGroupName = self.accessGroupName {
@@ -40,7 +42,7 @@ public class KeychainHandler {
         var query: [String: AnyObject] = [
             kSecClass as String: (kSecClassGenericPassword as NSString),
             kSecAttrAccount as String: key as AnyObject,
-            kSecAttrService as String: (Bundle.main.bundleIdentifier ?? "") as AnyObject
+            kSecAttrService as String: (bundleIdentifier ?? Bundle.main.bundleIdentifier ?? "") as AnyObject
         ]
         if let accessGroupName = self.accessGroupName {
             query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
