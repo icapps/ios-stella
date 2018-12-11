@@ -26,6 +26,7 @@
     - [UIView+Nib](#uiviewnib)
     - [UIViewController+Child](#uiviewcontrollerchild)
     - [UIViewController+Storyboard](#uiviewcontrollerstoryboard)
+    - [UIViewController+TopMost](#uiviewcontrollertopmost)
     - [Optionals](#optionals)
 - [Contribute](#contribute)
   - [How to contribute?](#howtocontribute)
@@ -327,6 +328,17 @@ let controller = SomeController.from(storyboard: "StoryboardName", bundle: Custo
 
 // Load a controller with the given storyboard identifier.
 let controller = SomeController.from(storyboard: "StoryboardName", identifier: "SomeControllerIdentifier")
+```
+
+#### UIViewController+TopMost
+
+Get the `UIViewController` that is currently presented on top of the application. It doesn't matter if a `UINavigationController` or a `UITabBarController` is in play or not.
+
+```swift
+let controller = UIAlertController(...)
+
+// Present an alert an top of all the controllers.
+otherController.topMostViewController.present(controller, animated: false, completion: nil)
 ```
 
 #### Optionals
