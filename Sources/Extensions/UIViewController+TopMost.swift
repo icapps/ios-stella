@@ -19,7 +19,7 @@ extension UIViewController {
     /// ```
     ///
     /// - returns: The view controller on top.
-    var topMostViewController: UIViewController {
+    public var topMostViewController: UIViewController {
         if let presentedViewController = presentedViewController {
             return presentedViewController.topMostViewController
         } else if let navigationController = self as? UINavigationController {
