@@ -91,7 +91,7 @@ print(Defaults[.dateValue]) // Prints '1996-12-19T16:39:57-08:00'
 ### Codable Defaults
 
 ```swift
-class SomeCodableObject: Codable {
+struct SomeCodableObject: Codable {
     var id: String
     ...
 }
