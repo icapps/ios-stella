@@ -34,6 +34,28 @@ open class DefaultsKey<ValueType>: DefaultsKeys {
 }
 
 public extension UserDefaults {
+    /// Get the defaults Codable model value for the given `DefaultsKey`. The preferred way to do this is to pass
+    /// the static key variable defined in the `DefaultsKeys` extension.
+    ///
+    /// ```
+    /// static let someCodableModel = DefaultsKey<CodableModel?>("the model defaults key")
+    /// ```
+    public subscript<T: Codable>(key: DefaultsKey<T?>) -> T? {
+        get {
+            guard
+                let savedData = object(forKey: key.key) as? Data,
+                let codableModel = try? JSONDecoder().decode(T.self, from: savedData) else { return nil }
+            return codableModel
+        }
+        set {
+            if let encoded = try? JSONEncoder().encode(newValue) {
+                set(encoded, forKey: key.key)
+            } else {
+                removeObject(forKey: key.key)
+            }
+        }
+    }
+    
     /// Get the defaults Enum (type String) value for the given `DefaultsKey`. The preferred way to do this is to pass
     /// the static key variable defined in the `DefaultsKeys` extension.
     ///

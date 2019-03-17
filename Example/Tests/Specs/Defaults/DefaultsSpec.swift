@@ -24,6 +24,12 @@ enum SomeIntEnum: Int {
     case type3
 }
 
+/// Some codable
+struct SomeCodable: Codable {
+    var identifier: String
+    var name: String?
+}
+
 // Define the keys used for this test.
 extension DefaultsKeys {
     static let enumStringTypeValue = DefaultsKey<SomeStringEnum?>("enumStringTypeValue")
@@ -35,12 +41,40 @@ extension DefaultsKeys {
     static let booleanValue = DefaultsKey<Bool?>("booleanValue")
     static let dateValue = DefaultsKey<Date?>("dateValue")
     static let stringsValue = DefaultsKey<[String]?>("stringsValue")
+    static let codableValue = DefaultsKey<SomeCodable?>("codableValue")
 }
 
 class DefaultsSpec: QuickSpec {
     // swiftlint:disable function_body_length
     override func spec() {
         describe("defaults") {
+            context("Codable value") {
+                it("should be able to write a codable value to the defaults") {
+                    let someCodable = SomeCodable(identifier: "1", name: "someName")
+                    Defaults[.codableValue] = someCodable
+                    let data = UserDefaults.standard.object(forKey: "codableValue") as? Data
+                    let model = try? JSONDecoder().decode(SomeCodable.self, from: data ?? Data())
+                    expect(model?.name) == "someName"
+                }
+                
+                it("should be able to clear the codable defaults") {
+                    let someCodable = SomeCodable(identifier: "1", name: "someName")
+                    Defaults[.codableValue] = someCodable
+                    Defaults[.codableValue] = nil
+                    let data = UserDefaults.standard.object(forKey: "codableValue") as? Data
+                    let model = try? JSONDecoder().decode(SomeCodable.self, from: data ?? Data())
+                    expect(model).to(beNil())
+                }
+                
+                it("should be able to read the codable defaults") {
+                    let someCodable = SomeCodable(identifier: "1", name: "someName")
+                    let value = try? JSONEncoder().encode(someCodable)
+                    UserDefaults.standard.set(value, forKey: "codableValue")
+                    let name = Defaults[.codableValue]?.name
+                    expect(name) == "someName"
+                }
+            }
+            
             context("enumType value + String") {
                 it("should be able to write to the defaults") {
                     Defaults[.enumStringTypeValue] = .type1
