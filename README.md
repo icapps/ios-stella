@@ -12,7 +12,7 @@
 - [Installation](#installation)
 - [Features](#features)
   - [Defaults](#defaults)
-    - [Codable Defaults](#codable defaults)
+    - [Defaults+Codable](#codabledefaults)
   - [Keychain](#keychain)
   - [Localization](#localization)
   - [Extensions](#extensions)
@@ -89,7 +89,7 @@ Defaults[.dateValue] = NSDate()
 print(Defaults[.dateValue]) // Prints '1996-12-19T16:39:57-08:00'
 ```
 
-### Codable Defaults
+### Defaults+Codable
 
 ```swift
 struct SomeCodableObject: Codable {
