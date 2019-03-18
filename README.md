@@ -12,6 +12,7 @@
 - [Installation](#installation)
 - [Features](#features)
   - [Defaults](#defaults)
+    - [Codable Defaults](#codable defaults)
   - [Keychain](#keychain)
   - [Localization](#localization)
   - [Extensions](#extensions)
