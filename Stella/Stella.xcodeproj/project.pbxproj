@@ -81,7 +81,7 @@
 		9D9F41CF227367E100A4A518 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		9D9F41D1227367E100A4A518 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		9D9F41D3227367E100A4A518 /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
-		9D9F41F222736BCF00A4A518 /* Stella_Tv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stella_Tv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D9F41F222736BCF00A4A518 /* Stella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9F41F422736BD000A4A518 /* Stella_Tv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stella_Tv.h; sourceTree = "<group>"; };
 		9D9F41F522736BD000A4A518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				9D9F41AA2273676E00A4A518 /* Stella.framework */,
-				9D9F41F222736BCF00A4A518 /* Stella_Tv.framework */,
+				9D9F41F222736BCF00A4A518 /* Stella.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 			);
 			name = "Stella Tv";
 			productName = "Stella Tv";
-			productReference = 9D9F41F222736BCF00A4A518 /* Stella_Tv.framework */;
+			productReference = 9D9F41F222736BCF00A4A518 /* Stella.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -578,7 +578,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.icapps.stella.Stella-Tv";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Stella;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -606,7 +606,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.icapps.stella.Stella-Tv";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Stella;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
