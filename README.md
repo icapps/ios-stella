@@ -10,6 +10,8 @@
 ## TOC
 
 - [Installation](#installation)
+  - [Cocoapods](#cocoapods)
+  - [Carthage](#carthage)
 - [Features](#features)
   - [Defaults](#defaults)
   - [Keychain](#keychain)
@@ -35,6 +37,8 @@
 
 ## Installation 💾
 
+### Cocoapods
+
 Stella is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
 
 ```ruby
@@ -42,6 +46,22 @@ pod 'Stella', git: 'https://github.com/icapps/ios-stella.git', commit: '...'
 ```
 
 _Pass the correct commit reference to make sure your code doesn't break in future updates._
+
+### Carthage
+
+To integrate Stella into your Xcode project using Carthage, specify it in your `Cartfile`"
+
+```ruby
+github "icapps/ios-stella" ~> 1.5.1
+```
+
+Then, run the following command to build the Stella framework:
+
+```sh
+carthage update
+```
+
+Perform the additional steps in orde the get Carthage setup with this framework: [Carthage's README](https://github.com/Carthage/Carthage#getting-started)
 
 ## Features
 
