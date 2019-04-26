@@ -30,7 +30,6 @@
 		9D9F41E7227367E100A4A518 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F41CF227367E100A4A518 /* Defaults.swift */; };
 		9D9F41E8227367E100A4A518 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F41D1227367E100A4A518 /* Keychain.swift */; };
 		9D9F41E9227367E100A4A518 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F41D3227367E100A4A518 /* Localization.swift */; };
-		9D9F41F622736BD000A4A518 /* Stella_Tv.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D9F41F422736BD000A4A518 /* Stella_Tv.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D9F41FA22736BF000A4A518 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F41CF227367E100A4A518 /* Defaults.swift */; };
 		9D9F41FB22736BF000A4A518 /* Array+Contains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F41C7227367E100A4A518 /* Array+Contains.swift */; };
 		9D9F41FC22736BF000A4A518 /* Array+Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F41BD227367E100A4A518 /* Array+Remove.swift */; };
@@ -53,6 +52,7 @@
 		9D9F420D22736BF000A4A518 /* URL+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F41BF227367E100A4A518 /* URL+Optional.swift */; };
 		9D9F420E22736BF000A4A518 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F41D1227367E100A4A518 /* Keychain.swift */; };
 		9D9F420F22736BF000A4A518 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F41D3227367E100A4A518 /* Localization.swift */; };
+		9D9F421222736D3500A4A518 /* Stella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D9F41AD2273676E00A4A518 /* Stella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,8 +82,6 @@
 		9D9F41D1227367E100A4A518 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		9D9F41D3227367E100A4A518 /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		9D9F41F222736BCF00A4A518 /* Stella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D9F41F422736BD000A4A518 /* Stella_Tv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stella_Tv.h; sourceTree = "<group>"; };
-		9D9F41F522736BD000A4A518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				9D9F41AC2273676E00A4A518 /* Stella */,
-				9D9F41F322736BD000A4A518 /* Stella Tv */,
 				9D9F41AB2273676E00A4A518 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -202,15 +199,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9D9F41F322736BD000A4A518 /* Stella Tv */ = {
-			isa = PBXGroup;
-			children = (
-				9D9F41F422736BD000A4A518 /* Stella_Tv.h */,
-				9D9F41F522736BD000A4A518 /* Info.plist */,
-			);
-			path = "Stella Tv";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -226,7 +214,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D9F41F622736BD000A4A518 /* Stella_Tv.h in Headers */,
+				9D9F421222736D3500A4A518 /* Stella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,18 +558,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Stella Tv/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Stella/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.icapps.stella.Stella-Tv";
+				PRODUCT_BUNDLE_IDENTIFIER = com.icapps.stella;
 				PRODUCT_NAME = Stella;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
@@ -598,18 +586,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Stella Tv/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Stella/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.icapps.stella.Stella-Tv";
+				PRODUCT_BUNDLE_IDENTIFIER = com.icapps.stella;
 				PRODUCT_NAME = Stella;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
