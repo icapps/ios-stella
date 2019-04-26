@@ -40,7 +40,7 @@ public extension UserDefaults {
     /// ```
     /// static let enumType = DefaultsKey<SomeEnumStringType?>("the enumType's defaults key")
     /// ```
-    public subscript<T: RawRepresentable>(key: DefaultsKey<T?>) -> T? where T.RawValue == String {
+    subscript<T: RawRepresentable>(key: DefaultsKey<T?>) -> T? where T.RawValue == String {
         get {
             guard let rawValue = string(forKey: key.key) else { return nil }
             return T(rawValue: rawValue)
@@ -56,7 +56,7 @@ public extension UserDefaults {
     /// ```
     /// static let enumType = DefaultsKey<SomeEnumIntType?>("the enumType's defaults key")
     /// ```
-    public subscript<T: RawRepresentable>(key: DefaultsKey<T?>) -> T? where T.RawValue == Int {
+    subscript<T: RawRepresentable>(key: DefaultsKey<T?>) -> T? where T.RawValue == Int {
         get {
             return T(rawValue: integer(forKey: key.key))
         }
@@ -71,7 +71,7 @@ public extension UserDefaults {
     /// ```
     /// static let string = DefaultsKey<String?>("the string defaults key")
     /// ```
-    public subscript(key: DefaultsKey<String?>) -> String? {
+    subscript(key: DefaultsKey<String?>) -> String? {
         get {
             return string(forKey: key.key)
         }
@@ -86,7 +86,7 @@ public extension UserDefaults {
     /// ```
     /// static let integer = DefaultsKey<Int?>("the integer defaults key")
     /// ```
-    public subscript(key: DefaultsKey<Int?>) -> Int? {
+    subscript(key: DefaultsKey<Int?>) -> Int? {
         get {
             return integer(forKey: key.key)
         }
@@ -105,7 +105,7 @@ public extension UserDefaults {
     /// ```
     /// static let float = DefaultsKey<Float?>("the float defaults key")
     /// ```
-    public subscript(key: DefaultsKey<Float?>) -> Float? {
+    subscript(key: DefaultsKey<Float?>) -> Float? {
         get {
             return float(forKey: key.key)
         }
@@ -124,7 +124,7 @@ public extension UserDefaults {
     /// ```
     /// static let double = DefaultsKey<Double?>("the double defaults key")
     /// ```
-    public subscript(key: DefaultsKey<Double?>) -> Double? {
+    subscript(key: DefaultsKey<Double?>) -> Double? {
         get {
             return double(forKey: key.key)
         }
@@ -143,7 +143,7 @@ public extension UserDefaults {
     /// ```
     /// static let boolean = DefaultsKey<Bool?>("the boolean defaults key")
     /// ```
-    public subscript(key: DefaultsKey<Bool?>) -> Bool {
+    subscript(key: DefaultsKey<Bool?>) -> Bool {
         get {
             return bool(forKey: key.key)
         }
@@ -158,7 +158,7 @@ public extension UserDefaults {
     /// ```
     /// static let date = DefaultsKey<NSDate?>("the date defaults key")
     /// ```
-    public subscript(key: DefaultsKey<Date?>) -> Date? {
+    subscript(key: DefaultsKey<Date?>) -> Date? {
         get {
             return object(forKey: key.key) as? Date
         }
@@ -173,7 +173,7 @@ public extension UserDefaults {
     /// ```
     /// static let strings = DefaultsKey<[String]?>("the strings defaults key")
     /// ```
-    public subscript(key: DefaultsKey<[String]?>) -> [String]? {
+    subscript(key: DefaultsKey<[String]?>) -> [String]? {
         get {
             return object(forKey: key.key) as? [String]
         }
