@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9D9F41F122736BCF00A4A518"
-               BuildableName = "Stella_Tv.framework"
+               BuildableName = "Stella.framework"
                BlueprintName = "Stella Tv"
                ReferencedContainer = "container:Stella.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9D9F41F122736BCF00A4A518"
-            BuildableName = "Stella_Tv.framework"
+            BuildableName = "Stella.framework"
             BlueprintName = "Stella Tv"
             ReferencedContainer = "container:Stella.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9D9F41F122736BCF00A4A518"
-            BuildableName = "Stella_Tv.framework"
+            BuildableName = "Stella.framework"
             BlueprintName = "Stella Tv"
             ReferencedContainer = "container:Stella.xcodeproj">
          </BuildableReference>
