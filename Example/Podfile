@@ -10,16 +10,14 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'Application' do
-  pod 'Stella', :path => '../'
-
+  # Linter
+  pod 'SwiftLint', '~> 0.28'
+    
   target 'Tests' do
     inherit! :search_paths
 
     # Frameworks needed for testing.
     pod 'Keychain', '~> 0.3'
-
-    # Linter
-    pod 'SwiftLint', '~> 0.28'
 
     # The test frameworks
     pod 'Quick',            '~> 1.3'

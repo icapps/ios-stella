@@ -122,7 +122,7 @@ public extension KeychainHandler {
     ///                                                     .userPresence, &error)
     /// static let noBackup = Key<String?>("not in backup", accessControl)
     /// ```
-    public subscript(key: Key<String?>) -> String? {
+    subscript(key: Key<String?>) -> String? {
         get {
             if let data = data(for: key.key, additionalQuery: key.additionalQuery) {
                 return String(data: data, encoding: .utf8)

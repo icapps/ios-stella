@@ -1,9 +1,7 @@
 # This is the minimum Fastlane version to use.
-fastlane_version '2.108.0'
+fastlane_version '2.121.0'
 
 # Don't generate README files.
-skip_docs
-
 skip_docs
 
 ##########################
@@ -23,11 +21,11 @@ lane :pr do
             executable: 'Example/Pods/Swiftlint/swiftlint'
 
   # Validate the QuickSpec to not use `fit`, `fcontext`, or `fdescribe`.
-  validate_specs directories: ['SwoopTests']
+  validate_specs directories: ['Example/Tests']
 
   # Run the tests.
   scan(
-    workspace:              'Example/Stella.xcworkspace',
+    workspace:              'Example/Example.xcworkspace',
     scheme:                 'Tests',
     clean:                  true,
     skip_build:             true
