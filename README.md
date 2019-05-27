@@ -14,6 +14,7 @@
   - [Carthage](#carthage)
 - [Features](#features)
   - [Defaults](#defaults)
+    - [Defaults+Codable](#defaultscodable)
   - [Keychain](#keychain)
   - [Localization](#localization)
   - [Extensions](#extensions)
@@ -107,6 +108,32 @@ print(Defaults[.booleanValue]) // Prints 'true'
 Defaults[.dateValue] = NSDate()
 print(Defaults[.dateValue]) // Prints '1996-12-19T16:39:57-08:00'
 ```
+
+### Defaults+Codable
+
+```swift
+struct SomeCodableObject: Codable {
+    var id: String
+    ...
+}
+```
+
+Define the user defaults by extending the `DefaultsKeys` class.
+
+```swift
+extension DefaultsKeys {
+  // Writes a codable object to the defaults with the 'Codable.Type' key.
+  static let codableValue = DefaultsKey<SomeCodableObject>("codableValue")
+}
+```
+
+You can read/write the from/to the `NSUserDefaults` by using the `subscript` on the `Defaults` class.
+
+```swift
+Defaults[.codableValue] = SomeCodableObject(id: "123")
+print(Defaults[.codableValue]) // Prints '123'
+```
+
 
 ### Keychain
 
@@ -214,7 +241,7 @@ Quickly remove a shadow from a certain view
 
 ```swift
 let view = UIView()
-view.layer.removeShadow() 
+view.layer.removeShadow()
 ```
 
 #### CGFloat+Radians
@@ -309,7 +336,7 @@ UIView.nibName
 UIView.nib
 ```
 
-Load the `UIView` from a nib with the same name. 
+Load the `UIView` from a nib with the same name.
 
 _It is important to type the destination property in orde to load the correct nib._
 
