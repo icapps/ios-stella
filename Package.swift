@@ -1,8 +1,13 @@
+// swift-tools-version:4.0
 import PackageDescription
 
 let package = Package(
   name: "Stella",
-  dependencies: [
-    .Package(url: "https://github.com/icapps/ios-stella.git", majorVersion: 1, minor: 1)
-  ]
+  products: [
+    .library(name: "Stella", targets: ["Stella"])
+  ],
+  dependencies: [],
+  targets: [
+        .target(name: "Stella", dependencies: [], path: "Sources")
+    ]
 )
