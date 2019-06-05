@@ -6,6 +6,8 @@
 //
 //
 
+import Foundation
+
 // swiftlint:disable identifier_name
 /// `Defaults` is a wrapper for the UserDefaults standard defaults instance.
 public let Defaults = UserDefaults.standard
