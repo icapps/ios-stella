@@ -6,6 +6,8 @@
 //
 //
 
+import Foundation
+
 // swiftlint:disable identifier_name
 /// `Keychain` is a wrapper for the Keychain shared instance.
 public let Keychain = KeychainHandler.shared

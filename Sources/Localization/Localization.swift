@@ -6,6 +6,8 @@
 //
 //
 
+import Foundation
+
 public extension String {
     /// Returns a localized string using the main bundle.
     var localizedString: String {

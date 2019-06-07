@@ -10,6 +10,7 @@
 ## TOC
 
 - [Installation](#installation)
+  - [Swift Package Manager](#swift-package-manager)
   - [Cocoapods](#cocoapods)
   - [Carthage](#carthage)
 - [Features](#features)
@@ -36,6 +37,10 @@
 - [License](#license)
 
 ## Installation 💾
+
+## Swift Package Manager
+
+You can install `Stella` using the Swift Package Manager. This is available starting from Xcode 11. Just search for `icapps/ios-stella` and install it.
 
 ### Cocoapods
 
