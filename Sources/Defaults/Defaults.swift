@@ -36,6 +36,23 @@ open class DefaultsKey<ValueType>: DefaultsKeys {
 }
 
 public extension UserDefaults {
+    /// Get the defaults dictionary value for the given `DefaultsKey`.
+    /// The preferred way to do this is to pass the static
+    ///
+    /// key variable defined in the `DefaultsKeys` extension.
+    ///
+    /// ```
+    /// static let dict = DefaultsKey<[String: Any]?>("the dict defaults key")
+    /// ```
+    subscript(key: DefaultsKey<[String: Any]?>) -> [String: Any]? {
+        get {
+            return dictionary(forKey: key.key)
+        }
+        set {
+            set(newValue, forKey: key.key)
+        }
+    }
+    
     /// Get the defaults Enum (type String) value for the given `DefaultsKey`. The preferred way to do this is to pass
     /// the static key variable defined in the `DefaultsKeys` extension.
     ///
