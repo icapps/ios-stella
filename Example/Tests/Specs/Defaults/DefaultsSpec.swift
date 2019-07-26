@@ -35,12 +35,34 @@ extension DefaultsKeys {
     static let booleanValue = DefaultsKey<Bool?>("booleanValue")
     static let dateValue = DefaultsKey<Date?>("dateValue")
     static let stringsValue = DefaultsKey<[String]?>("stringsValue")
+    static let dictValue = DefaultsKey<[String: Any]?>("dictValue")
 }
 
 class DefaultsSpec: QuickSpec {
     // swiftlint:disable function_body_length
     override func spec() {
         describe("defaults") {
+            context("dictionary") {
+                it("should be able to write to the defaults") {
+                    Defaults[.dictValue] = ["someKey": "someValue"]
+                    let value = UserDefaults.standard.dictionary(forKey: "dictValue") as? [String: String]
+                    expect(value?["someKey"]) == "someValue"
+                }
+                
+                it("should be able to clear the defaults") {
+                    Defaults[.dictValue] = ["someKey": "someValue"]
+                    Defaults[.dictValue] = nil
+                    let value = UserDefaults.standard.dictionary(forKey: "dictValue") as? [String: String]
+                    expect(value).to(beNil())
+                }
+                
+                it("should be able to read from the defaults") {
+                    UserDefaults.standard.set(["someKey": "someValue"], forKey: "dictValue")
+                    let value = Defaults[.dictValue] as? [String: String]
+                    expect(value?["someKey"]) == "someValue"
+                }
+            }
+            
             context("enumType value + String") {
                 it("should be able to write to the defaults") {
                     Defaults[.enumStringTypeValue] = .type1

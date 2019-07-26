@@ -88,6 +88,8 @@ extension DefaultsKeys {
   static let booleanValue = DefaultsKey<Bool?>("booleanValue")
   // Writes a date object to the defaults with the 'dateValue' key.
   static let dateValue = DefaultsKey<NSDate?>("dateValue")
+  // Writes a dictionary object to the defaults with the 'dictValue' key.
+  static let dictValue = DefaultsKey<[String: Any]?>("dictValue")
 }
 ```
 
@@ -111,6 +113,10 @@ print(Defaults[.booleanValue]) // Prints 'true'
 
 Defaults[.dateValue] = NSDate()
 print(Defaults[.dateValue]) // Prints '1996-12-19T16:39:57-08:00'
+
+Defaults[.dictValue] = ["SomeKey" : "SomeValue"]
+let value = Defaults[.dictValue]
+print(value["SomeKey"]) // Prints 'SomeValue'
 ```
 
 ### Keychain
@@ -219,7 +225,7 @@ Quickly remove a shadow from a certain view
 
 ```swift
 let view = UIView()
-view.layer.removeShadow() 
+view.layer.removeShadow()
 ```
 
 #### CGFloat+Radians
@@ -314,7 +320,7 @@ UIView.nibName
 UIView.nib
 ```
 
-Load the `UIView` from a nib with the same name. 
+Load the `UIView` from a nib with the same name.
 
 _It is important to type the destination property in orde to load the correct nib._
 
