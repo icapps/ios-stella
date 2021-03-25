@@ -17,17 +17,24 @@ public class KeychainHandler {
     /// Define the access group if you want to share the keychain values with other applications. When not set
     /// this value will be ignored, and no access group will be set.
     public var accessGroupName: String?
-    
-    public var bundleIdentifier: String?
+
+    @available(*, deprecated, renamed: "serviceIdentifier")
+    public var bundleIdentifier: String? {
+        set { serviceIdentifier = newValue }
+        get { return serviceIdentifier }
+    }
+
+    /// Define the service identifier, uses the main bundle identifier by default
+    public var serviceIdentifier: String? = Bundle.main.bundleIdentifier
 
     public static let shared = KeychainHandler()
-    
+
     fileprivate func data(for key: String, additionalQuery: [String: AnyObject]?) -> Data? {
         var query: [String: AnyObject] = [
             kSecClass as String: kSecClassGenericPassword as NSString,
             kSecMatchLimit as String: kSecMatchLimitOne,
             kSecReturnData as String: kCFBooleanTrue,
-            kSecAttrService as String: (bundleIdentifier ?? Bundle.main.bundleIdentifier ?? "") as AnyObject,
+            kSecAttrService as String: (serviceIdentifier ?? "") as AnyObject,
             kSecAttrAccount as String: key as AnyObject
         ]
         if let accessGroupName = self.accessGroupName {
@@ -39,12 +46,12 @@ public class KeychainHandler {
         }
         return self.secItemCopy(query).data as? Data
     }
-    
+
     fileprivate func set(_ data: Data?, for key: String, additionalQuery: [String: AnyObject]?) -> Bool {
         var query: [String: AnyObject] = [
             kSecClass as String: (kSecClassGenericPassword as NSString),
             kSecAttrAccount as String: key as AnyObject,
-            kSecAttrService as String: (bundleIdentifier ?? Bundle.main.bundleIdentifier ?? "") as AnyObject
+            kSecAttrService as String: (serviceIdentifier ?? "") as AnyObject
         ]
         if let accessGroupName = self.accessGroupName {
             query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
@@ -60,7 +67,22 @@ public class KeychainHandler {
             return self.secItemDelete(query) == noErr
         }
     }
-    
+
+    fileprivate func store<T: Codable>(_ data: T?,
+                                       for key: String,
+                                       additionalQuery: [String: AnyObject]?) throws -> Bool {
+        guard let data = data else {
+            return set(nil, for: key, additionalQuery: additionalQuery)
+        }
+        let newData = try JSONEncoder().encode(data)
+        return set(newData, for: key, additionalQuery: additionalQuery)
+    }
+
+    fileprivate func stored<T: Decodable>(for key: String, additionalQuery: [String: AnyObject]?) throws -> T? {
+        guard let data = data(for: key, additionalQuery: additionalQuery) else { return nil }
+        return try JSONDecoder().decode(T.self, from: data)
+    }
+
     private func secItemCopy(_ query: [String: AnyObject]) -> (status: OSStatus, data: AnyObject?) {
         var result: AnyObject?
         let status: OSStatus = withUnsafeMutablePointer(to: &result) {
@@ -81,7 +103,6 @@ public class KeychainHandler {
     private func secItemDelete(_ query: [String: AnyObject]) -> OSStatus {
         return SecItemDelete(query as CFDictionary)
     }
-    
 }
 
 /// `Keys` is a wrapper we can extend to define all the different keychain keys available.
@@ -134,6 +155,18 @@ public extension KeychainHandler {
         set {
             let value = newValue?.data(using: .utf8, allowLossyConversion: false)
             _ = set(value, for: key.key, additionalQuery: key.additionalQuery)
+        }
+    }
+
+    subscript<T: Codable>(key: Key<String?>) -> T? {
+        get {
+            if let result: T = try? stored(for: key.key, additionalQuery: key.additionalQuery) {
+                return result
+            }
+            return nil
+        }
+        set {
+            _ = try? store(newValue, for: key.key, additionalQuery: key.additionalQuery)
         }
     }
 }
