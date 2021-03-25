@@ -30,36 +30,14 @@ public class KeychainHandler {
     public static let shared = KeychainHandler()
 
     fileprivate func data(for key: String, additionalQuery: [String: AnyObject]?) -> Data? {
-        var query: [String: AnyObject] = [
-            kSecClass as String: kSecClassGenericPassword as NSString,
-            kSecMatchLimit as String: kSecMatchLimitOne,
-            kSecReturnData as String: kCFBooleanTrue,
-            kSecAttrService as String: (serviceIdentifier ?? "") as AnyObject,
-            kSecAttrAccount as String: key as AnyObject
-        ]
-        if let accessGroupName = self.accessGroupName {
-            query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
-        }
-        // Set additional query values when given.
-        if let additionalQuery = additionalQuery {
-            additionalQuery.forEach { key, value in query[key] = value }
-        }
+        var query = self.query(for: key, additionalQuery: additionalQuery)
+        query[kSecMatchLimit as String] = kSecMatchLimitOne
+        query[kSecReturnData as String] = kCFBooleanTrue
         return self.secItemCopy(query).data as? Data
     }
 
     fileprivate func set(_ data: Data?, for key: String, additionalQuery: [String: AnyObject]?) -> Bool {
-        var query: [String: AnyObject] = [
-            kSecClass as String: (kSecClassGenericPassword as NSString),
-            kSecAttrAccount as String: key as AnyObject,
-            kSecAttrService as String: (serviceIdentifier ?? "") as AnyObject
-        ]
-        if let accessGroupName = self.accessGroupName {
-            query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
-        }
-        // Set additional query values when given.
-        if let additionalQuery = additionalQuery {
-            additionalQuery.forEach { key, value in query[key] = value }
-        }
+        var query = self.query(for: key, additionalQuery: additionalQuery)
         if let data = data {
             query[kSecValueData as String] = data as AnyObject
             return self.secItemAdd(query) == noErr
@@ -81,6 +59,24 @@ public class KeychainHandler {
     fileprivate func stored<T: Decodable>(for key: String, additionalQuery: [String: AnyObject]?) throws -> T? {
         guard let data = data(for: key, additionalQuery: additionalQuery) else { return nil }
         return try JSONDecoder().decode(T.self, from: data)
+    }
+
+    private func query(for key: String, additionalQuery: [String: AnyObject]?) -> [String: AnyObject] {
+        var query: [String: AnyObject] = [
+            kSecClass as String: (kSecClassGenericPassword as NSString),
+            kSecAttrAccount as String: key as AnyObject
+        ]
+        if let service = self.serviceIdentifier {
+            query[kSecAttrService as String] = service as AnyObject
+        }
+        if let accessGroupName = self.accessGroupName {
+            query[kSecAttrAccessGroup as String] = accessGroupName as AnyObject
+        }
+        // Set additional query values when given.
+        if let additionalQuery = additionalQuery {
+            additionalQuery.forEach { key, value in query[key] = value }
+        }
+        return query
     }
 
     private func secItemCopy(_ query: [String: AnyObject]) -> (status: OSStatus, data: AnyObject?) {
