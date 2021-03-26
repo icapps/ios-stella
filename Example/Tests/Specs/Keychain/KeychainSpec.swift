@@ -14,6 +14,16 @@ import Keychain
 // Define the keys used for this test.
 extension Keys {
     static let stringValue = Key<String?>("stringValue")
+    static let codableValue = Key<String?>("codableValue")
+}
+
+private struct TestCodable: Codable, Equatable {
+    var identifier: String
+    var timestamp: Date
+    init(identifier: String, timestamp: Date) {
+        self.identifier = identifier
+        self.timestamp = timestamp
+    }
 }
 
 class KeychainSpec: QuickSpec {
@@ -38,6 +48,34 @@ class KeychainSpec: QuickSpec {
                 it("should be able to read to the keychain") {
                     _ = Keychain.save("Some string value", forKey: "stringValue")
                     expect(Keychain[.stringValue]).to(equal("Some string value"))
+                }
+
+                it("should be able to write a codable value to the keychain") {
+                    let value = TestCodable(identifier: "123",
+                                            timestamp: Date(timeIntervalSince1970: 2000))
+                    Keychain[.codableValue] = value
+                    expect(Keychain[.codableValue]) == value
+                }
+
+                it("Should override a codable value to the keychain") {
+                    let value1 = TestCodable(identifier: "123",
+                                             timestamp: Date(timeIntervalSince1970: 2000))
+                    let value2 = TestCodable(identifier: "456",
+                                             timestamp: Date(timeIntervalSince1970: 3000))
+                    Keychain[.codableValue] = value1
+                    Keychain[.codableValue] = value2
+
+                    expect(Keychain[.codableValue]) == value2
+                }
+
+                it("should be able to delete a codable value from the keychain") {
+                    let value = TestCodable(identifier: "123",
+                                            timestamp: Date(timeIntervalSince1970: 2000))
+                    Keychain[.codableValue] = value
+                    expect(Keychain[.codableValue]).toNot(beNil())
+
+                    Keychain[.codableValue] = nil
+                    expect(Keychain[.codableValue]).to(beNil())
                 }
             }
         }

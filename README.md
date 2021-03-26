@@ -131,10 +131,16 @@ extension Keys {
 ```
 
 You can read/write the from/to the `Keychain` by using the `subscript` on the `Keychain` class.
+It supports both regular `String` values as well as `Codable` objects.
 
 ```swift
 Keychain[.stringValue] = "A string value"
 print(Keychain[.stringValue]) // Prints 'A string value'
+
+```swift
+Keychain[.codableValue] = ClassConformingToCodable()
+print(Keychain[.codableValue]) // Prints '<ClassConformingToCodable: 0x0123456789>'
+```
 ```
 
 In some cases you want to be able to set additional keychain query paramaters on an item.
