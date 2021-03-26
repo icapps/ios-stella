@@ -17,10 +17,10 @@ extension Keys {
 }
 
 private struct TestCodable: Codable, Equatable {
-    var id: String
+    var identifier: String
     var timestamp: Date
-    init(id: String, timestamp: Date) {
-        self.id = id
+    init(identifier: String, timestamp: Date) {
+        self.identifier = identifier
         self.timestamp = timestamp
     }
 }
@@ -50,16 +50,16 @@ class KeychainSpec: QuickSpec {
                 }
 
                 it("should be able to write a codable value to the keychain") {
-                    let value = TestCodable(id: "123",
+                    let value = TestCodable(identifier: "123",
                                             timestamp: Date(timeIntervalSince1970: 2000))
                     keychain[.testKey] = value
                     expect(keychain[.testKey]) == value
                 }
 
                 it("Should override a codable value to the keychain") {
-                    let value1 = TestCodable(id: "123",
+                    let value1 = TestCodable(identifier: "123",
                                              timestamp: Date(timeIntervalSince1970: 2000))
-                    let value2 = TestCodable(id: "456",
+                    let value2 = TestCodable(identifier: "456",
                                              timestamp: Date(timeIntervalSince1970: 3000))
                     keychain[.testKey] = value1
                     keychain[.testKey] = value2
@@ -68,7 +68,7 @@ class KeychainSpec: QuickSpec {
                 }
 
                 it("should be able to delete a codable value from the keychain") {
-                    let value = TestCodable(id: "123",
+                    let value = TestCodable(identifier: "123",
                                             timestamp: Date(timeIntervalSince1970: 2000))
                     keychain[.testKey] = value
                     expect(keychain[.testKey]).toNot(beNil())
