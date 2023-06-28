@@ -156,10 +156,8 @@ public extension KeychainHandler {
 
     subscript<T: Codable>(key: Key<String?>) -> T? {
         get {
-            if let result: T = try? stored(for: key.key, additionalQuery: key.additionalQuery) {
-                return result
-            }
-            return nil
+            guard let data = data(for: key.key, additionalQuery: key.additionalQuery) else { return nil }
+            return try? JSONDecoder().decode(T.self, from: data)
         }
         set {
             _ = try? store(newValue, for: key.key, additionalQuery: key.additionalQuery)
