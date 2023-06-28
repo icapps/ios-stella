@@ -7,6 +7,8 @@
 
 import UIKit
 
+#if os(watchOS)
+#else
 extension UIView {
     /// Return the controller that is responsible for managing this view.
     public var respondingController: UIViewController? {
@@ -15,3 +17,4 @@ extension UIView {
         return nil
     }
 }
+#endif

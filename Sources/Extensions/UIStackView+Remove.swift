@@ -7,6 +7,8 @@
 
 import UIKit
 
+#if os(watchOS)
+#else
 @available(iOS 9.0, *)
 extension UIStackView {
     
@@ -20,3 +22,4 @@ extension UIStackView {
         }
     }
 }
+#endif

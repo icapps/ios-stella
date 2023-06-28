@@ -7,6 +7,8 @@
 
 import UIKit
 
+#if os(watchOS)
+#else
 extension UIViewController {
     /// Add a given controller to the current controller as a child view controller. The given
     /// controller's view is added as a subview to the given `UIView`.
@@ -78,3 +80,4 @@ extension UIViewController {
         remove(controller)
     }
 }
+#endif

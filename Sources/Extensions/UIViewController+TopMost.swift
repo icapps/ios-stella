@@ -7,6 +7,8 @@
 
 import UIKit
 
+#if os(watchOS)
+#else
 extension UIViewController {
     /// Get the view controller that is currently on top in your application.
     ///
@@ -31,3 +33,4 @@ extension UIViewController {
         }
     }
 }
+#endif

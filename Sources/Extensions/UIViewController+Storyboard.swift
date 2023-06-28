@@ -7,6 +7,8 @@
 
 import UIKit
 
+#if os(watchOS)
+#else
 extension UIViewController {
     /// Load the controller from the storyboard.
     ///
@@ -26,3 +28,4 @@ extension UIViewController {
         }
     }
 }
+#endif

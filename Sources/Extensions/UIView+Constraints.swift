@@ -7,6 +7,8 @@
 
 import UIKit
 
+#if os(watchOS)
+#else
 extension UIView {
     /// Constrain this view to the it's parent view.
     ///
@@ -59,3 +61,4 @@ extension UIView {
         constrain(to: view, insets: insets)
     }
 }
+#endif

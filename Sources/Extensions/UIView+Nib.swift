@@ -7,6 +7,8 @@
 
 import UIKit
 
+#if os(watchOS)
+#else
 extension UIView {
     /// Return the name of the view's class as it's reuse identifier.
     public class var reuseIdentifier: String {
@@ -33,3 +35,4 @@ extension UIView {
         return views.first as! View
     }
 }
+#endif

@@ -7,6 +7,8 @@
 
 import UIKit
 
+#if os(watchOS)
+#else
 extension UITableView {
     
     // MARK: - Register
@@ -62,3 +64,4 @@ extension UITableView {
         return cellForRow(at: indexPath) as! T
     }
 }
+#endif

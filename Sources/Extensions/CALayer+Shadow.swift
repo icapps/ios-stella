@@ -7,6 +7,8 @@
 
 import UIKit
 
+#if os(watchOS)
+#else
 extension CALayer {
     /// Adding shadow to a layer based on parameters `Sketch` parameters
     ///
@@ -50,3 +52,4 @@ extension CALayer {
         shadowPath = nil
     }
 }
+#endif
